@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- Copyright (c) 2014, Warren Weckesser.  All rights reserved. -->
+<html lang="en">
+<head>
+<title>Graph Paper Generator</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.8.17.custom.css">
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<!--<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">-->
+
+<script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+<script type="text/javascript" src="jspdf/jspdf.js"></script>
+<script type="text/javascript" src="jspdf/libs/Deflate/adler32cs.js"></script>
+<script type="text/javascript" src="jspdf/libs/FileSaver.js/FileSaver.js"></script>
+<script type="text/javascript" src="jspdf/libs/Blob.js/BlobBuilder.js"></script>
+
+<script type="text/javascript" src="graphpaperjs/gendoc.js"></script>
+
+</head>
+<body>
+<div>
+<h3>Graph Paper Generator</h3>
+<p>by Warren Weckesser</p>
+
+<form class="form-horizontal" onSubmit="generatePDF();">
+    <div class="control-group">
+        <label class="control-label" for="pattern"><b>Pattern</b></label>
+        <div class="controls">
+            <select class="span2" id="pattern">
+                <option selected="selected">Square Grid</option>
+                <option>Dots</option>
+                <option>Hexagonal Grid</option>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="papersize"><b>Paper size</b></label>
+        <div class="controls">
+            <select class="span2" id="papersize">
+                <option selected="selected">Letter</option>
+                <option>Legal</option>
+                <option>A3</option>
+                <option>A4</option>
+                <option>A5</option>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="orientation"><b>Orientation</b></label>
+        <div class="controls">
+            <select class="span2" id="orientation">
+                <option selected="selected">Portrait</option>
+                <option>Landscape</option>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="color"><b>Line color</b></label>
+        <div class="controls">
+            <select class="span2" id="color">
+                <option selected="selected">Black</option>
+                <option>Gray</option>
+                <option>Light Gray</option>
+                <option>Red</option>
+                <option>Green</option>
+                <option>Blue</option>
+                <option>Cyan</option>
+                <option>Magenta</option>
+                <option>Yellow</option>
+                <option>Dark Red</option>
+                <option>Dark Green</option>
+                <option>Dark Blue</option>
+                <option>Dark Cyan</option>
+                <option>Dark Magenta</option>
+                <option>Dark Yellow</option>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="linewidth"><b>Line width</b></label>
+        <div class="controls">
+            <select class="span2" id="linewidth">
+                <option>0.5 pts</option>
+                <option selected="selected">1 pt</option>
+                <option>1.5 pts</option>
+                <option>2 pts</option>
+                <option>2.5 pts</option>
+                <option>3 pts</option>
+                <option>4 pts</option>
+                <option>5 pts</option>
+                <option>6 pts</option>
+                <option>7 pts</option>
+                <option>8 pts</option>
+                <option>9 pts</option>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="gridspacing"><b>Grid spacing</b></label>
+        <div class="controls">
+            <select class="span2" id="gridspacing">
+                <option selected="selected">0.25 in</option>
+                <option>0.5 in</option>
+                <option>1 in</option>
+                <option>1.5 in</option>
+                <option>0.5 cm</option>
+                <option>1 cm</option>
+                <option>2 cm</option>
+                <option>3 cm</option>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="bordersize"><b>Border size</b></label>
+        <div class="controls">
+            <select class="span2" id="bordersize">
+                <option selected="selected">0.25 in</option>
+                <option>0.5 in</option>
+                <option>1 in</option>
+                <option>1.5 in</option>
+                <option>0.5 cm</option>
+                <option>1 cm</option>
+                <option>2 cm</option>
+                <option>3 cm</option>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="heavierlines"><b>Heavier lines</b><br/>(Square Grid only)</label>
+        <div class="controls">
+            <select class="span2" id="heavierlines">
+                <option selected="selected">None</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>12</option>
+                <option>16</option>
+                <option>20</option>
+            </select>
+        </div>
+    </div>
+    <!--
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-large btn-primary">Generate PDF</button>
+        </div>
+    </div>
+    -->
+</form>
+
+<!--
+<h4>Header Line (for Square Grid Only)</h4>
+<div>
+    <label class="checkbox">
+        <input type="checkbox" value="">Heavier line every N lines</input>
+    </label>  
+</div>
+-->
+<br />
+<a href="javascript:generatePDF()" class="btn btn-large btn-primary">Generate PDF</a>
+</div>
+<br />
+<hr />
+<div>
+    <b>Acknowledgments</b>
+    <ul>
+        <li><a href="http://jspdf.com">jsPDF</a></li>
+        <li><a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a> </li>
+    </ul>
+</div>
+</body>
+</html>
