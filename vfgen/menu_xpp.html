@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN &sect; &nbsp; XPP</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li class="strong"><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_xpp.html * * * -->
+<h2>XPP</h2>
+According to the <a href="http://www.math.pitt.edu/~bard/xpp/xpp.html">XPP</a>
+web page, "XPP is a tool for solving differential equations,
+difference equations, delay equations, functional equations, boundary value problems, and stochastic equations."
+<h3>The VFGEN XPP Command</h3>
+<p>
+An XPP ODE file is created by the command
+<div class="mypre">$ vfgen xpp vector_field_file.vf</div>
+<p>
+The name of the file created by this command is <b>[name].ode</b>, where
+[name] is the name of the vector field given in the vector field file. 
+</p>
+<p>
+The following table shows how
+the vector field file format is translated to the XPP ODE format.
+<table class="options">
+<tr>
+<td><i>VFGEN Element</i></td><td><i>XPP ODE File</i></td><td><i>Notes</i></td>
+</tr>
+<tr>
+<td>Constant</td><td><b>number</b>=<i>value</i></td><td>&nbsp;</td>
+</tr>
+<tr>
+<td>Parameter</td><td><b>par</b>=<i>value</i></td>
+     <td> VFGEN will use the DefaultValue for the value, or 0 if no DefaultValue is given. </td>
+</tr>
+<tr>
+<td>Expression</td><td><i>name</i>=<i>formula</i>  </td><td><i>name</i> is the VFGEN Name of the Expression</td>
+</tr>
+<tr>
+<td>StateVariable</td>
+<td><i>name</i>'=<i>formula</i> <br />
+           <b>init</b> <i>name</i>=<i>value</i> <br />
+           <i>name</i><b>(0)=</b><i>formula</i>
+</td>
+<td><i>name</i> is the VFGEN Name of the StateVariable.
+<br />
+The formula for <i>name</i><b>'=</b><i>formula</i> is taken from the StateVariable's
+Formula attribute.
+<br />
+The value for the initial value in
+<b>init name=</b><i>value</i> is taken from the StateVariable's
+DefaultInitialCondition attribute.
+<br />
+The formula in <b>name(0)=</b><i>formula</i> is taken from the StateVariable's
+DefaultHistory attribute; this line is included only if the system has delays.
+</td>
+</tr>
+<tr>
+<td>Function</td><td><b>aux=</b><i>formula<i></td><td>&nbsp;</td>
+</tr>
+</table> 
+</p>
+<h4>Options</h4>
+<table class="options">
+<tr>
+<td>
+<b>extra</b>
+</td>
+<td>
+The option <b>extra=</b><i>text</i> allows the user to customize the ODE file with additional
+lines.  The characters in <i>text</i> will be written to the end of the ODE file.
+Any semi-colons in <i>text</i> are converted to newlines.  For example
+<b>extra=</b>"@ total=100;@ maxstor=10000" will add the lines
+<div class="mypre">@ total=100 <br />
+@ maxstor=10000</div>
+to the ODE file. (A final semi-colon in <i>text</i> is optional.)
+<br />
+<i>Warning</i>: <i>text</i> <b>must not contain any commas</b>!
+</td>
+</tr>
+</table>
+<p>
+Caveats:
+<ul>
+<li> As noted in the table above, VFGEN does not check if a parameter
+is actually a derived parameter that is defined in terms of other parameters.
+This requires a different output format.
+<li>Also noted above, the text in the <b>extra=</b><i>text</i> option must not
+contain any commas.
+</ul>
+<h4>Example 1</h4>
+<p>
+Here is a sample vector field file: <a href="example_vf/pendulum.vf">pendulum.vf</a>.
+<br>
+The file created by
+<div class="mypre">$ vfgen xpp pendulum.vf</div>
+<br>
+is <a href="example_xpp/pendulum.ode">pendulum.ode</a>.
+Below is a screenshot of XPPAUT (version 5.96) running with this ODE file.
+The parameters were <i>g</i>=9.81, <i>b</i>=0.5</i>, <i>L</i>=1.0 and <i>m</i>=1.0.
+</p>
+<br />
+<br />
+<center>
+<img src="example_xpp/Screenshot-XPP_Ver_5.96.png">
+</center>
+<br />
+<h4>Example 2</h4>
+<p>
+The Mackey-Glass equation is the differential delay equation
+<center>
+    <i>x</i>'(<i>t</i>) = -<i>b</i>*<i>x</i> +
+          <i>a</i>*<i>x</i>(<i>t</i>-&tau;)/(1+<i>x</i>(<i>t</i>-&tau;)<sup>10</sup>)
+</center>
+</p>
+<p>
+A vector field file for this equation is
+<a href="example_vf/MackeyGlass.vf">MackeyGlass.vf</a>.
+</p>
+<p>
+We create an ODE file for XPP with the command
+<div class="mypre">$ vfgen xpp:extra="@ total=500;@ delay=20;@ maxstor=15000;@ xlo=0;@ xhi=500;@ ylo=0;@ yhi=1.5;" MackeyGlass.vf</div>
+(Your web browser may wrap the text, but the above command should be one continuous line when you enter
+it on the command line.)
+The file generated is <a href="example_xpp/MackeyGlass.ode">MackeyGlass.ode</a>.
+</p>
+<p>
+We run XPP with the command
+<div class="mypre">$ xppaut MackeyGlass.ode</div>
+</p>
+<p>
+Then run the simulation by selecting <b>Initialconds</b> followed by <b>(O)ld</b>.
+(Press I then O in the main menu.)
+</p>
+<p>
+The following screenshot shows the result.
+</p>
+<center>
+<img src="example_xpp/Screenshot-XPP_Ver_5.96-MackeyGlass.png">
+</center>
+<!-- * * * End of content_xpp.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>

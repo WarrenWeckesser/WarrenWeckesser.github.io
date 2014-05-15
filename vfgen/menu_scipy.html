@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN &sect; &nbsp; SciPy</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li class="strong"><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_scipy.html * * * -->
+<h2>SciPy</h2>
+<p>
+<a href="http://www.scipy.org/">SciPy</a>
+is an open source library of scientific tools for Python.
+</p>
+<h3>The VFGEN SciPy Command</h3>
+<p>
+Python files that can be used with the SciPy ODEINT routine
+are created by the command
+<div class="mypre">$ vfgen scipy vector_field_file.vf</div>
+<p>
+The files created are <b>[name].py</b>
+and, if the option <b>demo=yes</b> option is given,
+<b>[name]_demo.py</b>,
+where [name] is the name of the vector field given in the vector field file. 
+The Python file <b>[name].py</b> will contain the functions <b>vectorfield</b>
+and <b>jacobian</b>.
+</p>
+<h4>Options</h4>
+<table class="options">
+<tr>
+<td><b>func</b></td>
+<td>
+If the option <b>func=yes</b> is given,
+VFGEN also converts any user-defined functions in the vector field file
+into functions in the Python file.  The names of the
+functions will be the same as those given in the vector field file.
+<br />
+<i>Default</i>: <b>func=no</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>demo</b>
+</td>
+<td>
+If the option <b>demo=yes</b> is given,
+the file <b>[name]_demo.py</b> will contain a Python script for
+a command-line ODE solver for the vector field.  The
+example below shows how this file can be used.
+<br />
+<i>Default</i>: <b>demo=no</b>
+</td>
+</tr>
+</table>
+
+<h4>Example</h4>
+Here is a sample vector field file: <a href="example_vf/pendulum.vf">pendulum.vf</a>.
+<br>
+The files created by
+<div class="mypre">$ vfgen scipy:func=yes,demo=yes pendulum.vf</div>
+<br>
+are <a href="example_scipy/pendulum.py">pendulum.py</a>
+and <a href="example_scipy/pendulum_demo.py">pendulum_demo.py</a>.
+Run the demonstration program with a command such as
+<div class="mypre">$ python pendulum_demo.py theta=3.1 b=0.5 stoptime=10 > pend.dat</div>
+This will write the solution data to the file <b>pend.dat</b>.
+The following is a plot of this data.
+<center>
+<img src="example_scipy/pendulum_plot.png" />
+</center>
+<!-- * * * End of content_scipy.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>

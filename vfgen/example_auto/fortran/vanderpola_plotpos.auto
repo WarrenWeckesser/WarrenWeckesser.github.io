@@ -1,0 +1,45 @@
+#
+# File: vanderpol_plotpos.auto
+# Author: Warren Weckesser, www.warrenweckesser.net
+#
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
+
+
+data = sl('vanderpola_bif')
+
+plt.figure(figsize=(6,4)).subplots_adjust(bottom=0.12)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.hold(True)
+plt.title('van der Pol Canards')
+lw = 1.5
+
+#
+# A selection of periodic orbits from the vanderpola_bif data set.
+#
+#indices = [5, 9, 16, 20, 24, 26, len(data)-1]
+indices = [5, 9, 16, len(data)-1]
+
+n = len(indices)
+b = 0
+
+# Plot the solutions.
+for index in indices:
+    x = [data[index]['data'][k]['u'][0] for k in range(len(data[index]['data']))]
+    y = [data[index]['data'][k]['u'][1] for k in range(len(data[index]['data']))]
+    plt.plot(x, y, color=[0.6*b, 1 - b, b], linewidth=lw)
+    b = b + 1.0/n
+#
+# Plot the cubic y = x^3/x-x
+#
+x = np.linspace(-2.25, 2.25, 100)
+y = x**3/3.0-x
+plt.plot(x, y, color=[.5,.5,.5], linestyle='--')
+
+plt.axis([-2.25, 2.25, -1.0, 1.0])
+plt.savefig('vanderpola_canards.png', dpi=72)
+# plt.show()

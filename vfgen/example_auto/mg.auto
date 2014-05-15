@@ -1,0 +1,34 @@
+#
+# File:   mg.auto
+# Author: Warren Weckesser, www.warrenweckesser.net
+#
+# This AUTO script creates a partial bifurcation diagram for the
+# Mackey-Glass equation.
+#
+clean()
+delete("mg_bif")
+load(e="mg_2ode_avf", c="mg_2ode_avf")
+run()
+sv("mg_bif")
+#
+ch("IPS", 2)
+ch("ISP", 2)
+ch("ICP", [3, 11])
+ch("NTST", 20)
+ch("NCOL", 4)
+ch("IRS", 2)
+run(s="mg_bif")
+ap("mg_bif")
+#
+ch("IRS", 4)
+ch("ISW", -1)
+ch("NTST", 40)
+run(s="mg_bif")
+ap("mg_bif")
+#
+ch("IRS", 6)
+ch("ISW", -1)
+ch("NTST", 80)
+run(s="mg_bif")
+ap("mg_bif")
+clean()

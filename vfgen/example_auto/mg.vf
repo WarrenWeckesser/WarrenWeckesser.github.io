@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<VectorField Name="mg" Description="The Mackey-Glass Equation (with default IC and history set to 1)">
+<Parameter Name="a" DefaultValue="0.2" />
+<Parameter Name="b" DefaultValue="0.1" />
+<Parameter Name="tau" DefaultValue="0.1" Description="Delay time" />
+<Expression Name="delayedx" Formula="delay(x,tau)" Description="x(t-tau)" />
+<StateVariable Name="x" Formula="-b*x+a*delayedx/(1+delayedx^10)"
+                 DefaultInitialCondition="1" DefaultHistory="1" />
+</VectorField>

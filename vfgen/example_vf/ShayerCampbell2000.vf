@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<VectorField Name="ShayerCampbell2000">
+<Parameter Name="kappa" DefaultValue="0.5" />
+<Parameter Name="beta"  DefaultValue="1.0" />
+<Parameter Name="a12"   DefaultValue="1.0" />
+<Parameter Name="a21"   DefaultValue="1.0" />
+<Parameter Name="tau1"  DefaultValue="1.0" />
+<Parameter Name="tau2"  DefaultValue="1.0" />
+<Parameter Name="taus"  DefaultValue="1.0" />
+<Expression Name="x1tau1" Formula="delay(x1,tau1)" Description="x1(t-tau1)" />
+<Expression Name="x2tau2" Formula="delay(x2,tau2)" Description="x2(t-tau2)" />
+<Expression Name="x1taus" Formula="delay(x1,taus)" Description="x1(t-taus)" />
+<Expression Name="x2taus" Formula="delay(x2,taus)" Description="x2(t-taus)" />
+<StateVariable Name="x1" Formula="-kappa*x1 + beta*tanh(x1taus) + a12*tanh(x2tau2)"
+      DefaultInitialCondition="1.0" DefaultHistory="1.0" />
+<StateVariable Name="x2" Formula="-kappa*x2 + beta*tanh(x2taus) + a21*tanh(x1tau1)"
+      DefaultInitialCondition="1.0" DefaultHistory="1.0" />
+</VectorField>

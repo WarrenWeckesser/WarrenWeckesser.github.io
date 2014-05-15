@@ -1,0 +1,9 @@
+sys-wn2-edit.so  SYSNAME
+0                          LABEL
+40 P0 0                    TYPE, P0, NPARX, PARX[NPARX]
+200  4 5 1 1                NINT, NDEG, NMUL, STAB, NMAT
+12 12 4 4                  NINT1, NINT2, NDEG1, NDEG2
+100 3 0.2 400                  STEPS, IAD, P0MIN, P0MAX
+0.001 0.00001 0.05 0.0001    DS, DSMIN, DSMAX, DSSTART
+1e-09 1e-09 1e-10          EPSC, EPSR, EPSS
+12 12 12		   NITC, NITR, NITS

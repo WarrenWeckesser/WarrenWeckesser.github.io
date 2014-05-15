@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN Download</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="strong"><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_download.html * * * -->
+<h3>Downloading and Installing VFGEN</h3>
+
+<ul>
+<li><a href="#precompiled">Precompiled, statically linked executable files</a></li>
+<li><a href="#sourcecode">Source code</a></li>
+</ul>
+
+<h4><a name="precompiled">Precompiled, statically linked executable files</a></h4>
+<p>
+Download the file that is appropriate for your system, if one is available here.
+</p>
+<table border=1 cellpadding=3 cellspacing=1>
+<tr>
+<td>
+<i>Computer</i>
+</td>
+<td>
+<i>Executable File</i>
+</td>
+<td>
+<i>Size</i>
+</td>
+</tr>
+<tr>
+<td>
+GNU Linux / x86 64 bit
+</td>
+<td>
+<a href="bin/vfgen-2.5.0-x86_64">vfgen-2.5.0-x86_64</a>
+</td>
+<td>
+5.1 meg
+</td>
+</tr>
+<tr>
+<td>
+Windows / Intel PC (32 bit)
+</td>
+<td>
+<a href="bin/vfgen-2.5.0.exe">vfgen-2.5.0.exe</a>
+</td>
+<td>
+23 meg
+</td>
+</tr>
+<tr>
+<td>
+Mac OS X (10.4) / PowerPC 
+</td>
+<td>
+<a href="bin/vfgen-2.5.0-mac-ppc">vfgen-2.5.0-mac-ppc</a>
+</td>
+<td>
+26 meg
+</td>
+</tr>
+</table>
+</p>
+<p>
+After downloading the executable file, Linux and Mac users should
+rename the file to <b>vfgen</b>. Windows users should rename it
+to <b>vfgen.exe</b>.
+</p>
+<p>
+In all versions, the program is a command-line program
+that is run from a terminal.
+The terminology for the program that gives you a command-line depends on the operating system:
+<ul>
+<li>In Linux, start a "Terminal" (also known as a "shell" or "console").</li>
+<li>On a Mac in OS X, start a "Terminal".</li>
+<li>In Windows, run a "Command Prompt".</li>
+</ul>
+</p>
+<hr />
+<p>
+Here are a few options for installing the program
+in Linux (or Linux-like) systems:
+<ul>
+<li>
+If you do not have root privileges, you can copy this file to your
+own bin directory, ~/bin, and rename it to "vfgen". (You may have to
+create the ~/bin directory if you don't already have one.)
+Then be sure that
+the directory ~/bin is included in your search path.
+Here is how you can do that if you use the bash shell:
+<div class="mypre">
+$ export PATH=~/bin:$PATH
+</div></li>
+<li>
+If you are the system administrator for your computer system, or if you
+have root privileges, you can copy the executable file
+to /usr/local/bin (if you are using Linux)
+to make it available to all users.
+To be compatible with the examples in the
+VFGEN web page, rename the executable file to "vfgen".</li>
+<br />
+<li>
+If you don't want to bother with any of that, you can simply save
+the file in the same directory in which you will be working, and
+rename it to "vfgen".
+Then to run the program, instead of giving the command "vfgen", you will have
+to use "./vfgen".  For example:
+<div class="mypre">$ ./vfgen check pendulum.vf</div></li>
+</ul>
+</p>
+<hr />
+
+<h4><a name="sourcecode">Source code</a></h4>
+<p>
+The source code for VFGEN is now on GitHub: <a href="https://github.com/WarrenWeckesser/vfgen"><tt>https://github.com/WarrenWeckesser/vfgen</tt></a>
+</p>
+<p>
+For the latest stable release, download this file:
+<ul>
+<li><a href="source/vfgen-2.5.0.tar.gz">vfgen-2.5.0.tar.gz</a></li>
+</ul>
+In the directory where the file was saved, run the command
+<div class="mypre">$ tar xvzf vfgen-2.5.0.tar.gz</div>
+This will create the subdirectory <b>vfgen-2.5.0</b>.
+See the <b>README</b> file in that directory for
+instructions for building VFGEN.
+</p>
+<p>
+In addition to the standard C/C++ libraries, VFGEN uses
+the libraries listed in the following table.
+You will need these libraries installed if you want to
+build VFGEN from the source code.
+Other versions of these libraries <i>might</i> work, but these are the versions
+that were used to develop and test VFGEN 2.5.0.
+</p>
+<table border=1 cellpadding=3 cellspacing=1>
+<tr valign=top>
+<td>Mini-XML (version 2.8)</td>
+<td>A "mini" XML C Library</td>
+<td><a href="http://www.minixml.org/">www.minixml.org</a></td>
+</tr>
+<tr valign=top>
+<td>GiNaC (version 1.6.2)</td>
+<td>C++ Library for Symbolic Mathematics</td>
+<td><a href="http://www.ginac.de">www.ginac.de</a></td>
+</tr>
+<tr valign=top>
+<td>CLN (version 1.3.3)</td>
+<td>Class Library for Numbers</td>
+<td><a href="http://www.ginac.de/CLN/">www.ginac.de/CLN</a></td>
+</tr>
+</table>
+<p>
+<span style="color:red"><i>Note:</i></span>
+Version 2.5 of the Mini-XML (mxml) library has
+a spelling error in one of its configuration files.  If you install
+mxml version 2.5 from source, the spelling error causes the build
+of VFGEN to fail.  To fix this, reinstall version 2.5 of mxml after
+changing <b>@PHTREAD_LIBS@</b> to <b>@PTHREAD_LIBS@</b> in the file
+<b>mxml.pc.in</b>.
+</p>
+<!-- * * * End of content_download.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>

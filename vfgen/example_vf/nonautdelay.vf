@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<VectorField Name="nonautdelay" Description="A nonautonomous delay equation">
+<Parameter Name="a" DefaultValue="0.001" />
+<Parameter Name="tau" DefaultValue="0.1" Description="Delay time" />
+<Expression Name="delayedx" Formula="delay(x,tau)" Description="x(t-tau)" />
+<StateVariable Name="x"  Formula="x*(1+a*sin(2*Pi*t)-delayedx)" DefaultInitialCondition="0.1" DefaultHistory="0.1"/>
+</VectorField>

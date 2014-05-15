@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<VectorField Name="SIRdelay">
+<Parameter Name="alpha" DefaultValue="0.5" />
+<Parameter Name="tau" DefaultValue="4.0" Description="Delay time" />
+<Expression Name="delayedS" Formula="delay(S,tau)" Description="S(t-tau)" />
+<Expression Name="delayedIn" Formula="delay(In,tau)" Description="I(t-tau)" />
+<StateVariable Name="S"  Formula="-alpha*S*In" DefaultInitialCondition="0.999" DefaultHistory="1.0"/>
+<StateVariable Name="In" Formula="alpha*(S*In - delayedS*delayedIn)" DefaultInitialCondition="0.001" DefaultHistory="0.0"/>
+<StateVariable Name="R"  Formula="alpha*delayedS*delayedIn" DefaultInitialCondition="0" DefaultHistory="0" />
+</VectorField>

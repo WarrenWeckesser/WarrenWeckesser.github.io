@@ -1,0 +1,17 @@
+Name:       pendulum   Independent Variable: t
+Constants:  {}  Values: {}
+Parameters: {g,b,L,m}  Default values: {9.81,0.0,1.0,1.0}
+Variables:  {theta,v}
+  DefaultICs:     {-0.01+Pi,0.0}
+  DefaultHistory: {0,0}
+Expressions: 
+Expressions (equation list): {}
+Vector field: 
+   v
+   -sin(theta)*L^(-1)*g-b*L^(-2)*v*m^(-1)
+Functions: 
+   energy=1/2*L^2*v^2*m-L*cos(theta)*m*g
+IsDelay: false
+HasNonconstantDelay: false
+IsAutonomous: true
+HasPi: true

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN &sect; &nbsp; MATCONT</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li class="strong"><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_matcont.html * * * -->
+<h2>MATCONT</h2>
+<p>
+<a href="http://www.matcont.ugent.be/">MATCONT and CL_MATCONT</a>
+are MATLAB programs for doing numerical continuation.
+From the MATCONT web page: "The aim of <b>MATCONT</b>
+and <b>CL_MATCONT</b> is to provide a continuation toolbox which is compatible with the standard MATLAB ODE representation of differential equations."
+</p>
+<h3>The VFGEN MATCONT Command</h3>
+<p>
+A MATCONT file is created by the command
+<div class="mypre">$ vfgen matcont vector_field_file.vf</div>
+<p>
+One file is created, called <b>[name].m</b>, where [name] is the name
+given in the vector field file.
+The first function in the this file
+has the same name as the vector field.  The return value of this function, out,
+will be:
+<p>
+<table class="options">
+<tr>
+<td width="30%"><i>Return Value</i></td>
+<td><i>MATCONT Meaning</i></td>
+</tr>
+<tr>
+<td>out{1} = @[name]_init;</td>
+<td>Initialization function</td>
+</tr>
+<tr>
+<td>out{2} = @[name]_vf;</td>
+<td>Vector field function</td>
+</tr>
+<tr>
+<td>out{3} = @[name]_jac;</td>
+<td>Jacobian, with respect to the state variables</td>
+</tr>
+<tr>
+<td>out{4} = @[name]_jacp;</td>
+<td>Jacobian, with respect to the parameters</td>
+</tr>
+<tr>
+<td>out{5} = @[name]_hess;</td>
+<td>Hessians, with respect to the state variables</td>
+</tr>
+<tr>
+<td>out{6} = @[name]_hessp;</td>
+<td>Second derivatives, taken with respect to the state variables and the parameters</td>
+</tr>
+<tr>
+<td>out{7} = @[name]_der3;</td>
+<td>Third derivatives, taken with respect to the state variables</td>
+</tr>
+<tr>
+<td>out{8} = [];</td>
+<td>Fourth derivatives; not created by VFGEN</td>
+</tr>
+<tr>
+<td>out{9} = [];</td>
+<td>Fifth derivatives; not created by VFGEN</td>
+</tr>
+<tr>
+<td>out{10} = @[name]_[user1]; <br />
+out{11} = @[name]_[user2]; <br />
+<i>etc.</i>
+</td>
+<td>If any user functions are defined, they will also be implemented in
+the output file, and references to the function will be stored in 
+out{10}, out{11}, etc.
+</td>
+</tr>
+</table>
+<br />
+<b><i>Note</i></b>
+<p>
+I have only tested the files create by VFGEN with <b>CL_MATCONT</b>.
+The demonstration scripts below are to be used with <b>CL_MATCONT</b>.
+<h4>Example 1</h4>
+<p>
+Section 7.4 of the MATCONT manual 
+"<i>MATCONT and CL MATCONT:
+Continuation Toolboxes in Matlab</i>"
+(A. Dhooge, <i>et al</i>, December 2006)
+discusses the <i>Bratu example</i>.
+A vector field file that defines the differential equations for this
+example is <a href="example_vf/bratu.vf">bratu.vf</a>.
+A MATLAB definition file for MATCONT is created with the command
+<div class="mypre">$ vfgen matcont bratu.vf</div>
+This creates the file <a href="example_matcont/bratu.m">bratu.m</a>.
+</p>
+<p>
+The MATLAB script <a href="example_matcont/bratu_script.m">bratu_script.m</a>
+contains the commands given in Section 7.4 of the manual.  Here is the plot
+generated by this script:
+<center>
+<img src="example_matcont/bratu_plot.png" />
+</center>
+</p>
+<h4>Example 2</h4>
+<p>
+We will use MATCONT to do two parameter continuation of limit points and Hopf points
+in the <a href="http://www.scholarpedia.org/article/Morris-Lecar_model">Morris-Lecar equations</a>.
+A vector field file for these equations is
+<a href="example_vf/MorrisLecar.vf">MorrisLecar.vf</a>.
+<br>
+The file created by
+<div class="mypre">$ vfgen matcont MorrisLecar.vf</div>
+<br>
+is <a href="example_matcont/MorrisLecar.m">MorrisLecar.m</a>.
+</p>
+<p>
+The MATLAB script <a href="example_matcont/MorrisLecar_script.m">MorrisLecar_script.m</a>
+first computes a curve of equilibrium by varying the parameter <b>ic</b>.
+Two limit points and a Hopf point are found on this curve.
+The script then does two parameter continuation (using <b>ic</b> and <b>gca</b>)
+of a limit point and of the Hopf point.
+Here is the plot generated by the script:
+<center>
+<img src="example_matcont/MorrisLecar_plot.png" />
+</center>
+(The extraneous red dots are the starting points of the curves; each was computed in
+stages, forward and backward.  The BT point is labeled twice because it was detected
+on both the Hopf curve and the limit point curve.)
+</p>
+<!-- * * * End of content_matcont.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>

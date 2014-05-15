@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<VectorField Name="simpledelay">
+<Parameter Name="h" DefaultValue="1.0" Description="Delay time" />
+<Expression Name="delayedx" Formula="delay(x,h)" Description="x(t-h)" />
+<StateVariable Name="x" Formula="sin(t)" DefaultInitialCondition="1" DefaultHistory="2-cos(t)"/>
+</VectorField>

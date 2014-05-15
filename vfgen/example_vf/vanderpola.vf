@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<VectorField
+    Name="vanderpola" >
+<Parameter
+    Name="epsilon"
+    DefaultValue="0.01" />
+<Parameter
+    Name="a"
+    DefaultValue="0.0" />
+<StateVariable
+    Name="x"
+    Formula="(y+x-x^3/3.0)/epsilon"
+    DefaultInitialCondition="0.0" />
+<StateVariable
+    Name="y"
+    Formula="a-x"
+    DefaultInitialCondition="0.0" />
+</VectorField>

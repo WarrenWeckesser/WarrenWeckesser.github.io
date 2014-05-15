@@ -1,0 +1,49 @@
+#
+# File:   vanderpola.auto
+# Author: Warren Weckesser
+#
+# This AUTO script creates a partial bifurcation diagram for the
+# van der Pol system in which the second equation is y'=a-x
+# This version of the script is for the FORTRAN version of the
+# equations file.
+#
+
+clean()
+delete("vanderpola_bif")
+load(e="vanderpola_avf",c="vanderpola_avf")
+run()
+sv("vanderpola_bif")
+
+data = sl('vanderpola_bif')
+k = 0
+while k < len(data) and data[k]['Type name'] != 'HB':
+    k = k + 1
+if k == len(data):
+    print "Hopf bifurcation not found."
+    exit
+hopf_label = data[k]['Label']
+
+ch("IPS", hopf_label)
+ch("ISP", 2)
+ch("ICP", [2, 11])
+ch("NTST", 20)
+ch("NCOL", 4)
+ch("IRS", 2)
+ch("NPR", 100)
+ch("DSMAX", 0.002)
+ch("DS", 0.0001)
+ch("NMX", 500)
+run(s="vanderpola_bif")
+ap("vanderpola_bif")
+
+data = sl('vanderpola_bif')
+last_label = data[-1]['Label']
+
+ch("IRS", last_label)
+ch("NTST", 50)
+ch("NPR", 200)
+ch("DSMAX", 0.04)
+ch("NMX", 1000)
+run(s="vanderpola_bif")
+ap("vanderpola_bif")
+clean()

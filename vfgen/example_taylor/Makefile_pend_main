@@ -1,0 +1,20 @@
+#
+# Makefile_pend_main
+#
+# This Makefile is for the program pend_main, the demonstration program
+# for the VFGEN Taylor mode.
+#
+# Copyright (c) 2006-2014 Warren Weckesser, www.warrenweckesser.net
+#
+#
+# Other than linking with -lm, the implicit compilation rules should
+# work with these files, so no commands are given explicitly.
+#
+
+LDFLAGS=-lm
+
+pend_main: pend_main.o pendulum_taylor7.o
+
+pend_main.o: pend_main.c pendulum_taylor7.h
+
+pendulum_taylor7.o: pendulum_taylor7.c pendulum_taylor7.h

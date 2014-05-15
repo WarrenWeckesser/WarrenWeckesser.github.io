@@ -1,0 +1,118 @@
+/*
+ *  File:  menulayout.css
+ *
+ *  Set assorted styles for the left side navigation menu, and the
+ *  basic properties of the content section.  Also sets the properties
+ *  of the menu-footer (the copyright notice).
+ */
+
+body
+    {
+	font-family: "bitstream vera sans",sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #e0e0d8;
+    }
+
+a:link
+    {
+	color: #604040;
+    }
+
+a:visited
+    {
+	color: #485060;
+    }
+
+a:hover
+    {
+	color: #f20;
+    }
+
+a[name]
+    {
+	color: inherit;
+	text-decoration: inherit;
+    }
+
+
+#menu-side
+    {
+    position: absolute;
+    z-index: 2;
+    width: 164px;
+    left: 12px;
+    top: 4px;
+    margin-top: 6px;
+    color: #ffffff;
+    font-size: 0.8em;
+    }
+
+/* Left-side navigation menu (ul) */
+
+#menu-side-nav
+    {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #382010;
+    border-top: 0;
+    /*background-color: #604444;*/
+    background-color: #584040;
+    }
+
+#menu-side-nav li
+    {
+    margin: 0;
+    padding: 1px;
+    border-top: 1px solid #382010;
+    }
+
+#menu-side-nav a
+    {
+    margin: 0;
+    color: #f0f0d0;
+    display: block;
+    text-decoration: none;
+    padding: 3px 4px;
+    }
+
+#menu-side-nav a:hover
+    {
+    background-color: #903030;
+    color: white;
+    }
+
+#menu-side-nav li.strong
+    {
+    background-color: #403838;
+    }
+
+#menu-side-nav li:hover
+    {
+    background-color: #903030;
+    }
+
+/* content container */
+
+#menu-page-content
+    {
+    /* font-size: 0.9em; */
+    width: auto;
+    min-width: 120px;
+    margin: 15px;
+    z-index: 3;
+    margin-left: 193px;
+    padding: 20px;
+    border: 1px solid #382010;
+    background-color: white;
+    }
+
+#menu-footer 
+    {
+    font-size: 0.64em;
+    text-align: right;
+    color: #777;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    }

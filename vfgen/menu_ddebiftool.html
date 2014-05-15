@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN &sect; &nbsp; DDE-BIFTOOL</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li class="strong"><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_ddebiftool.html * * * -->
+<h2>DDE-BIFTOOL</h2>
+<p>
+<a href="http://arachne.cs.kuleuven.ac.be/~twr/research/software/delay/ddebiftool.shtml">
+DDE-BIFTOOL</a> is a <a href="http://www.mathworks.com/">MATLAB</a>
+package for bifurcation analysis of delay differental equations.
+</p>
+<h3>The VFGEN DDE-BIFTOOL Command</h3>
+<p>
+A set of MATLAB files configured for the DDE-BIFTOOL package
+are created by the command
+<br />
+<div class="mypre">$ vfgen ddebiftool vector_field_file.vf</div>
+</p>
+<p>
+The vector field must have at least one <b>delay</b> expression.
+</p>
+<p>
+<b>Note</b>: Currently VFGEN only generates DDE-BIFTOOL files for systems
+with <i>constant</i> delays.
+<h4>Options</h4>
+<table class="options">
+<tr>
+<td>
+<b>path</b>
+</td>
+<td>
+The <b>path</b> option allows the user to specify a directory that
+is added to the MATLAB search path in the sys_init.m file.
+For example, if the VFGEN command
+<div class="mypre">$ vfgen ddebiftool:path="/home/wweckesser/ddebiftool" mg.vf</div>
+is given, the line
+<pre>    path(path,'/home/wweckesser/ddebiftool');</pre>
+is added to the sys_init.m file.
+<br />
+<i>Default</i>: If the <b>path</b> option is not used, the following comments are
+added to sys_init.m:
+<pre>
+    # Add the DDE-BIFTOOL path here, if necessary.
+    # path(path,'');
+</pre>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<p>
+The file <a href="example_auto/mg.vf">mg.vf</a> defines the Mackey-Glass equation.
+The command
+<div class="mypre">vfgen ddebiftool:path=/home/wweckesser/ddebiftool mg.vf</div>
+creates the files
+<ul>
+<li><a href="example_ddebiftool/sys_init.m">sys_init.m</a></li>
+<li><a href="example_ddebiftool/sys_rhs.m">sys_rhs.m</a></li>
+<li><a href="example_ddebiftool/sys_deri.m">sys_deri.m</a></li>
+<li><a href="example_ddebiftool/sys_tau.m">sys_tau.m</a></li>
+</ul>
+The script <a href="example_ddebiftool/mg_script.m">mg_script.m</a> results in the following
+plot:
+<br />
+<br />
+<center>
+<img  border="1" src="example_ddebiftool/mg_bifdiag.png">
+</center>
+</p>
+<!-- * * * End of content_ddebiftool.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>

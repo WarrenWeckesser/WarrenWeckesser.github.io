@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<VectorField Name="hr" IndependentVariable="t" Description="Hindmarsh-Rose Neuron">
+<Parameter Name="a" DefaultValue="2.6" Description="related to the fast ion channels" />
+<Parameter Name="b" DefaultValue="4.0" Description="" />
+<Parameter Name="d" DefaultValue="5.0" Description="related to the fast ion channels" />
+<Parameter Name="mu" DefaultValue="0.01" Description="related to the slow ion channels" />
+<Parameter Name="x0" DefaultValue="-1.6" Description="initial potential" />
+<Parameter Name="In" DefaultValue="4.0" Description="external injected current" />
+<StateVariable Name="x" 
+    Formula="y + a * x^2 - x^3 - z + In"
+    DefaultInitialCondition="0" 
+    Description="membrane potential" />
+<StateVariable
+    Name="y"
+    Formula="1 - d * x^2 - y"
+    DefaultInitialCondition="0" 
+    Description="transport of fast ion channels" />
+<StateVariable
+    Name="z"
+    Formula="mu * (b * (x-x0) - z)"
+    DefaultInitialCondition="0" 
+    Description="transport of slow ion channels" />
+</VectorField>

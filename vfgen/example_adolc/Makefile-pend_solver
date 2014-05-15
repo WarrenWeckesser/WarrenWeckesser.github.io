@@ -1,0 +1,18 @@
+#
+# Makefile-pend_solver
+#
+
+all: pend_solver
+
+pend_solver: pend_solver.o pendulum_adolc.o
+	$(CXX) $(LDFLAGS) -o pend_solver pend_solver.o pendulum_adolc.o -ladolc
+
+pend_solver.o: pend_solver.cpp pendulum_adolc.h
+	$(CXX) $(CPPFLAGS) -c pend_solver.cpp
+
+pendulum_adolc.o: pendulum_adolc.cpp pendulum_adolc.h
+	$(CXX) $(CPPFLAGS) -c pendulum_adolc.cpp
+
+clean:
+	rm -f pend_solver pend_solver.o pendulum_adolc.o
+

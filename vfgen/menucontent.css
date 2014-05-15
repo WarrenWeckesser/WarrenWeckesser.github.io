@@ -1,0 +1,115 @@
+* {font-family: garamond, georgia, times;}
+
+pre
+    {
+    border: 1px solid #b0b0b0;
+    background-color: #e0e0e0;
+    color: black;
+    padding: 1%;
+    width: 97%;
+    }
+
+span.tt
+    {
+    font-family: monospace;
+    font-weight: bold;
+    }
+
+div.mypre
+    {
+    width: 97%;
+    border: 1px solid #b0b0b0;
+    background-color: #e0e0e0;
+    color: black;
+    padding: 1%;
+    text-align: left;
+    /* font-family: courier, serif; */
+    font-family: monospace;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    }
+
+div.box
+    {
+    background: #d0d0d0;
+    color: black;
+    border: 1px solid black;
+    padding: .2cm;
+    text-align: left;
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+div.centered
+    {
+    text-align: center;
+    }
+
+
+h1, h2, h3, h4 {
+	/*
+	font-style: italic;
+	font-family: "luxi sans",sans-serif;
+    */
+}
+h1
+    {
+    font-size: 1.6em;
+    }
+
+h2
+    {
+    font-size: 1.4em;
+    }
+
+h3
+    {
+    font-size: 1.2em;
+    }
+
+h4
+    {
+    font-size: 1.1em;
+    font-style: italic;
+    }
+
+hr
+    {
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    }
+
+table.options
+    {
+    border: 0px;
+    padding: 0px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    }
+
+table.options tr
+    {
+    font-size: 0.9em;
+    }
+
+table.options td
+    {
+    border: 1px solid black;
+    padding: 0.5em;
+    text-align: left;
+    vertical-align: top;
+    }
+
+table.eqnarray td
+    {
+    text-align: left;
+    vertical-align: top;
+    }
+
+
+.warning
+    {
+    color: red;
+    }

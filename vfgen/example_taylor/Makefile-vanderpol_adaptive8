@@ -1,0 +1,20 @@
+#
+# Makefile_vanderpol_adaptive8
+#
+# This Makefile is for the program vanderpol_adaptive8, a demonstration program
+# for the VFGEN Taylor mode.
+#
+# Copyright (c) 2006-2014 2008 Warren Weckesser, www.warrenweckesser.net
+#
+#
+# Other than linking with -lm, the implicit compilation rules should
+# work with these files, so no commands are given explicitly.
+#
+
+LDFLAGS=-lm
+
+vanderpol_adaptive8: vanderpol_adaptive8.o vanderpol_taylor8.o
+
+vanderpol_adaptive8.o: vanderpol_adaptive8.c vanderpol_taylor8.h
+
+vanderpol_taylor8.o: vanderpol_taylor8.c vanderpol_taylor8.h

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<VectorField Name="wn2">
+<Parameter Name="epsilon" DefaultValue="0.1" />
+<Parameter Name="a"  DefaultValue="5" />
+<Parameter Name="T" DefaultValue="2*Pi" />
+<StateVariable Name="x" Formula="T*y"
+      DefaultInitialCondition="0.0" DefaultHistory="0.0" />
+<StateVariable Name="y" Formula="T*(-x - epsilon*(y + x^3 - a*cos(2*Pi*t)))"
+      DefaultInitialCondition="0.0" DefaultHistory="0.0" />
+</VectorField>

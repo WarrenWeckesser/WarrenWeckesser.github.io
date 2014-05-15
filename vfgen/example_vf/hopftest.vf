@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<VectorField Name="hopftest">
+<Parameter Name="mu" />
+<Parameter Name="omega" />
+<Expression Name="rr" Formula="x^2+y^2" />
+<StateVariable Name="x" Formula="mu*x+omega*y+rr*x" />
+<StateVariable Name="y" Formula="-omega*x+mu*y+rr*y" />
+</VectorField>

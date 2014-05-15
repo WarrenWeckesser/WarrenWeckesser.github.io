@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<VectorField
+    Name="lorenz" >
+<Parameter
+    Name="sigma"
+    DefaultValue="10.0" />
+<Parameter
+    Name="rho"
+    DefaultValue="28.0" />
+<Parameter
+    Name="beta"
+    DefaultValue="10.0/3.0" />
+<StateVariable
+    Name="x"
+    Formula="sigma*(y-x)"
+    DefaultInitialCondition="1.0" />
+<StateVariable
+    Name="y"
+    Formula="rho*x - y - x*z"
+    DefaultInitialCondition="0.0" />
+<StateVariable
+    Name="z"
+    Formula="x*y - beta*z"
+    DefaultInitialCondition="1.0" />
+</VectorField>

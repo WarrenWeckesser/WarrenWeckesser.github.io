@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN &sect; &nbsp; Taylor</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li class="strong"><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_taylor.html * * * -->
+<h2>Taylor Method</h2>
+The idea of the Taylor method for approximating the solution to a system of
+differential equations is to expand the solution to
+<br>
+<center>
+<i>X</i>'(<i>t</i>) = <i>F</i>(<i>X</i>)
+</center>
+in a Taylor series:
+<center>
+<i>X</i>(<i>t</i>+<i>h</i>) = <i>X</i>(<i>t</i>) + <i>h</i><i>X</i>'(<i>t</i>)
+                       + (<i>h</i><sup>2</sup>/2)<i>X</i>''(<i>t</i>)
+                    + (<i>h</i><sup>3</sup>/6)<i>X</i><sup>(3)</sup>(<i>t</i>)  + ...
+</center>
+The differential equation gives us <i>X</i>'(<i>t</i>).
+To find <i>X</i>''(<i>t</i>), we differentiate the differential equation with respect
+to <i>t</i> (<i>t</i> arguments are suppressed):
+<center>
+<i>X</i>'' = <i>D</i><i>F</i>(<i>X</i>)[<i>X</i>']
+</center>
+(We denote the <i>r</i>-linear differential <i>D</i><sup><i>r</i></sup><i>F</i>(<i>X</i>)
+acting on the vectors <i>V</i><sub>1</sub>,...,<i>V</i><sub>r</sub> as
+<i>D</i><sup><i>r</i></sup><i>F</i>(<i>X</i>)[<i>V</i><sub>1</sub>,...,<i>V</i><sub>r</sub>].)
+Differentiate again to find <i>X</i><sup>(3)</sup> and higher derivatives
+of <i>X</i>:
+<center>
+<table class="eqnarray">
+<tr>
+<td>
+<i>X</i><sup>(3)</sup>
+</td>
+<td>=</td>
+<td>
+<i>D</i><sup>2</sup><i>F</i>(<i>X</i>)[<i>X</i>',<i>X</i>']+<i>D</i><i>F</i>(<i>X</i>)[<i>X</i>'']
+</td>
+</tr>
+<tr>
+<td>
+<i>X</i><sup>(4)</sup>
+</td>
+<td>=</td>
+<td>
+<i>D</i><sup>3</sup><i>F</i>(<i>X</i>)[<i>X</i>',<i>X</i>',<i>X</i>'] 
+    + 3<i>D</i><sup>2</sup><i>F</i>(<i>X</i>)[<i>X</i>'',<i>X</i>']
+     + <i>D</i><i>F</i>(<i>X</i>)[<i>X</i><sup>(3)</sup>]
+</td>
+</tr>
+<tr>
+<td>
+<i>X</i><sup>(5)</sup>
+</td>
+<td>=</td>
+<td>
+<i>D</i><sup>4</sup><i>F</i>(<i>X</i>)[<i>X</i>',<i>X</i>',<i>X</i>',<i>X</i>']
+     + 6 <i>D</i><sup>3</sup><i>F</i>(<i>X</i>)[<i>X</i>'',<i>X</i>',<i>X</i>'] + 3<i>D</i><sup>2</sup><i>F</i>(<i>X</i>)[<i>X</i>'',<i>X</i>'']
+      + 4<i>D</i><sup>2</sup><i>F</i>(<i>X</i>)[<i>X</i><sup>(3)</sup>,<i>X</i>']
+      + <i>D</i><i>F</i>(<i>X</i>)[<i>X</i><sup>(4)</sup>]
+</td>
+</tr>
+</table>
+</center>
+and so on.
+<h3>The VFGEN Taylor Command</h3>
+<p>
+The <b>taylor</b> command of VFGEN creates a function that computes 
+the Taylor expansion of <i>X</i>(<i>t</i>+<i>h</i>) to a given order.
+The order is specified with the <b>order</b> option.
+The general form of the command is
+<div class="mypre">$ vfgen taylor:order=r vector_field_file.vf</div>
+<p>
+The files created are <b>[name]_taylor[r].c</b>
+and <b>[name]_taylor[r].h</b>,
+where [name] is the name of the vector field given in the vector field file,
+and [r] is the order given with the <b>order</b> option.
+ 
+The C file <b>[name]_taylor[r].c</b> will contain the functions
+<b>[name]_vf</b> and
+<b>[name]_taylor[r]</b>.
+The first computes the vector field, and the second computes the Taylor approximation.
+Also defined in the C file are the functions
+<b>[name]_diff[k]</b>, for <i>k</i>=1, 2, ..., <i>r</i>-1.
+These functions compute the <i>k</i>-linear differentials
+<i>D</i><sup><i>k</i></sup><i>F</i>(<i>X</i>)[<i>V</i><sub>1</sub>,...,<i>V</i><sub>k</sub>].
+These could be useful in programs that analyze bifurcations or that compute invariant manifolds.
+</p>
+<h4>Options</h4>
+<table class="options">
+<tr>
+<td><b>order</b></td>
+<td>
+This option specifies the highest order
+retained in the Taylor series.
+The order must be a positive integer.
+<br>
+<i>Default:</i> <b>order=5</b>
+</td>
+</tr>
+</table>
+<h4>Bugs and Limitations</h4>
+<ul>
+<li> The length of the expression for the <i>n</i>-th derivative of an expression
+can grow rapidly as <i>n</i> increases.  Currently, the program computes derivatives
+and prints the formulas to the C file without checking the length.  Some C compilers
+may not be able to handle the long lines.
+<li> Some of the C variable names that are generated can also become very long.
+This may cause some compilers to fail.
+<li> The program assumes that the vector field is autonomous.
+(This should be fixed in a future version.)
+It will not warn you if you use this command on a nonautonomous vector field,
+but the results returned by the C function will not be correct.
+</ul>
+<h4>Example 1</h4>
+Here is a sample vector field file: <a href="example_vf/pendulum.vf">pendulum.vf</a>.
+<br>
+The file created by
+<div class="mypre">$ vfgen taylor:order=7 pendulum.vf</div>
+<br>
+are
+<ul>
+<li><a href="example_taylor/pendulum_taylor7.c">pendulum_taylor7.c</a>
+<li><a href="example_taylor/pendulum_taylor7.h">pendulum_taylor7.h</a>
+</ul>
+A short C program that uses these files is
+<a href="example_taylor/pend_main.c">pend_main.c</a>.
+A Makefile for the pend_main program is
+<a href="example_taylor/Makefile_pend_main">Makefile_pend_main</a>.
+The program pend_main uses the function pendulum_taylor7 to implement
+a simple solver for the differential equations.
+Here is a plot of the output of pendmain:
+<center>
+<img src="example_taylor/pend7.png">
+</center>
+The following plot shows a comparison of the polynomial approximations for orders
+3, 7, and 15 for the pendulum vector field.  The Taylor expansion was found
+for <i>&theta;</i>(0)=1.0 and <i>v</i>(0)=1.5, with parameter values
+<i>g</i>=9.81, <i>b</i>=0.25, <i>L</i>=1, and <i>m</i>=1.
+(For example, the data for the order=3 case was created with
+<a href="example_taylor/pend_taylor3_demo.c">pend_taylor3_demo.c</a>.)
+Also shown is the solution generated with the
+<a href="menu_gsl.html">GSL ODE solver</a>
+(with abserr=10<sup>-12</sup> and relerr=10<sup>-10</sup>).
+<center>
+<img src="example_taylor/pend_taylor_demo.png">
+</center>
+<h4>Example 2</h4>
+<p>
+A vector field file for the van der Pol equation
+is <a href="example_vf/vanderpol.vf">vanderpol.vf</a>.
+The file <a href="example_taylor/vanderpol_adaptive8.c">vanderpol_adaptive8.c</a>
+implements an adaptive solver that uses an order 8 Taylor method
+to solve the differential equation.
+The code works by using the Taylor polynomial at <b>x</b>(t) to
+estimate <b>x</b>(t+h).  Then, the Taylor polynomial
+at <b>x</b>(t+h) is used to compute the value at
+<b>x</b>(t).  If this value differs from the original
+<b>x</b>(t) by more than <b>tol</b>, the step size is
+reduced by 2/3, and the test is tried again.
+If the difference is less than <b>tol</b>, the solution
+is advanced.  If, in addition, the solution is less
+then <b>mintol</b>, the step size is increased by a factor
+of 1.5.
+</p>
+<p>
+(This method was implemented as a fairly simple test of the
+code generated by VFGEN.  There are smarter ways to adapt
+the step size--see, for example, the documentation of the
+<b>Taylor</b> program by Zou and Jorba.) 
+</p>
+<p>
+The program uses the functions defined in the C files created
+by the command
+<div class="mypre">$ vfgen taylor:order=8 vanderpol.vf</div>
+A Makefile for the solver is
+<a href="example_taylor/Makefile-vanderpol_adaptive8">Makefile-vanderpol_adaptive8</a>;
+the solver is compiled and run as follows:
+<pre>$ make -f Makefile-vanderpol_adaptive8
+$ ./vanderpol_adaptive8 > vdp8.dat</pre>
+The parameter values used in the file vanderpol_adaptive8.c are:
+&epsilon;=10<sup>-3</sup>, <b>tol</b>=10<sup>-8</sup>,
+<b>mintol</b>=10<sup>-10</sup>.
+</p>
+<p>
+For comparison, a solver that uses the GNU Scientific library
+is created (also with VFGEN):
+<pre>$ vfgen gsl:demo=yes vanderpol.vf
+$ make -f Makefile-vanderpol
+$ ./vanderpol_solve epsilon=0.001 relerr=1e-7 abserr=1e-9 > vdpgsl.dat
+</pre>
+A solver that uses RADAU5 is created with
+<pre>$ vfgen radau5:demo=yes vanderpol.vf</pre>
+and then the driver program <b>vanderpol_dr5.f</b> is modified
+to use &epsilon; = 0.001, and the relative and absolute tolerances
+are set to 10<sup>-7</sup> and 10<sup>-9</sup>, respectively.
+The RADAU5 driver is compiled as shown in the <a href="menu_radau5.html">
+RADAU5</a> section of the web page.
+</p>
+<p>
+Solutions generated by the GSL solver and by the adaptive Taylor solver
+are shown in the following plot.  Only the interval
+8.5 &lt; <i>t</i> &lt; 10 is shown.
+<center>
+<img src="example_taylor/vdp8compare.png" />
+</center>
+The plots are indistinguishable.
+The adaptive Taylor method generates 4767 data points, the
+GSL solver generates 4904, and the RADAU5 solver generates
+just 1191 points.  The final values of the
+<i>x</i> and <i>y</i> coordinates of the numerical
+solutions are
+<center>
+<table border="1" cellpadding="2">
+<tr>
+<td>Solver</td><td align="center"><i>x</i>(10)</td><td align="center"><i>y</i>(10)</td>
+</tr>
+<tr>
+<td>Adaptive Taylor (Order 8)</td>
+<td>1.80308347</td>
+<td>0.150123424</td>
+</tr>
+<tr>
+<td>GSL</td>
+<td>1.80308347</td>
+<td>0.150123395</td>
+</tr>
+<tr>
+<td>RADAU5</td>
+<td>1.80308348</td>
+<td>0.150123481</td>
+</table>
+</center>
+<!-- * * * End of content_taylor.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>

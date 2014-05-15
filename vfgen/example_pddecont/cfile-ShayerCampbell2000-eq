@@ -1,0 +1,9 @@
+sys-ShayerCampbell2000.so  SYSNAME
+0                          LABEL
+40 P4 0                    TYPE, P0, NPARX, PARX[NPARX]
+20  5 5 1 6                 NINT, NDEG, NMUL, STAB, NMAT
+12 12 4 4                  NINT1, NINT2, NDEG1, NDEG2
+120 3 0 3                  STEPS, IAD, P0MIN, P0MAX
+0.01 0.0001 0.1 0.0001   DS, DSMIN, DSMAX, DSSTART
+1e-08 1e-08 1e-09          EPSC, EPSR, EPSS
+12 12 12		   NITC, NITR, NITS

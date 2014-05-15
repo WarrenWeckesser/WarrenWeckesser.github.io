@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN &sect; &nbsp; Javascript</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li class="strong"><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_javascript.html * * * -->
+<h2>Javascript</h2>
+<p>
+Javascript is a programming language that is understood by many web browsers.
+</p>
+<h3>The VFGEN Javascript Command</h3>
+<p>
+The <b>javascript</b> command generates Javascript code that can be used to
+implement a Taylor method solver for the vector field.
+</p>
+<p>
+A javascript file called <b>[name].js</b> is created by the command
+<div class="mypre">$ vfgen javascript vector_field_file.vf</div>
+where [name] is the name of the vector field given in the vector field file.
+The javascript file contains functions that compute the vector field, and
+higher order derivatives of the vector field, and a function that evaluates
+an approximate solution based on the Taylor expansion.  See the
+<a href="menu_taylor.html">taylor command</a> for more background; the javascript
+command is basically the same, but it generates javascript code instead of C
+code.
+</p>
+<p>
+The <b>javascript</b> command does not handle delay equations.
+</p>
+<h4>Options</h4>
+<table class="options">
+<tr>
+<td>
+<b>demo</b>
+</td>
+<td>
+If the option <b>demo=yes</b> is given, two additional files are created:
+<ul>
+    <li><b>[name].html</b> is an HTML file that creates a user interface for the
+        Taylor method solver.  It includes a graphical display of the solution, and
+        several controls and input fields for controlling the solver.
+        The HTML file must be viewed with a browser that supports the
+        <b>canvas</b> object.
+    </li>
+    <li><b>[name]_solverdemo.js</b> contains javascript functions used in the
+        HTML file.  Included in this file is a Taylor method solver for the vector
+        field.
+    </li>
+</ul>
+<i>Default</i>: <b>demo=no</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>order</b>
+</td>
+<td>
+This option specifies the highest order
+retained in the Taylor series.
+The order must be a positive integer.
+<br />
+<i>Default</i>: <b>order=5</b>
+</td>
+</tr>
+</table>
+
+<h4>Example</h4>
+<p>
+A vector field file for the Lorenz equations is <a href="example_vf/lorenz.vf">lorenz.vf</a>.
+<br />
+The files created by
+<div class="mypre">$ vfgen javascript:order=7,demo=yes lorenz.vf</div>
+<br />
+are
+<ul>
+  <li><a href="example_javascript/lorenz.js">lorenz.js</a></li>
+  <li><a href="example_javascript/lorenz_solverdemo.js">lorenz_solverdemo.js</a></li>
+  <li><a href="example_javascript/lorenz.html">lorenz.html</a></li>
+
+  </li>
+</ul>
+Clicking on <a href="example_javascript/lorenz.html">lorenz.html</a> will bring
+you to the HTML/Javascript solver that was generated by VFGEN.
+Right-click on the link to download the HTML file, or following the link and use the
+<b>View Source</b> command in your browser (for example, <b>View</b>&rarr;<b>Page Source</b> in
+Firefox or <b>View</b>&rarr;<b>View Source</b> in Safari).
+</p><!-- * * * End of content_javascript.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>

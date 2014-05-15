@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<VectorField
+    Name="bratu" >
+<Parameter
+    Name="a"
+    DefaultValue="0" />
+<StateVariable
+    Name="x"
+    Formula="y-2*x+a*exp(x)"
+    DefaultInitialCondition="1" />
+<StateVariable
+    Name="y"
+    Formula="x-2*y+a*exp(y)"
+    DefaultInitialCondition="0" />
+<Function
+    Name="userf1"
+    Formula="a-0.2" />
+</VectorField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<VectorField Name="MorrisLecar">
+<Parameter Name="gca" DefaultValue="5.5" />
+<Parameter Name="gk"  DefaultValue="8.0" />
+<Parameter Name="gl"  DefaultValue="2.0" />
+<Parameter Name="vca" DefaultValue="115.0" />
+<Parameter Name="vk"  DefaultValue="-84.0" />
+<Parameter Name="vl"  DefaultValue="-55.0" />
+<Parameter Name="c"   DefaultValue="20.0" />
+<Parameter Name="phi" DefaultValue="0.22" />
+<Parameter Name="ic"  DefaultValue="90.0" />
+<Parameter Name="v1"  DefaultValue="-1.2" />
+<Parameter Name="v2"  DefaultValue="18.0" />
+<Parameter Name="v3"  DefaultValue="2.0" />
+<Parameter Name="v4"  DefaultValue="30.0" />
+<Expression Name="minf" Formula="(1/2)*(1+tanh((v-v1)/v2))" />
+<Expression Name="winf" Formula="(1/2)*(1+tanh((v-v3)/v4))" />
+<Expression Name="tauw" Formula="1/cosh((v-v3)/(2*v4))" />
+<StateVariable Name="v" Formula="(1/c)*(ic-gca*minf*(v-vca) - gk*w*(v-vk) - gl*(v-vl))" />
+<StateVariable Name="w" Formula="phi*(winf-w)/tauw" />
+</VectorField>

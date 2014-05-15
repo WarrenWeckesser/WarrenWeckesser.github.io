@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN &sect; &nbsp; DDE_SOLVER</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li class="strong"><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_dde_solver.html * * * -->
+<h2>DDE_SOLVER</h2>
+<p>
+The DDE_SOLVER command creates Fortran 90 code that can be used with
+<a href="http://www.runet.edu/~thompson/ffddes/index.html">DDE_SOLVER_M</a>,
+a Fortran 90 module created by S. Thompson and L. F. Shampine for solving
+differential delay equations.
+</p>
+<p>
+Note: The zip file on the DDE_SOLVER web page contains two files:
+<span class="tt">dde_solver_m.f90</span> and
+<span class="tt">dde_solver_m_unix.f90</span>.
+The filenames do not indicate a version number, but the contents of these
+files do occasionally change!  As of early May, 2014, the first two lines of
+the file <span class="tt">dde_solver_m_unix.f90</span> are
+<div class="mypre">
+MODULE DDE_SOLVER_M <br />
+  !____________________________________________________________________________<br />
+  !<br />
+  ! Last change:  ST 15 August 2011<br />  
+</div>
+This is the version I used with VFGEN 2.5.0.
+</p>
+<h3>The VFGEN DDE_SOLVER Command</h3>
+<p>
+A Fortran 90 file that can be used with the DDE_SOLVER_M
+module is created by the command
+<br />
+<div class="mypre">$ vfgen dde_solver vector_field_file.vf</div>
+</p>
+<p>
+The command will create the file <span class="tt">[name].f90</span>,
+where <span class="tt">[name]</span> is the
+name of the vector field defined in <span class="tt">vector_field_file.vf</span>.
+</p>
+<p>
+The vector field must have at least one <b>delay</b> expression.
+</p>
+
+<h4>Options</h4>
+<table class="options">
+<tr>
+<td>
+<b>demo</b>
+</td>
+<td>
+If the option <b>demo=yes</b> is given, the file <b>[name]_demo.f90</b>
+is created. This program uses the default initial conditions and parameter
+values to generate a solution to the DDEs.
+<br />
+<i>Default</i>: <b>demo=no</b>
+</td>
+</tr>
+</table>
+<h4>Example 1</h4>
+<p>
+The Mackey-Glass equation is
+<!--
+<center>
+    <i>x</i>'(<i>t</i>) = -<i>b</i>*<i>x</i> +
+          <i>a</i>*<i>x</i>(<i>t</i>-&tau;)/(1+<i>x</i>(<i>t</i>-&tau;)<sup>10</sup>)
+</center>
+-->
+$$x'(t) = -bx + \frac{ax(t-\tau)}{1 + x(t-\tau)^{10}}$$
+</p>
+<p>
+Here is the Mackey-Glass vector field file: <a href="example_vf/MackeyGlass.vf">MackeyGlass.vf</a>.
+<br>
+The files created by
+<div class="mypre">$ vfgen dde_solver:demo=yes MackeyGlass.vf</div>
+<br>
+are
+<ul>
+<li><a href="example_dde_solver/MackeyGlass.f90">MackeyGlass.f90</a>
+<li><a href="example_dde_solver/MackeyGlass_demo.f90">MackeyGlass_demo.f90</a>
+</ul>
+</p>
+<p>
+To compile the demonstration program, I will use the <b>gfortran</b> compiler.
+(<a href="http://gcc.gnu.org/fortran/">gfortran</a> is easily installed in most Linux distributions.
+Another readily available Fortran compiler is <a href="http://www.g95.org/">g95</a>.
+If you use g95, you may need to add the option -ffree-line-length-huge to the command;
+the lines generated by VFGEN often exceed 80 characters.)
+</p>
+<p>
+First the DDE_SOLVER_M module must be downloaded and compiled.
+As of May 2014, there is a .zip file on the
+<a href="http://www.runet.edu/~thompson/ffddes/index.html">DDE Solver web page</a>.
+It contains
+two files: <span class="tt">dde_solver_m.f90</span> and
+<span class="tt">dde_solver_m_unix.f90</span>.
+These files are identical except for the 'end-of-line' convention.
+I will use
+<span class="tt">dde_solver_m_unix.f90</span>.
+</p>
+<p>
+To compile the solver module:
+<div class="mypre">$ gfortran -c dde_solver_m_unix.f90</div>
+</p>
+<p>
+To compile the demonstration program:
+<div class="mypre">$ gfortran MackeyGlass.f90 MackeyGlass_demo.f90 dde_solver_m_unix.o -o MackeyGlass_demo</div>
+and to run it:
+<div class="mypre">$ ./MackeyGlass_demo > mg.dat</div>
+<p>
+Here is a plot of the data generated by <span class="tt">MackeyGlass_demo</span>, after the <span class="tt">stoptime</span>
+in <span class=="tt">MackeyGlass_demo.f90</span> was changed to 500:
+<br />
+<center>
+<img src="example_dde_solver/mg.png" alt="Plot of x(t)">
+</center>
+</p>
+</p>
+<h4>Example 2</h4>
+<p>
+This example has a state-dependent delay.
+The DDE is
+$$y'(t) = \frac{y(t) y(\ln(y(t))-1)}{t + 1}$$
+$$y(t) = 1, \; t < 0$$
+<br />
+<!---
+<br />
+<center>
+<i>y</i>'(<i>t</i>) = <i>y</i>(<i>t</i>)<i>y</i>(ln(<i>y</i>(<i>t</i>))-1)/(<i>t</i>+1)
+<br />
+<br />
+<i>y</i>(<i>t</i>) = 1 &nbsp; <i>t</i> < 0
+</center>
+<br />
+-->
+A vector field file for this system is
+<a href="example_vf/sdd.vf">sdd.vf</a>.
+We create the Fortran 90 functions and demonstration program with the command
+<div class="mypre">$ vfgen dde_solver:demo=yes sdd.vf</div>
+This creates the files
+<ul>
+<li><a href="example_dde_solver/sdd.f90">sdd.f90</a>
+<li><a href="example_dde_solver/sdd_demo.f90">sdd_demo.f90</a>
+</ul>
+In Linux, we compile and run this program with the commands
+<div class="mypre">$ gfortran sdd.f90 sdd_demo.f90 dde_solver_m_unix.o -o sdd_demo<br />
+$ ./sdd_demo > sdd.dat</div>
+Here is a plot of the result.  The data computed by the DDE_SOLVER is plotted with
+blue dots; the exact solution is the green line.
+<center>
+<img src="example_dde_solver/sdd.png">
+</center>
+For reference, the exact solution is
+\[
+y(t) = 
+    \left\{
+        \begin{matrix}
+        t + 1, & 0 \le t \le e-1 \\
+        \exp\left(\frac{t+1}{e}\right), & e-1 \le t \le e^2-1 \\
+        \left(\frac{e}{3 - \ln(t+1)}\right)^e, & e^2 - 1 \le t \le e^3 - e^{1-e} - 1 \\
+        \end{matrix}
+    \right.
+\]
+<!--
+<br />
+<i>y</i>(<i>t</i>) = <i>t</i>+1 for 0 &le; <i>t</i> &le; e-1
+<br />
+<i>y</i>(<i>t</i>) = exp((<i>t</i>+1)/e) for e-1 &le; <i>t</i> &le; exp(2)-1
+<br />
+<i>y</i>(<i>t</i>) = (e/(3-ln(<i>t</i>+1)))^e  for exp(2)-1 &le; <i>t</i> &le; exp(3-exp(1-e))-1
+<br />
+<br />
+-->
+The example was taken from "DKLAG6: A Code Based on Continuously Imbedded
+Sixth Order Runge-Kutta Methods for the Solution of State Dependent Functional
+Differential Equations", by S. P. Corwin, D. Sarafyan, and S. Thompson, and they
+give their source of the equation as "Developing a Delay Differential Equation
+Solver" by C. A. H. Paul (<i>J. Appl. Num. Math.</i>, Vol. 9, pp. 403-414, 1992).
+</p>
+<h4>Example 3</h4>
+<p>
+This is another example with a state-dependent delay.
+The DDE is
+$$y'(t) = \frac{y\left(y(t)-\sqrt{2}\right)}{2\sqrt{t+1}}$$
+$$y(t) = 1, \; t < 0$$
+<!--
+<br />
+<br />
+<center>
+<i>y</i>'(<i>t</i>) = (1/2)(<i>t</i>+1)^(-1/2)<i>y</i>(<i>y</i>-sqrt(2))
+<br />
+<br />
+<i>y</i>(<i>t</i>) = 1 &nbsp; <i>t</i> < 0
+</center>
+<br />
+-->
+A vector field file for this system is
+<a href="example_vf/sddfn.vf">sddfn.vf</a>.
+We create the Fortran 90 functions and demonstration program with the command
+<div class="mypre">$ vfgen dde_solver:demo=yes sddfn.vf</div>
+This creates the files
+<ul>
+<li><a href="example_dde_solver/sddfn.f90">sddfn.f90</a>
+<li><a href="example_dde_solver/sddfn_demo.f90">sddfn_demo.f90</a>
+</ul>
+In Linux, we compile and run this program with the commands
+<div class="mypre">$ gfortran sddfn.f90 sddfn_demo.f90 dde_solver_m_unix.o -o sddfn_demo<br />
+$ ./sddfn_demo > sddfn.dat</div>
+Here is a plot of the result, after changing the variables in the demo program
+to <b>relerr=1D-9</b>, <b>abserr=1D-11</b>, and <b>stoptime=2.0</b>.
+The data computed by the DDE_SOLVER is plotted with
+blue dots; the exact solution is the green line.
+<center>
+<img src="example_dde_solver/sddfn.png">
+</center>
+For reference, the exact solution is
+$$
+y(t) =
+    \left\{
+    \begin{matrix}
+    \sqrt{t + 1}, & 0 \le t \le 1 \\
+    \frac{t + 1}{4} + \frac{1}{2} + \left(1 - \frac{\sqrt{2}}{2}\right)\sqrt{t + 1}, & 1 \le t \le 2 \\
+    \end{matrix}
+    \right.
+$$
+<!--
+<br />
+<i>y</i>(<i>t</i>) = (<i>t</i>+1)^(1/2) for 0 &le; <i>t</i> &le; 1
+<br />
+<i>y</i>(<i>t</i>) = (t+1)/4 + 1/2 + (1-sqrt(2)/2)(t+1)^(1/2) for 1 &le; <i>t</i> &le; 2
+<br />
+<br />
+-->
+The example was taken from
+"High Order Methods for State-Dependent Delay Differential Equations with Nonsmooth
+Solutions", by A. Feldstein and K. W. Neves
+(<i>SIAM J. Numer. Anal.</i>, Vol. 21, No. 5., pp. 844-863, October, 1984).
+</p>
+<!-- * * * End of content_dde_solver.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>

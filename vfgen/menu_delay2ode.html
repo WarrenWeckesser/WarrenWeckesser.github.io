@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN &sect; &nbsp; Delay2ODE</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li class="strong"><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_delay2ode.html * * * -->
+<h2>Delay2ODE</h2>
+<p>
+A delay can be approximated by using a finite-dimensional system of differential
+equations. This command provides the ability to automatically generate such an
+approximation from a differential delay equation.
+</p>
+<p>
+The <b>delay2ode</b> command generates a new vector field file from an existing
+file that contains delays.  The new vector field will be a system of ordinary
+differential equations in which the delays have been replaced by finite dimensional
+approximations.
+</p>
+<p>
+<b>Background.</b>
+Suppose
+<br />
+<center>
+<i>y(t) = x(t-&delta;)</i>
+</center>
+Then, of course,
+<center>
+<i>y(t+&delta;) = x(t)</i>
+</center>
+Let <i>N > 0</i> be an integer.
+We can write the previous equation as
+<center>
+<i>
+<table class="eqnarray">
+<tr>
+<td>
+   y<sub>1</sub>(t + &delta;/N)
+</td>
+<td>=</td>
+<td>
+ x(t)
+</td>
+</tr>
+<tr>
+<td>
+   y<sub>2</sub>(t + &delta;/N)
+</td>
+<td>=</td>
+<td>
+ y<sub>1</sub>(t)
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>.</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>.</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>.</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>
+   y<sub>N</sub>(t + &delta;/N)
+</td>
+<td>=</td>
+<td>
+ y<sub>N-1</sub>(t)
+</td>
+</tr>
+</table>
+</i>
+</center>
+and <i>y<sub>N</sub>(t) = y(t)</i>.
+We expand <i>y<sub>k</sub>(t+&delta;/N)</i>
+in a Taylor series, and
+then approximate the system by keeping only terms up to order
+<i>p</i> in the series.
+We obtain a differential equation of order <i>p</i> for
+each <i>y<sub>k</sub></i>.
+When <i>p > 1</i>, we convert the differential equation
+into a system of <i>p</i> equations.  We write the variables
+in the <i>k</i><sup>th</sup> system as <i>y<sub>1,k</sub>, y<sub>2,k</sub>,
+..., y<sub>p,k</sub></i>.  Then <i>y<sub>k</sub> = y<sub>1,k</sub></i>.
+</p>
+<p>
+When <b><i>p=1</i></b>, we obtain
+<center>
+<i>
+   y<sub>k</sub>' = (N/&delta;)(y<sub>k-1</sub> - y<sub>k</sub>)
+</i>
+</center>
+(The case <i>p=1</i> is equivalent to assuming that the delay time is
+a random variable whose probability distribution function
+is an <a href="http://en.wikipedia.org/wiki/Erlang_distribution">Erlang distribution</a>
+with shape parameter <i>N</i>.)
+</p>
+<p>
+When <b><i>p=2</i></b>, we obtain
+<center>
+<i>
+<table class="eqnarray">
+<tr>
+<td>
+    y<sub>1,k</sub>'
+</td>
+<td>=</td>
+<td>
+  y<sub>2,k</sub>
+</td>
+</tr>
+<tr>
+<td>
+    y<sub>2,k</sub>'
+</td>
+<td>=</td>
+<td>
+ (2N/&delta;)(-y<sub>2,k</sub> + (N/&delta;)(y<sub>1,k-1</sub> - y<sub>1,k</sub>))
+</td>
+</tr>
+</table>
+</i>
+</center>
+When <b><i>p=3</i></b>, we obtain
+<center>
+<i>
+<table class="eqnarray">
+<tr>
+<td>
+    y<sub>1,k</sub>'
+</td>
+<td>=</td>
+<td>
+ y<sub>2,k</sub>
+</td>
+</tr>
+<tr>
+<td>
+    y<sub>2,k</sub>'
+</td>
+<td>=</td>
+<td>
+ y<sub>3,k</sub>
+</td>
+</tr>
+<tr>
+<td>
+    y<sub>3,k</sub>'
+</td>
+<td>=</td>
+<td>
+ (3N/&delta;) (-y<sub>3,k</sub> - (2N/&delta;)(y<sub>2,k</sub> 
+                   - (N/&delta;)(y<sub>1,k-1</sub> - y<sub>1,k</sub>)))
+</td>
+</tr>
+</table>
+</i>
+</center>
+(<i>p=4</i> has not yet been implemented. For <i>p > 4</i>, the linear system is unstable.)
+</p>
+<h4>The delay2ode command</h4>
+<p>
+A new vector field file containing the definition of a system of
+ordinary differential equations in which all the delays in the
+DDE defined in <b>vector_field_file.vf</b> have been
+replaced by finite dimensional approximations is created with the
+command
+<div class="mypre">$ vfgen delay2ode vector_field_file.vf</div>
+The <b>Name</b> of the vector field will have "_2ode" appended to the
+<b>Name</b> in vector_field_file.vf.
+</p>
+<p>
+The new vector field file is written to the console, so the command
+is generally used by redirecting the output to a file:
+<div class="mypre">$ vfgen delay2ode vector_field_file.vf > vector_field_file_2ode.vf</div>
+</p>
+
+<h4>Options</h4>
+<table class="options">
+<tr>
+<td>
+<b>p</b> &nbsp;
+</td>
+<td>
+Order of the approximation. As explained above, this is the order
+of the Taylor series retained in the approximation of a ``small'' delay.
+Only <b>p=1</b>, <b>p=2</b>, and <b>p=3</b> are allowed.
+<br>
+<i>Default</i>: <b>p=1</b>
+</td>
+</tr>
+<tr>
+<td><b>N</b> &nbsp; </td>
+<td>
+Number of grid points in the approximation to the delayed
+expression in the delay interval.
+<br />
+<i>Default</i>: <b>N=10</b>
+</td>
+<tr>
+</table>  
+
+<h4>Example 1</h4>
+<p>
+We consider the equation
+<center>
+<i>x</i>'(<i>t</i>) = sin(<i>t</i>), &nbsp; <i>x</i>(0)=1
+</center>
+Of course, this is not a delay equation. In fact, it is a trivial differential
+equation; we can simply integrate to obtain
+<center>
+    <i>x</i>(<i>t</i>) = -cos(<i>t</i>) + 2
+</center>
+</p>
+<p>
+We create a delayed copy of <i>x(t)</i> by defining an expression
+with the formula <b>delay(x,h)</b>
+Here is the vector field file <a href="example_vf/simpledelay.vf">simpledelay.vf</a>.
+We create a new vector field with the command
+<div class="mypre">$ vfgen delay2ode:N=12,p=2  simpledelay.vf > simpledelay_2ode.vf</div>
+<br />
+Note that, unlike most VFGEN commands, the ouput is sent to the console
+rather than a file.
+In this example, we have redirected the output to the file
+<a href="example_delay2ode/simpledelay_2ode.vf">simpledelay_2ode.vf</a>.
+The name of the new vector field will be the name of the old vector field
+with "<b>_2ode</b>" appended to it.
+</p>
+<p>
+We can now apply VFGEN to this new vector field to create a solver.
+The following commands create and compile a solver written in C that uses the GSL library.
+(See the <a href="menu_gsl.html">GSL section</a> for more information about using
+the GSL command of VFGEN.)
+<div class="mypre">$ vfgen gsl:demo=yes  simpledelay_2ode.vf <br />
+$ make -f Makefile-simpledelay_2ode</div>
+Then the command
+<div class="mypre">$ ./simpledelay_2ode_solve relerr=1e-12 > outp2n12.dat</div>
+runs the solver, and writes the solution to the file outp2n12.dat.
+(Setting relerr=1e-12 is a bit of a "hack" to force the solver to generate
+reasonably dense output.)
+This file has 26 columns of data. The first two columns are <i>t</i> and <i>x(t)</i>.
+The remaining 24 columns are the variables generated by VFGEN to approximate
+the delay. In particular, column 25 contains the approximation of <i>x(t-h)</i>.
+Here is a plot of <i>x(t)</i> and <i>x(t-h)</i> from the data file.
+(The delay is <i>h=1</i>.)
+</p>
+<br />
+<center>
+<img src="example_delay2ode/delay_plot_p2n12.png" alt="Graphs of x(t) and x(t-1)" />
+</center>
+<h4>Example 2: The Mackey-Glass Equation</h4>
+<p>
+The Mackey-Glass equation is
+<center>
+    <i>x</i>'(<i>t</i>) = -<i>b</i>*<i>x</i> +
+          <i>a</i>*<i>x</i>(<i>t</i>-&tau;)/(1+<i>x</i>(<i>t</i>-&tau;)<sup>10</sup>)
+</center>
+<br />
+A vector field file for this system is <a href="example_vf/MackeyGlass.vf">MackeyGlass.vf</a>.
+</p>
+<p>
+We create a new vector field with the command
+<div class="mypre">$ vfgen delay2ode:N=25,p=3  MackeyGlass.vf > MackeyGlass_2ode.vf</div>
+<br />
+The delay interval is broken into 25 subintervals, and a third order
+approximation is used on each subinterval.
+This creates the file <a href="example_delay2ode/MackeyGlass_2ode.vf">MackeyGlass_2ode.vf</a>.
+</p>
+<p>
+The following commands create and compile a solver for this approximation to the delay equation:
+<div class="mypre">$ vfgen gsl:demo=yes  MackeyGlass_2ode.vf <br />
+$ make -f Makefile-MackeyGlass_2ode</div>
+and the following command runs the solver:
+<div class="mypre">$ ./MackeyGlass_2ode_solve relerr=1e-8 abserr=1e-10 stoptime=500 > mg.dat</div>
+This plot shows the solution <i>x</i>(<i>t</i>), along with the
+(approximate) delayed expression <i>x</i>(<i>t</i>-17):
+<br />
+<center>
+<img src="example_delay2ode/mg.png" alt="Graphs of x(t) and x(t-17)" />
+</center>
+</p>
+<p>
+(Another example in which the delay2ode command is used to approximate
+the Mackey-Glass equation with a finite dimensional system is given
+in the <a href="menu_auto.html">VFGEN <b>auto</b></a> command documentation.)
+</p>
+<!-- * * * End of content_delay2ode.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>
