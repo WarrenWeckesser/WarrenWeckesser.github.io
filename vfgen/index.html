@@ -1,1 +1,314 @@
-Hello from the vfgen directory.
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>VFGEN Home</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+
+<script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<link rel="stylesheet" href="menulayout.css" type="text/css" />
+<link rel="stylesheet" href="menucontent.css" type="text/css" />
+</head>
+<body>
+<div id="menu-side">
+    <img src="images/VFGENbrown.png" alt="VFGEN">
+    <ul id="menu-side-nav">
+            <li class="strong"><a href="index.html">Home</a></li>
+            <li><a href="menu_download.html">Download</a></li>
+            <li><a href="menu_support.html">Support</a></li>
+            <li><a href="menu_guide.html">User's Guide</a></li>
+            <li><a href="menu_fileformat.html">&sect; &nbsp; Vector Field File</a></li>
+            <li><a href="menu_adolc.html">&sect; &nbsp; ADOL-C</a></li>
+            <li><a href="menu_auto.html">&sect; &nbsp; AUTO</a></li>
+            <li><a href="menu_check.html">&sect; &nbsp; Check</a></li>
+            <li><a href="menu_cvode.html">&sect; &nbsp; CVODE</a></li>
+            <li><a href="menu_dde23.html">&sect; &nbsp; DDE23</a></li>
+            <li><a href="menu_ddebiftool.html">&sect; &nbsp; DDE-BIFTOOL</a></li>
+            <li><a href="menu_dde_solver.html">&sect; &nbsp; DDE_SOLVER</a></li>
+            <li><a href="menu_delay2ode.html">&sect; &nbsp; Delay2ODE</a></li>
+            <li><a href="menu_dstool.html">&sect; &nbsp; DSTool</a></li>
+            <li><a href="menu_evf.html">&sect; &nbsp; EVF</a></li>
+            <li><a href="menu_gsl.html">&sect; &nbsp; GSL</a></li>
+            <li><a href="menu_help.html">&sect; &nbsp; Help</a></li>
+            <li><a href="menu_javascript.html">&sect; &nbsp; Javascript</a></li>
+            <li><a href="menu_latex.html">&sect; &nbsp; LaTeX</a></li>
+            <li><a href="menu_lsoda.html">&sect; &nbsp; LSODA</a></li>
+            <li><a href="menu_matcont.html">&sect; &nbsp; MATCONT</a></li>
+            <li><a href="menu_matlab.html">&sect; &nbsp; MATLAB</a></li>
+            <li><a href="menu_octave.html">&sect; &nbsp; Octave</a></li>
+            <li><a href="menu_pddecont.html">&sect; &nbsp; PDDE-CONT</a></li>
+            <li><a href="menu_pydstool.html">&sect; &nbsp; PyDSTool</a></li>
+            <li><a href="menu_pygsl.html">&sect; &nbsp; PyGSL</a></li>
+            <li><a href="menu_r.html">&sect; &nbsp; R</a></li>
+            <li><a href="menu_radau5.html">&sect; &nbsp; RADAU5</a></li>
+            <li><a href="menu_scilab.html">&sect; &nbsp; Scilab</a></li>
+            <li><a href="menu_scipy.html">&sect; &nbsp; SciPy</a></li>
+            <li><a href="menu_taylor.html">&sect; &nbsp; Taylor</a></li>
+            <li><a href="menu_xpp.html">&sect; &nbsp; XPP</a></li>
+    </ul>
+</div>
+<div id="menu-page-content">
+<!-- * * * Contents of content_home.html * * * -->
+<div class="centered">
+<h1>VFGEN</h1>
+<h3>A Vector Field File Generator</h3>
+<b>for differential equation solvers and other computational tools</b>
+<br />
+<br />
+<br />
+<b><a href="http://www.warrenweckesser.net/">Warren Weckesser</a></b>
+<br /><br />
+<div class="box">
+<span class="boxheader"><i>Features</i></span>
+<ul>
+<li>Generate code for ordinary and delay differential equations.
+<li>Specify your equations once, and export to multiple file formats.</li>
+<li>Generate analytical expressions for Jacobians and higher derivatives automatically.</li>
+<li>Available export formats include MATLAB, Scilab, AUTO, GNU Scientific Library,
+          SciPy, PyDSTool, XPP and more.</li>
+</ul>
+<span class="boxheader"><i>New in Version 2.5</i></span>
+    <ul>
+    <li>Added the <b>r</b> command for generating R code to use with the <b>deSolve</b> package.
+    <li>Added support for versions 2.6.0 and 2.7.0 of CVODE</li>
+    <li>Restored support for PyGSL.</li>
+    </ul>
+</div>
+<br />
+</div>
+<hr />
+<h4>Overview</h4>
+<p>
+There are many excellent programs available for
+solving differential equations
+and computing bifurcations of vector fields.
+However, each has its own format for specifying the vector
+field that defines the differential equation.
+VFGEN lets you define your vector field once
+(using <a href="menu_fileformat.html">XML</a>),
+and export the vector field
+in several formats.
+VFGEN uses a C++ symbolic algebra library
+(<a href="http://www.ginac.de">GiNaC</a>)
+to generate Jacobians and higher derivatives automatically. 
+</p>
+<p>
+An article about VFGEN was published in the
+<a href="http://www.jnaiam.org/journals_view.php?jForm=&nid=6&volumes=3&issue=9">
+Journal of Numerical Analysis, Industrial and Applied Mathematics, Volume 3(1-2)</a>.
+</p>
+<hr />
+<p>
+Here, grouped roughly by category, are the output formats available:
+<table class="options">
+<tr>
+<td><i>ODE solver libraries</i></td>
+<td>
+<a href="menu_cvode.html">CVODE</a> (C),
+<a href="menu_gsl.html">GNU Scientific Library</a> (C),
+ODEPACK solvers
+<a href="menu_lsoda.html">LSODA</a>, LSODAR and LSODE (Fortran 77),
+<a href="menu_matlab.html">MATLAB</a>,
+<a href="menu_octave.html">Octave</a>,
+<a href="menu_pygsl.html">PyGSL</a> (Python),
+<a href="menu_r.html">R</a> (using the deSolve package),
+<a href="menu_radau5.html">RADAU5</a> (Fortran 77),
+<a href="menu_scilab.html">Scilab</a>,
+<a href="menu_scipy.html">SciPy</a> (Python)
+</td>
+</tr>
+<tr>
+<td><i>Bifurcation analysis</i></td>
+<td>
+<a href="menu_auto.html">AUTO</a>,
+<a href="menu_ddebiftool.html">DDE-BIFTOOL</a>,
+<a href="menu_dstool.html">DSTool</a>,
+<a href="menu_matcont.html">MATCONT</a>,
+<a href="menu_pddecont.html">PDDE-CONT</a>,
+<a href="menu_pydstool.html">PyDSTool</a>,
+<a href="menu_xpp.html">XPP</a>
+</td>
+</tr>
+<tr>
+<td><i>Delay equations</i></td>
+<td>
+<a href="menu_dde23.html">DDE23</a> (MATLAB),
+<a href="menu_ddebiftool.html">DDE-BIFTOOL</a> (MATLAB),
+<a href="menu_dde_solver.html">DDE_SOLVER</a> (Fortran 90),
+<a href="menu_delay2ode.html">Delay2ODE</a>,
+<a href="menu_pddecont.html">PDDE-CONT</a> (C++),
+<a href="menu_r.html">R</a> (using the deSolve package),
+<a href="menu_xpp.html">XPP</a>
+</td>
+</tr>
+<tr>
+<td><i>Dynamical systems programs</i></td>
+<td>
+<a href="menu_dstool.html">DSTool</a>,
+<a href="menu_matcont.html">MATCONT</a> (MATLAB),
+<a href="menu_pydstool.html">PyDSTool</a> (Python),
+<a href="menu_xpp.html">XPP</a>
+</td>
+</tr>
+<tr>
+<td><i>Other</i></td>
+<td>
+<a href="menu_adolc.html">ADOL-C</a>,
+<a href="menu_delay2ode.html">Delay2ODE</a>,
+<a href="menu_evf.html">EVF</a> (variational equations),
+<a href="menu_javascript.html">Javascript</a>,
+<a href="menu_latex.html">LaTeX</a>,
+<a href="menu_taylor.html">Taylor</a>
+</td>
+</tr>
+</table>
+<br />
+Many of the commands have a <b>demo</b> option.
+With this option, you can quickly develop a working
+program with the tool of your choice.
+</p>
+<br />
+<hr />
+<b>Recent changes</b>
+<br />
+<br />
+<i>Version 2.5.0 (XX May 2014)</i>
+<p>It has been a very long time since the last release.  An assortment of bug
+reports and requests for enhancements were the inspiration for resuming work
+on VFGEN.
+</p>
+<ul>
+<li>The <a href="menu_r.html">r</a> command was added.  This command generates
+    R code to be used with the <b>deSolve</b> package.
+<li>CVODE output was updated to support versions 2.6.0 and 2.7.0.
+    Version 2.7.0 is now the default.</li>
+<li>The Scilab demo uses exec() instead of getf().</li>
+<li>Eliminated the <b>num</b> option of the <b>pygsl</b> command.
+    VFGEN will only generate PyGSL code that uses numpy.</li>
+<li>Limit the length of lines in Fortran 90 code generated by VFGEN.</li>
+<li>The <b>adolc</b> command now generates code for ADOL-C version 2.
+(Specifically, the generated code was tested with ADOL-C 2.5.0.) </li>
+<li>The demo generated by the <b>pydstool</b> command was updated.</li>
+<li><b>INTENT</b> statements were added to the Fortran 90 code generated by
+    the <b>dde_solver</b> command.</li>
+<li>Fixed a couple bugs in the DDE BIFTOOL output, including a misnamed array
+    (<b>jac_</b> was incorrectly called <b>jacp_</b>).</li>
+<li>In the VFGEN source code, more <b>const</b> declarations were added
+    to eliminate deprecation warnings when compiling.</li>
+<li>The source code was updated to use version 1.6.2 of GiNaC.
+</ul>
+Note: I no longer own a copy of Matlab, so the commands that generate Matlab
+code--<b>dde23</b>, <b>dde-biftool</b>, <b>matcont</b> and <b>matlab</b>--have
+not received any work since the last version of VFGEN.
+<br />
+<br />
+<i>Version 2.4.0 (17 July 2008)</i>
+<ul>
+<li>Added the <a href="menu_javascript.html">javascript</a> command.</li>
+<li>Improved the docstrings in the code generated for SciPy. </li>
+<li>The command-line demo solver created for SciPy now includes the values
+of any Functions in its output.
+<li>Bug fixes: The dde23, matlab and scilab commands didn't handle the
+default value of the parstyle option correctly.  Also, they generated bad code
+if there were no Parameters.</li>
+<li>The ODE solver for the demo program created by the Matlab command
+was changed to ode45 (instead of ode15s).</li>
+<li>The Octave demo now passes the vector field and jacobian function names
+in a cell array.</li>
+<li>Numerous other tweaks to the VFGEN source code (not visible to a user).</li>
+</ul>
+<br />
+<i>Version 2.3.1 (5 April 2008)</i>
+<ul>
+<li>Fixed the help messages for the auto, pydstool, pygsl, and scipy commands, and
+reformatted a few other help messages.
+</li>
+</ul>
+<i>Version 2.3.0 (3 April 2008)</i>
+<ul>
+<li>Changed the convention that is followed when naming Python functions for
+the vector field and its Jacobian.  The new style is a bit more "Pythonic".
+This affects the PyGSL, PyDSTool and SciPy commands.
+<br />
+<span style="color: gray; font-size: smaller;">
+(Unfortunately, the PyGSL changes have not been tested.
+I haven't been able to install PyGSL on my current computer,
+and I didn't want to hold back the release while I debug my PyGSL installation.
+Reports on the use of the VFGEN PyGSL command, good or bad, are appreciated!)</span>
+</li>
+<li>Added the option <b>lang</b> to the AUTO command.  This gives the user
+the choice of generating C or FORTRAN code.</li>
+<li>Fixed a bug in the C code generated by AUTO.  Expressions weren't fully
+substituted before taking a derivative with respect to a parameter.</li>
+<li>The code now checks that any options specified are known options.
+Previously, unknown option names were silently ignored.</li>
+</ul>
+<i>Version 2.2.0 (17 March 2008)</i>
+<ul>
+<li> <b><i>New commands:</i></b> Added the
+<a href="menu_lsoda.html">lsoda</a> and
+<a href="menu_pddecont.html">pddecont</a> commands.
+</li>
+<li> Added the <b>par</b> option to the <a href="menu_evf.html">evf</a>
+command.  With this option, you can generate an extended vector field
+to compute parametric sensitivity.
+</li>
+<li> Fixed a major bug in the handling of <b>Expressions</b>.  For several of the commands,
+if an Expression used another Expression, it would not be evaluated correctly
+when a Jacobian was computed.
+</li>
+<li> Improved the error checking that occurs when VFGEN reads a vector field file.
+</li>
+<li> Tweaked demos created by the matlab and scilab commands: fixed the spacing of
+the fields in the matlab GUI; use subplots in the plots created by the scilab demo.
+</li>
+<li> Fixed a bug in which the demo programs created by the GSL and CVODE commands
+would not compile if the vector field had no parameters.
+</li>
+<li>
+Fixed the bug that caused VFGEN to crash when the delay2ode command was applied to
+a delay equation in which a lag was not a single symbol.
+</li>
+<li> Fixed the setting of the values of XPP <i>number</i>s, <i>par</i>s, and
+initial conditions when the default initial conditions, default Parameter values, or
+the values of Constants are expressed in terms of previously defined symbols.
+<li> Many more minor changes and bug fixes.
+</li>
+</ul>
+<i>Version 2.1.0 (3 June 2007)</i>
+<ul>
+<li><b><i>New commands:</i></b> Added the <a href="menu_octave.html">octave</a>,
+    <a href="menu_pydstool.html">pydstool</a> and
+    <a href="menu_radau5.html">radau5</a> commands.
+<li>The demo program created by the
+<a href="menu_cvode.html">cvode command</a> outputs each point that
+it computes, instead of a set of 201 evenly spaced points.
+<li> The <b>parstyle</b> option was removed from the
+<a href="menu_matcont.html">matcont command</a>.
+(Each parameter <i>must</i> be given as a separate argument
+in the vector field function and its derivatives.)
+<li>Added brief docstrings to the vector field functions created by
+the <a href="menu_pygsl.html">pygsl</a> and
+<a href="menu_scipy.html">scipy</a> commands.
+</ul>
+<i>Version 2.0.0 (4 May 2007)</i>
+<ul>
+<li> VFGEN can generate code for delay equations.
+<li> New commands:
+      <a href="menu_adolc.html">adolc</a>,
+      <a href="menu_dde23.html">dde23<a>,
+      <a href="menu_ddebiftool.html">ddebiftool</a>,
+      <a href="menu_dde_solver.html">dde_solver</a>,
+      <a href="menu_delay2ode.html">delay2ode</a>,
+      <a href="menu_help.html">help</a>,
+      <a href="menu_latex.html">latex</a>,
+      <a href="menu_taylor.html">taylor</a>.
+<li> Numerous enhancements (and a few bug fixes)
+were made throughout the commands.
+</ul>
+<!-- * * * End of content_home.html * * * -->
+</div>
+<div id="menu-footer">
+Copyright &copy; 2005-2014 <a href="http://www.warrenweckesser.net/">Warren Weckesser</a>
+</div>
+</body>
+</html>
