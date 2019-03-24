@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://warrenweckesser.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://warrenweckesser.github.io/blog/" rel="alternate" type="text/html" /><updated>2019-03-23T23:48:47-04:00</updated><id>http://warrenweckesser.github.io/blog/</id><title type="html">Warren Weckesser ║ Notes</title><subtitle>Notes on applied mathematics, statistics, signal processing and scientific computing.</subtitle><entry><title type="html">Test Post 2</title><link href="http://warrenweckesser.github.io/blog/2019/03/23/test-post2.html" rel="alternate" type="text/html" title="Test Post 2" /><published>2019-03-23T00:00:01-04:00</published><updated>2019-03-23T00:00:01-04:00</updated><id>http://warrenweckesser.github.io/blog/2019/03/23/test-post2</id><content type="html" xml:base="http://warrenweckesser.github.io/blog/2019/03/23/test-post2.html">&lt;p&gt;This is another test.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://warrenweckesser.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://warrenweckesser.github.io/blog/" rel="alternate" type="text/html" /><updated>2019-03-23T23:57:11-04:00</updated><id>http://warrenweckesser.github.io/blog/</id><title type="html">Warren Weckesser ║ Notes</title><subtitle>Notes on applied mathematics, statistics, signal processing and scientific computing.</subtitle><entry><title type="html">Test Post 2</title><link href="http://warrenweckesser.github.io/blog/2019/03/23/test-post2.html" rel="alternate" type="text/html" title="Test Post 2" /><published>2019-03-23T00:00:01-04:00</published><updated>2019-03-23T00:00:01-04:00</updated><id>http://warrenweckesser.github.io/blog/2019/03/23/test-post2</id><content type="html" xml:base="http://warrenweckesser.github.io/blog/2019/03/23/test-post2.html">&lt;p&gt;This is another test.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -92,6 +92,6 @@
   0 &amp; 7 \\
 \end{bmatrix} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/contingency_table_probabilities.png&quot; alt=&quot;plot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/contingency_table_probabilities.png&quot; alt=&quot;plot&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;End of the test.&lt;/p&gt;</content><author><name></name></author><category term="test" /><summary type="html">This is a test.</summary></entry></feed>
