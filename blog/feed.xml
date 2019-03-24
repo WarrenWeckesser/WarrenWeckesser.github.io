@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://warrenweckesser.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://warrenweckesser.github.io/blog/" rel="alternate" type="text/html" /><updated>2019-03-23T23:29:13-04:00</updated><id>http://warrenweckesser.github.io/blog/</id><title type="html">Warren Weckesser ║ Notes</title><subtitle>Notes on applied mathematics, statistics, signal processing and scientific computing.</subtitle><entry><title type="html">Test Post</title><link href="http://warrenweckesser.github.io/blog/2019/03/23/test-post.html" rel="alternate" type="text/html" title="Test Post" /><published>2019-03-23T00:00:01-04:00</published><updated>2019-03-23T00:00:01-04:00</updated><id>http://warrenweckesser.github.io/blog/2019/03/23/test-post</id><content type="html" xml:base="http://warrenweckesser.github.io/blog/2019/03/23/test-post.html">&lt;p&gt;This is a test.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://warrenweckesser.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://warrenweckesser.github.io/blog/" rel="alternate" type="text/html" /><updated>2019-03-23T23:34:41-04:00</updated><id>http://warrenweckesser.github.io/blog/</id><title type="html">Warren Weckesser ║ Notes</title><subtitle>Notes on applied mathematics, statistics, signal processing and scientific computing.</subtitle><entry><title type="html">Test Post 2</title><link href="http://warrenweckesser.github.io/blog/2019/03/23/test-post2.html" rel="alternate" type="text/html" title="Test Post 2" /><published>2019-03-23T00:00:01-04:00</published><updated>2019-03-23T00:00:01-04:00</updated><id>http://warrenweckesser.github.io/blog/2019/03/23/test-post2</id><content type="html" xml:base="http://warrenweckesser.github.io/blog/2019/03/23/test-post2.html">&lt;p&gt;This is another test.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+  &lt;th&gt;&lt;/th&gt;
+  &lt;th&gt;A&lt;/th&gt;
+  &lt;th&gt;B&lt;/th&gt;
+  &lt;th&gt;Total&lt;/th&gt;
+&lt;/thead&gt;
+&lt;tr&gt;
+  &lt;th scope=&quot;row&quot; class=&quot;tablerowheader&quot;&gt;X&lt;/th&gt;
+  &lt;td&gt;14&lt;/td&gt;
+  &lt;td&gt; 9&lt;/td&gt;
+  &lt;td&gt;23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;th scope=&quot;row&quot; class=&quot;tablerowheader&quot;&gt;Y&lt;/th&gt;
+  &lt;td&gt; 2&lt;/td&gt;
+  &lt;td&gt; 5&lt;/td&gt;
+  &lt;td&gt; 7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;th scope=&quot;row&quot; class=&quot;tablerowheader&quot;&gt;Total&lt;/th&gt;
+  &lt;td&gt;16&lt;/td&gt;
+  &lt;td&gt;14&lt;/td&gt;
+  &lt;td&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;End of the test 2.&lt;/p&gt;</content><author><name></name></author><category term="test" /><category term="foo" /><summary type="html">This is another test.</summary></entry><entry><title type="html">Test Post</title><link href="http://warrenweckesser.github.io/blog/2019/03/22/test-post.html" rel="alternate" type="text/html" title="Test Post" /><published>2019-03-22T00:00:01-04:00</published><updated>2019-03-22T00:00:01-04:00</updated><id>http://warrenweckesser.github.io/blog/2019/03/22/test-post</id><content type="html" xml:base="http://warrenweckesser.github.io/blog/2019/03/22/test-post.html">&lt;p&gt;This is a test.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
