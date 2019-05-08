@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gamma probability distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="genindex.html">Index</a></li>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.gamma"></span><div class="section" id="gamma-probability-distribution">
+<h1>Gamma probability distribution<a class="headerlink" href="#gamma-probability-distribution" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mpsci.distributions.gamma.pdf">
+<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">pdf</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gamma distribution probability density function.</p>
+<p>k is the shape parameter
+theta is the scale parameter (reciprocal of the rate parameter)</p>
+<p>Unlike scipy, a location parameter is not included.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma.cdf">
+<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">cdf</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gamma distribution cumulative distribution function.</p>
+<p>k is the shape parameter
+theta is the scale parameter (reciprocal of the rate parameter)</p>
+<p>Unlike scipy, a location parameter is not included.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma.mle">
+<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">mle</code><span class="sig-paren">(</span><em>x</em>, <em>k=None</em>, <em>theta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gamma distribution maximum likelihood parameter estimation.</p>
+<p>Maximum likelihood estimate for the k (shape) and theta (scale) parameters
+of the gamma distribution.</p>
+<p>x must be a sequence of values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma.nll">
+<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">nll</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gamma distribution negative log-likelihood.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma.nll_grad">
+<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">nll_grad</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_grad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gamma distribution gradient of the negative log-likelihood function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma.nll_hess">
+<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">nll_hess</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_hess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gamma distribution hessian of the negative log-likelihood function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma.nll_invhess">
+<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">nll_invhess</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_invhess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gamma distribution inverse of the hessian of the negative log-likelihood.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2019, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

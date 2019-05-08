@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>stats &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="distributions" href="distributions.html" />
+    <link rel="prev" title="signal" href="signal.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="genindex.html">Index</a></li>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.stats"><span id="stats"></span></span><div class="section" id="id1">
+<h1><code class="docutils literal notranslate"><span class="pre">stats</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Most of these functions were implemented to test their counterparts
+in <cite>scipy.stats</cite>.</p>
+</div>
+<p><em>Descriptive statistics</em></p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="stats/gmean.html#mpsci.stats.gmean" title="mpsci.stats.gmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gmean</span></code></a>(x)</p></td>
+<td><p>Geometric mean of the values in the sequence x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stats/hmean.html#mpsci.stats.hmean" title="mpsci.stats.hmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hmean</span></code></a>(x)</p></td>
+<td><p>Harmonic mean of the values in the sequence x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stats/mean.html#mpsci.stats.mean" title="mpsci.stats.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(x[, weights])</p></td>
+<td><p>Mean of the values in the sequence x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stats/pmean.html#mpsci.stats.pmean" title="mpsci.stats.pmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pmean</span></code></a>(x, p)</p></td>
+<td><p>Power (or generalized) mean of the values in the sequence x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stats/std.html#mpsci.stats.std" title="mpsci.stats.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>(x[, ddof])</p></td>
+<td><p>Standard deviation of the values in the sequence x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stats/var.html#mpsci.stats.var" title="mpsci.stats.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>(x[, ddof])</p></td>
+<td><p>Variance of the values in the sequence x.</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Statistical tests</em></p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="stats/chisquare.html#mpsci.stats.chisquare" title="mpsci.stats.chisquare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chisquare</span></code></a>(observed, expected)</p></td>
+<td><p>Pearson’s chi-square test.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stats/fisher_exact.html#mpsci.stats.fisher_exact" title="mpsci.stats.fisher_exact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fisher_exact</span></code></a>(table[, alternative])</p></td>
+<td><p>Compute Fisher’s exact test on the 2x2 table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stats/gtest.html#mpsci.stats.gtest" title="mpsci.stats.gtest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gtest</span></code></a>(observed, expected)</p></td>
+<td><p>G-test (likelihood-ratio test, maximum likelihood test).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stats/pearsonr.html#mpsci.stats.pearsonr" title="mpsci.stats.pearsonr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pearsonr</span></code></a>(x, y)</p></td>
+<td><p>Pearson’s correlation coefficient.</p></td>
+</tr>
+</tbody>
+</table>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2019, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

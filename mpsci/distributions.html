@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>distributions &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="stats" href="stats.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="genindex.html">Index</a></li>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions"><span id="distributions"></span></span><div class="section" id="id1">
+<h1><code class="docutils literal notranslate"><span class="pre">distributions</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>A few probability distributions.</p>
+<p>Note that these implementations do not necessarily use the same parametrization
+as the corresponding implementations in <cite>scipy.stats</cite>.</p>
+</div>
+<p><em>Continuous distributions</em></p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/cosine.html#module-mpsci.distributions.cosine" title="mpsci.distributions.cosine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cosine</span></code></a></p></td>
+<td><p>Raised cosine distribution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/exponweib.html#module-mpsci.distributions.exponweib" title="mpsci.distributions.exponweib"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exponweib</span></code></a></p></td>
+<td><p>Exponentiated Weibull probability distribution</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/gamma.html#module-mpsci.distributions.gamma" title="mpsci.distributions.gamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma</span></code></a></p></td>
+<td><p>Gamma probability distribution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/genextreme.html#module-mpsci.distributions.genextreme" title="mpsci.distributions.genextreme"><code class="xref py py-obj docutils literal notranslate"><span class="pre">genextreme</span></code></a></p></td>
+<td><p>Generalized extreme value distribution</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/geninvgauss.html#module-mpsci.distributions.geninvgauss" title="mpsci.distributions.geninvgauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geninvgauss</span></code></a></p></td>
+<td><p>Generalized inverse Gaussian distribution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/ncx2.html#module-mpsci.distributions.ncx2" title="mpsci.distributions.ncx2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ncx2</span></code></a></p></td>
+<td><p>Noncentral chi-square distribution</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/normal.html#module-mpsci.distributions.normal" title="mpsci.distributions.normal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normal</span></code></a></p></td>
+<td><p>Normal distribution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/rice.html#module-mpsci.distributions.rice" title="mpsci.distributions.rice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rice</span></code></a></p></td>
+<td><p>Rice distribution</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Discrete distributions</em></p>
+<table class="longtable docutils align-center">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/fishers_noncentral_hypergeometric.html#module-mpsci.distributions.fishers_noncentral_hypergeometric" title="mpsci.distributions.fishers_noncentral_hypergeometric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fishers_noncentral_hypergeometric</span></code></a></p></td>
+<td><p>Fisher’s noncentral hypergeometric distribution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/hypergeometric.html#module-mpsci.distributions.hypergeometric" title="mpsci.distributions.hypergeometric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hypergeometric</span></code></a></p></td>
+<td><p>Hypergeometric distribution</p></td>
+</tr>
+</tbody>
+</table>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2019, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
