@@ -73,6 +73,8 @@
             
   <span class="target" id="module-mpsci.distributions.genextreme"></span><div class="section" id="generalized-extreme-value-distribution">
 <h1>Generalized extreme value distribution<a class="headerlink" href="#generalized-extreme-value-distribution" title="Permalink to this headline">¶</a></h1>
+<p>Note that the parameter xi used here has the opposite sign
+of the corresponding shape parameter in <cite>scipy.stats.genextreme</cite>.</p>
 <dl class="function">
 <dt id="mpsci.distributions.genextreme.pdf">
 <code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">pdf</code><span class="sig-paren">(</span><em>x</em>, <em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.pdf" title="Permalink to this definition">¶</a></dt>
@@ -83,6 +85,18 @@
 <dt id="mpsci.distributions.genextreme.cdf">
 <code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">cdf</code><span class="sig-paren">(</span><em>x</em>, <em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generalized extreme value distribution cumulative density function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.genextreme.mean">
+<code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the generalized extreme value distribution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.genextreme.var">
+<code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">var</code><span class="sig-paren">(</span><em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the generalized extreme value distribution.</p>
 </dd></dl>
 
 </div>
