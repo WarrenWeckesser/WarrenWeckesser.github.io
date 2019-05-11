@@ -79,6 +79,18 @@
 <code class="descclassname">mpsci.distributions.fishers_noncentral_hypergeometric.</code><code class="descname">support</code><span class="sig-paren">(</span><em>nc</em>, <em>ntotal</em>, <em>ngood</em>, <em>nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>Full</em> PMF for Fisher’s noncentral hypergeometric distribution.</p>
 <p>Requires 0 &lt; nc &lt;<span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+<p>The support of the distribution is <span class="math notranslate nohighlight">\(k_{\textsf{min}} \le k \le k_{\textsf{max}}\)</span>, where</p>
+<div class="math notranslate nohighlight">
+\[k_{\textsf{min}} = \textrm{max}(0, \textsf{nsample} - (\textsf{ntotal} - \textsf{ngood}))\]</div>
+<div class="math notranslate nohighlight">
+\[k_{\textsf{max}} = \textrm{min}(\textsf{nsample}, \textsf{ngood}).\]</div>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[c_k = \binom{\textsf{ngood}}{k}\binom{\textsf{ntotal} - \textsf{ngood}}{\textsf{nsample} - k}\textsf{nc}^{k}\]</div>
+<p>The probability mass function is</p>
+<div class="math notranslate nohighlight">
+\[p_k = \frac{c_k}
+            {\sum_{j=k_{\textsf{min}}}^{k_{\textsf{max}}} c_j}\]</div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><ul class="simple">
@@ -111,6 +123,8 @@
 <dt id="mpsci.distributions.fishers_noncentral_hypergeometric.mode">
 <code class="descclassname">mpsci.distributions.fishers_noncentral_hypergeometric.</code><code class="descname">mode</code><span class="sig-paren">(</span><em>nc</em>, <em>ntotal</em>, <em>ngood</em>, <em>nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.mode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mode of Fisher’s noncentral hypergeometric distribution.</p>
+<p>In cases where the maximum of the PMF occurs twice, the larger index
+of the two is returned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><strong>m</strong> – The mode of the distribution.</p>
@@ -122,7 +136,24 @@
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="k">import</span> <span class="n">fishers_noncentral_hypergeometric</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fishers_noncentral_hypergeometric</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="go">mpf(&#39;6.0&#39;)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<p>In this example, the PMF is symmetric about the mean, and the maximum
+value of the PMF occurs at k=3 and k=4.  The value 4 is returned for the
+mode.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fishers_noncentral_hypergeometric</span><span class="o">.</span><span class="n">support</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="go">(range(0, 8),</span>
+<span class="go"> [mpf(&#39;0.00029137529137529148&#39;),</span>
+<span class="go">  mpf(&#39;0.014277389277389273&#39;),</span>
+<span class="go">  mpf(&#39;0.12849650349650352&#39;),</span>
+<span class="go">  mpf(&#39;0.35693473193473196&#39;),</span>
+<span class="go">  mpf(&#39;0.35693473193473196&#39;),</span>
+<span class="go">  mpf(&#39;0.12849650349650352&#39;),</span>
+<span class="go">  mpf(&#39;0.014277389277389273&#39;),</span>
+<span class="go">  mpf(&#39;0.00029137529137529148&#39;)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fishers_noncentral_hypergeometric</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="go">4</span>
 </pre></div>
 </div>
 </dd></dl>
