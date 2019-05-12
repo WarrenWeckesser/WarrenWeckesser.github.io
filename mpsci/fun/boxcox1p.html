@@ -80,8 +80,8 @@
 <p>The transformation is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f(x; \lambda) = \begin{cases}
-                   \log(x) &amp; \textrm{if} \; \lambda = 0 \\
-                   \frac{x^{\lambda} - 1}{\lambda}  &amp; \textrm{if} \; \lambda \ne 0
+                   \log(x + 1) &amp; \textrm{if} \; \lambda = 0 \\
+                   \frac{(x + 1)^{\lambda} - 1}{\lambda}  &amp; \textrm{if} \; \lambda \ne 0
                 \end{cases}\end{split}\]</div>
 <p>This function is mathematically equivalent to <cite>boxcox(1+x, lmba)</cite>.
 It avoids the loss of precision that can occur if x is very small.</p>
