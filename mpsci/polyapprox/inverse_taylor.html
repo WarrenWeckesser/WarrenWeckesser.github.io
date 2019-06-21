@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>marcumq &#8212; mpsci  documentation</title>
+    <title>inverse_taylor &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -71,34 +71,42 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="marcumq">
-<span id="mpsci-fun-marcumq"></span><h1>marcumq<a class="headerlink" href="#marcumq" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="inverse-taylor">
+<span id="mpsci-polyapprox-inverse-taylor"></span><h1>inverse_taylor<a class="headerlink" href="#inverse-taylor" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="mpsci.fun.marcumq">
-<code class="descclassname">mpsci.fun.</code><code class="descname">marcumq</code><span class="sig-paren">(</span><em>m</em>, <em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.marcumq" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Marcum Q function.</p>
-<p>The function is defined as</p>
-<div class="math notranslate nohighlight">
-\[Q_M(a, b) = \int_b^{\infty} x \left(\frac{x}{a}\right)^{M-1}
-            \exp\left(-\frac{x^2 + a^2}{2}\right) I_{M-1}(ax)\,dx\]</div>
-<p>where <span class="math notranslate nohighlight">\(I_{M-1}(z)\)</span> is the modified Bessel function of order <span class="math notranslate nohighlight">\(M-1\)</span></p>
-<p><em>See also:</em> <a class="reference internal" href="cmarcumq.html#mpsci-fun-cmarcumq"><span class="std std-ref">cmarcumq</span></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>q</strong> – The function value.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>mpmath.mpf</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>The function uses numerical integration, so it can be very slow.</p>
+<dt id="mpsci.polyapprox.inverse_taylor">
+<code class="descclassname">mpsci.polyapprox.</code><code class="descname">inverse_taylor</code><span class="sig-paren">(</span><em>f</em>, <em>x0</em>, <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.polyapprox.inverse_taylor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Taylor polynomial coefficients of the inverse of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Given a callable <span class="math notranslate nohighlight">\(f\)</span>, and a point <span class="math notranslate nohighlight">\(x_0\)</span>, find the Taylor polynomial of degree n
+of the inverse of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(y_0\)</span> = <span class="math notranslate nohighlight">\(f(x_0)\)</span>, and if the inverse of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(g\)</span>, this function returns
+the Taylor polynomial coefficients of <span class="math notranslate nohighlight">\(g(y)\)</span> at <span class="math notranslate nohighlight">\(y_0\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(f'(x_0)\)</span> must be nonzero.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.fun</span> <span class="k">import</span> <span class="n">marcumq</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">marcumq</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
-<span class="go">mpf(&#39;0.07558718754263240906718640000640082605610073&#39;)</span>
+</pre></div>
+</div>
+<p>Compute the Taylor coefficients of the inverse of the sine function
+sin(x) at x=1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inverse_taylor</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">[mpf(&#39;1.0&#39;),</span>
+<span class="go"> mpf(&#39;1.850815717680925617911753241398650193470396&#39;),</span>
+<span class="go"> mpf(&#39;2.667464736243829370645086306803786566557799&#39;),</span>
+<span class="go"> mpf(&#39;8.745566949501434796799480049601499630239969&#39;),</span>
+<span class="go"> mpf(&#39;34.55691117453807764026147509020588920253199&#39;),</span>
+<span class="go"> mpf(&#39;152.9343377104818039879748855586655382173672&#39;)]</span>
+</pre></div>
+</div>
+<p>Compare that to computing the Taylor polynomial coefficients of
+the arcsine function directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">taylor</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">asin</span><span class="p">,</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">[mpf(&#39;1.0&#39;),</span>
+<span class="go"> mpf(&#39;1.850815717680925617911753241398650193470396&#39;),</span>
+<span class="go"> mpf(&#39;2.667464736243829370645086306803786566557799&#39;),</span>
+<span class="go"> mpf(&#39;8.745566949501434796799480049601499630240153&#39;),</span>
+<span class="go"> mpf(&#39;34.55691117453807764026147509020588920253199&#39;),</span>
+<span class="go"> mpf(&#39;152.9343377104818039879748855586655382173702&#39;)]</span>
 </pre></div>
 </div>
 </dd></dl>
