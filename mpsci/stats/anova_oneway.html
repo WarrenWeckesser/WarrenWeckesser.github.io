@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>anova_oneway &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anova-oneway">
+<h1>anova_oneway<a class="headerlink" href="#anova-oneway" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mpsci.stats.anova_oneway">
+<code class="descclassname">mpsci.stats.</code><code class="descname">anova_oneway</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.anova_oneway" title="Permalink to this definition">¶</a></dt>
+<dd><p>One-way analysis of variance (ANOVA) test.</p>
+<p>The number of replicates in each group may be different.</p>
+<p>Returns the F statistic and the p-value.</p>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.stats</span> <span class="k">import</span> <span class="n">anova_oneway</span>
+</pre></div>
+</div>
+<p>This example is based on the article “One-way anova” from the
+<strong>Handbook of Biological Statistics</strong> by John H. McDonald
+(<a class="reference external" href="http://www.biostathandbook.com/onewayanova.html">http://www.biostathandbook.com/onewayanova.html</a>).
+Here are shell measurements from the mussel Mytilus trossulus from five
+locations: Tillamook, Oregon; Newport, Oregon; Petersburg, Alaska; Magadan,
+Russia; and Tvarminne, Finland.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmook</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0571</span><span class="p">,</span> <span class="mf">0.0813</span><span class="p">,</span> <span class="mf">0.0831</span><span class="p">,</span> <span class="mf">0.0976</span><span class="p">,</span> <span class="mf">0.0817</span><span class="p">,</span> <span class="mf">0.0859</span><span class="p">,</span>
+<span class="gp">... </span>         <span class="mf">0.0735</span><span class="p">,</span> <span class="mf">0.0659</span><span class="p">,</span> <span class="mf">0.0923</span><span class="p">,</span> <span class="mf">0.0836</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nport</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0873</span><span class="p">,</span> <span class="mf">0.0662</span><span class="p">,</span> <span class="mf">0.0672</span><span class="p">,</span> <span class="mf">0.0819</span><span class="p">,</span> <span class="mf">0.0749</span><span class="p">,</span> <span class="mf">0.0649</span><span class="p">,</span>
+<span class="gp">... </span>         <span class="mf">0.0835</span><span class="p">,</span> <span class="mf">0.0725</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pburg</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0974</span><span class="p">,</span> <span class="mf">0.1352</span><span class="p">,</span> <span class="mf">0.0817</span><span class="p">,</span> <span class="mf">0.1016</span><span class="p">,</span> <span class="mf">0.0968</span><span class="p">,</span> <span class="mf">0.1064</span><span class="p">,</span>
+<span class="gp">... </span>         <span class="mf">0.105</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mdan</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1033</span><span class="p">,</span> <span class="mf">0.0915</span><span class="p">,</span> <span class="mf">0.0781</span><span class="p">,</span> <span class="mf">0.0685</span><span class="p">,</span> <span class="mf">0.0677</span><span class="p">,</span> <span class="mf">0.0697</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="mf">0.0764</span><span class="p">,</span> <span class="mf">0.0689</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tvar</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0703</span><span class="p">,</span> <span class="mf">0.1026</span><span class="p">,</span> <span class="mf">0.0956</span><span class="p">,</span> <span class="mf">0.0973</span><span class="p">,</span> <span class="mf">0.1039</span><span class="p">,</span> <span class="mf">0.1045</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">anova_oneway</span><span class="p">(</span><span class="n">tmook</span><span class="p">,</span> <span class="n">nport</span><span class="p">,</span> <span class="n">pburg</span><span class="p">,</span> <span class="n">mdan</span><span class="p">,</span> <span class="n">tvar</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span>
+<span class="go">mpf(&#39;7.1210194716424442964706&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>
+<span class="go">mpf(&#39;0.00028122423145345577062353&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2019, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
