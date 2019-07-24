@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pearsonr_ci &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pearsonr-ci">
+<h1>pearsonr_ci<a class="headerlink" href="#pearsonr-ci" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mpsci.stats.pearsonr_ci">
+<code class="descclassname">mpsci.stats.</code><code class="descname">pearsonr_ci</code><span class="sig-paren">(</span><em>r</em>, <em>n</em>, <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.pearsonr_ci" title="Permalink to this definition">¶</a></dt>
+<dd><p>Confidence interval of Pearson’s correlation coefficient.</p>
+<p>This function uses Fisher’s transformation to compute the confidence
+interval of Pearson’s correlation coefficient.</p>
+<p class="rubric">Examples</p>
+<p>Imports:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.stats</span> <span class="k">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">pearsonr_ci</span>
+</pre></div>
+</div>
+<p>Sample data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.53</span><span class="p">,</span> <span class="mf">2.41</span><span class="p">,</span> <span class="mf">3.60</span><span class="p">,</span> <span class="mf">2.69</span><span class="p">,</span> <span class="mf">3.19</span><span class="p">,</span> <span class="mf">4.05</span><span class="p">,</span> <span class="mf">3.71</span><span class="p">,</span> <span class="mf">4.65</span><span class="p">,</span> <span class="mf">4.33</span><span class="p">,</span> <span class="mf">4.70</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Compute the correlation coefficient:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span>
+<span class="go">mpf(&#39;0.893060379514729854846&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>
+<span class="go">mpf(&#39;0.00050197523992669206603645&#39;)</span>
+</pre></div>
+</div>
+<p>Compute the 95% confidence interval for r:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rlo</span><span class="p">,</span> <span class="n">rhi</span> <span class="o">=</span> <span class="n">pearsonr_ci</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rlo</span>
+<span class="go">mpf(&#39;0.60185206817708369265664&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rhi</span>
+<span class="go">mpf(&#39;0.97464778383702233502275&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2019, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
