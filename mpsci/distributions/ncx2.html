@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,37 +69,39 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <span class="target" id="module-mpsci.distributions.ncx2"></span><div class="section" id="noncentral-chi-square-distribution">
 <h1>Noncentral chi-square distribution<a class="headerlink" href="#noncentral-chi-square-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.distributions.ncx2.pdf">
-<code class="descclassname">mpsci.distributions.ncx2.</code><code class="descname">pdf</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.pdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.ncx2.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.pdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>PDF for the noncentral chi-square distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.ncx2.cdf">
-<code class="descclassname">mpsci.distributions.ncx2.</code><code class="descname">cdf</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.ncx2.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>CDF for the noncentral chi-square distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.ncx2.sf">
-<code class="descclassname">mpsci.distributions.ncx2.</code><code class="descname">sf</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.ncx2.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function for the noncentral chi-square distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.ncx2.mean">
-<code class="descclassname">mpsci.distributions.ncx2.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>k</em>, <em>lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.ncx2.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the noncentral chi-square distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.ncx2.variance">
-<code class="descclassname">mpsci.distributions.ncx2.</code><code class="descname">variance</code><span class="sig-paren">(</span><em>k</em>, <em>lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.variance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.ncx2.</code><code class="sig-name descname">variance</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">lam</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.ncx2.variance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variance of the noncentral chi-square distribution.</p>
 </dd></dl>
 
@@ -107,6 +109,7 @@
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -115,8 +118,8 @@
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,37 +69,39 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <span class="target" id="module-mpsci.distributions.hypergeometric"></span><div class="section" id="hypergeometric-distribution">
 <h1>Hypergeometric distribution<a class="headerlink" href="#hypergeometric-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.distributions.hypergeometric.pmf">
-<code class="descclassname">mpsci.distributions.hypergeometric.</code><code class="descname">pmf</code><span class="sig-paren">(</span><em>k</em>, <em>ntotal</em>, <em>ngood</em>, <em>nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.pmf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">pmf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.pmf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Probability mass function of the hypergeometric distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.hypergeometric.logpmf">
-<code class="descclassname">mpsci.distributions.hypergeometric.</code><code class="descname">logpmf</code><span class="sig-paren">(</span><em>k</em>, <em>ntotal</em>, <em>ngood</em>, <em>nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.logpmf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">logpmf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.logpmf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural log of the probability mass function of the hypergeometric distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.hypergeometric.cdf">
-<code class="descclassname">mpsci.distributions.hypergeometric.</code><code class="descname">cdf</code><span class="sig-paren">(</span><em>k</em>, <em>ntotal</em>, <em>ngood</em>, <em>nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cumulative distribution function of the hypergeometric distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.hypergeometric.sf">
-<code class="descclassname">mpsci.distributions.hypergeometric.</code><code class="descname">sf</code><span class="sig-paren">(</span><em>k</em>, <em>ntotal</em>, <em>ngood</em>, <em>nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the hypergeometric distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.hypergeometric.support">
-<code class="descclassname">mpsci.distributions.hypergeometric.</code><code class="descname">support</code><span class="sig-paren">(</span><em>ntotal</em>, <em>ngood</em>, <em>nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.support" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">support</code><span class="sig-paren">(</span><em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.support" title="Permalink to this definition">¶</a></dt>
 <dd><p>Support of the hypergeometric distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -130,6 +132,7 @@ get the list of integers in the support.)</p></li>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -138,8 +141,8 @@ get the list of integers in the support.)</p></li>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

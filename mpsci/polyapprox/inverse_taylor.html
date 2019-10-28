@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="inverse-taylor">
 <span id="mpsci-polyapprox-inverse-taylor"></span><h1>inverse_taylor<a class="headerlink" href="#inverse-taylor" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.polyapprox.inverse_taylor">
-<code class="descclassname">mpsci.polyapprox.</code><code class="descname">inverse_taylor</code><span class="sig-paren">(</span><em>f</em>, <em>x0</em>, <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.polyapprox.inverse_taylor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.polyapprox.</code><code class="sig-name descname">inverse_taylor</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">x0</em>, <em class="sig-param">n</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.polyapprox.inverse_taylor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Taylor polynomial coefficients of the inverse of <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <p>Given a callable <span class="math notranslate nohighlight">\(f\)</span>, and a point <span class="math notranslate nohighlight">\(x_0\)</span>, find the Taylor polynomial of degree n
 of the inverse of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
@@ -115,6 +117,7 @@ the arcsine function directly:</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -123,8 +126,8 @@ the arcsine function directly:</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

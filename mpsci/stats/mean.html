@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="mean">
 <h1>mean<a class="headerlink" href="#mean" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.stats.mean">
-<code class="descclassname">mpsci.stats.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>x</em>, <em>weights=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">weights=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the values in the sequence x.</p>
 <p>Negative values in weights are allowed.  The only constraint is
 that sum(weights) is not zero.</p>
@@ -85,6 +87,7 @@ that sum(weights) is not zero.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -93,8 +96,8 @@ that sum(weights) is not zero.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

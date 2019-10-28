@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="cheby1-lp">
 <span id="mpsci-signal-cheby1-lp"></span><h1>cheby1_lp<a class="headerlink" href="#cheby1-lp" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.signal.cheby1_lp">
-<code class="descclassname">mpsci.signal.</code><code class="descname">cheby1_lp</code><span class="sig-paren">(</span><em>N</em>, <em>rp</em>, <em>Wn</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.signal.cheby1_lp" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.signal.</code><code class="sig-name descname">cheby1_lp</code><span class="sig-paren">(</span><em class="sig-param">N</em>, <em class="sig-param">rp</em>, <em class="sig-param">Wn</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.signal.cheby1_lp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Chebyshev Type I lowpass digital filter design.</p>
 <p>This function computes the same result as</p>
 <blockquote>
@@ -89,6 +91,7 @@ numpy arrays.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -97,8 +100,8 @@ numpy arrays.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

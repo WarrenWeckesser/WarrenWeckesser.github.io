@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="fisher-exact">
 <h1>fisher_exact<a class="headerlink" href="#fisher-exact" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.stats.fisher_exact">
-<code class="descclassname">mpsci.stats.</code><code class="descname">fisher_exact</code><span class="sig-paren">(</span><em>table</em>, <em>alternative='two-sided'</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.fisher_exact" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">fisher_exact</code><span class="sig-paren">(</span><em class="sig-param">table</em>, <em class="sig-param">alternative='two-sided'</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.fisher_exact" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Fisher’s exact test on the 2x2 table.</p>
 <p>This function uses python integers to compute the probability exactly.
 (Unlike most of the other functions in the <cite>mpsci</cite> library, this function
@@ -121,6 +123,7 @@ and available memory.)</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -129,8 +132,8 @@ and available memory.)</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

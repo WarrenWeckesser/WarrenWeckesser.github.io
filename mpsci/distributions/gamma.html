@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <span class="target" id="module-mpsci.distributions.gamma"></span><div class="section" id="gamma-probability-distribution">
 <h1>Gamma probability distribution<a class="headerlink" href="#gamma-probability-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.distributions.gamma.pdf">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">pdf</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.pdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.pdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gamma distribution probability density function.</p>
 <p>k is the shape parameter
 theta is the scale parameter (reciprocal of the rate parameter)</p>
@@ -84,13 +86,13 @@ theta is the scale parameter (reciprocal of the rate parameter)</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.logpdf">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">logpdf</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.logpdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.logpdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log of the PDF of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.cdf">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">cdf</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gamma distribution cumulative distribution function.</p>
 <p>k is the shape parameter
 theta is the scale parameter (reciprocal of the rate parameter)</p>
@@ -99,25 +101,25 @@ theta is the scale parameter (reciprocal of the rate parameter)</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.sf">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">sf</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.mean">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.var">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">var</code><span class="sig-paren">(</span><em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.var" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variance of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.mle">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">mle</code><span class="sig-paren">(</span><em>x</em>, <em>k=None</em>, <em>theta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">mle</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k=None</em>, <em class="sig-param">theta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gamma distribution maximum likelihood parameter estimation.</p>
 <p>Maximum likelihood estimate for the k (shape) and theta (scale) parameters
 of the gamma distribution.</p>
@@ -126,25 +128,25 @@ of the gamma distribution.</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.nll">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">nll</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">nll</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gamma distribution negative log-likelihood.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.nll_grad">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">nll_grad</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_grad" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">nll_grad</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_grad" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gamma distribution gradient of the negative log-likelihood function.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.nll_hess">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">nll_hess</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_hess" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">nll_hess</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_hess" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gamma distribution hessian of the negative log-likelihood function.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.gamma.nll_invhess">
-<code class="descclassname">mpsci.distributions.gamma.</code><code class="descname">nll_invhess</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_invhess" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.gamma.</code><code class="sig-name descname">nll_invhess</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">k</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_invhess" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gamma distribution inverse of the hessian of the negative log-likelihood.</p>
 </dd></dl>
 
@@ -152,6 +154,7 @@ of the gamma distribution.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -160,8 +163,8 @@ of the gamma distribution.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="anova-oneway">
 <h1>anova_oneway<a class="headerlink" href="#anova-oneway" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.stats.anova_oneway">
-<code class="descclassname">mpsci.stats.</code><code class="descname">anova_oneway</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.anova_oneway" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">anova_oneway</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.anova_oneway" title="Permalink to this definition">¶</a></dt>
 <dd><p>One-way analysis of variance (ANOVA) test.</p>
 <p>The number of replicates in each group may be different.</p>
 <p>Returns the F statistic and the p-value.</p>
@@ -113,6 +115,7 @@ Russia; and Tvarminne, Finland.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -121,8 +124,8 @@ Russia; and Tvarminne, Finland.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

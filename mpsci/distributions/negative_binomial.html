@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,6 +69,8 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <span class="target" id="module-mpsci.distributions.negative_binomial"></span><div class="section" id="negative-binomial-distribution">
@@ -80,7 +82,7 @@ the number of “failures” drawn is <cite>r</cite>.  <cite>p</cite> is the pro
 a “success”.</p>
 <dl class="function">
 <dt id="mpsci.distributions.negative_binomial.pmf">
-<code class="descclassname">mpsci.distributions.negative_binomial.</code><code class="descname">pmf</code><span class="sig-paren">(</span><em>k</em>, <em>r</em>, <em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.pmf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.negative_binomial.</code><code class="sig-name descname">pmf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">r</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.pmf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Probability mass function of the negative binomial distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -94,7 +96,7 @@ a “success”.</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.negative_binomial.logpmf">
-<code class="descclassname">mpsci.distributions.negative_binomial.</code><code class="descname">logpmf</code><span class="sig-paren">(</span><em>k</em>, <em>r</em>, <em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.logpmf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.negative_binomial.</code><code class="sig-name descname">logpmf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">r</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.logpmf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log of the probability mass function of the negative binomial distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -108,7 +110,7 @@ a “success”.</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.negative_binomial.sf">
-<code class="descclassname">mpsci.distributions.negative_binomial.</code><code class="descname">sf</code><span class="sig-paren">(</span><em>k</em>, <em>r</em>, <em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.negative_binomial.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">r</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the negative binomial distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -122,7 +124,7 @@ a “success”.</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.negative_binomial.cdf">
-<code class="descclassname">mpsci.distributions.negative_binomial.</code><code class="descname">cdf</code><span class="sig-paren">(</span><em>k</em>, <em>r</em>, <em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.negative_binomial.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">r</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cumulative distribution function of the negative binomial distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -136,7 +138,7 @@ a “success”.</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.negative_binomial.mean">
-<code class="descclassname">mpsci.distributions.negative_binomial.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>r</em>, <em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.negative_binomial.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the negative binomial distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -150,7 +152,7 @@ a “success”.</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.negative_binomial.var">
-<code class="descclassname">mpsci.distributions.negative_binomial.</code><code class="descname">var</code><span class="sig-paren">(</span><em>r</em>, <em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.var" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.negative_binomial.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variance of the negative binomial distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -166,6 +168,7 @@ a “success”.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -174,8 +177,8 @@ a “success”.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

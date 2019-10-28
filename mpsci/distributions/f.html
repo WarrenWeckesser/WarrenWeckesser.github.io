@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,34 +69,36 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <span class="target" id="module-mpsci.distributions.f"></span><div class="section" id="f-distribution">
 <h1>F distribution<a class="headerlink" href="#f-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.distributions.f.pdf">
-<code class="descclassname">mpsci.distributions.f.</code><code class="descname">pdf</code><span class="sig-paren">(</span><em>x</em>, <em>dfn</em>, <em>dfd</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.f.pdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.f.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">dfn</em>, <em class="sig-param">dfd</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.f.pdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Probability density function of the F distribution.</p>
 <p><cite>dfn</cite> and <cite>dfd</cite> are the numerator and denominator degrees of freedom, resp.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.f.logpdf">
-<code class="descclassname">mpsci.distributions.f.</code><code class="descname">logpdf</code><span class="sig-paren">(</span><em>x</em>, <em>dfn</em>, <em>dfd</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.f.logpdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.f.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">dfn</em>, <em class="sig-param">dfd</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.f.logpdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural log. of the probability density function of the F distribution.</p>
 <p><cite>dfn</cite> and <cite>dfd</cite> are the numerator and denominator degrees of freedom, resp.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.f.cdf">
-<code class="descclassname">mpsci.distributions.f.</code><code class="descname">cdf</code><span class="sig-paren">(</span><em>x</em>, <em>dfn</em>, <em>dfd</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.f.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.f.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">dfn</em>, <em class="sig-param">dfd</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.f.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cumulative distribution function of the F distribution.</p>
 <p><cite>dfn</cite> and <cite>dfd</cite> are the numerator and denominator degrees of freedom, resp.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.f.sf">
-<code class="descclassname">mpsci.distributions.f.</code><code class="descname">sf</code><span class="sig-paren">(</span><em>x</em>, <em>dfn</em>, <em>dfd</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.f.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.f.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">dfn</em>, <em class="sig-param">dfd</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.f.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the F distribution.</p>
 <p><cite>dfn</cite> and <cite>dfd</cite> are the numerator and denominator degrees of freedom, resp.</p>
 </dd></dl>
@@ -105,6 +107,7 @@
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -113,8 +116,8 @@
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

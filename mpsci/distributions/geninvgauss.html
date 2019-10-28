@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <span class="target" id="module-mpsci.distributions.geninvgauss"></span><div class="section" id="generalized-inverse-gaussian-distribution">
 <h1>Generalized inverse Gaussian distribution<a class="headerlink" href="#generalized-inverse-gaussian-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.distributions.geninvgauss.pdf">
-<code class="descclassname">mpsci.distributions.geninvgauss.</code><code class="descname">pdf</code><span class="sig-paren">(</span><em>x</em>, <em>p</em>, <em>b</em>, <em>loc=0</em>, <em>scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.pdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.pdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Probability density function of the generalized inverse Gaussian
 distribution.</p>
 <p>The PDF for <span class="math notranslate nohighlight">\(x &gt; \textsf{loc}\)</span> is:</p>
@@ -88,7 +90,7 @@ function of the second kind.  For <span class="math notranslate nohighlight">\(x
 
 <dl class="function">
 <dt id="mpsci.distributions.geninvgauss.logpdf">
-<code class="descclassname">mpsci.distributions.geninvgauss.</code><code class="descname">logpdf</code><span class="sig-paren">(</span><em>x</em>, <em>p</em>, <em>b</em>, <em>loc=0</em>, <em>scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.logpdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.logpdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log of the PDF of the generalized inverse Gaussian distribution.</p>
 <p>The PDF for <span class="math notranslate nohighlight">\(x &gt; \textsf{loc}\)</span> is:</p>
 <div class="math notranslate nohighlight">
@@ -100,7 +102,7 @@ function of the second kind.  For <span class="math notranslate nohighlight">\(x
 
 <dl class="function">
 <dt id="mpsci.distributions.geninvgauss.cdf">
-<code class="descclassname">mpsci.distributions.geninvgauss.</code><code class="descname">cdf</code><span class="sig-paren">(</span><em>x</em>, <em>p</em>, <em>b</em>, <em>loc=0</em>, <em>scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cumulative distribution function of the generalized inverse Gaussian
 distribution.</p>
 <p>The CDF is computed by using mpmath.quad to numerically integrate the PDF.</p>
@@ -108,7 +110,7 @@ distribution.</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.geninvgauss.sf">
-<code class="descclassname">mpsci.distributions.geninvgauss.</code><code class="descname">sf</code><span class="sig-paren">(</span><em>x</em>, <em>p</em>, <em>b</em>, <em>loc=0</em>, <em>scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the generalized inverse Gaussian distribution.</p>
 <p>The survival function is computed by using mpmath.quad to numerically
 integrate the PDF.</p>
@@ -116,7 +118,7 @@ integrate the PDF.</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.geninvgauss.mean">
-<code class="descclassname">mpsci.distributions.geninvgauss.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>p</em>, <em>b</em>, <em>loc=0</em>, <em>scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the generalized inverse Gaussian distribution.</p>
 <p>The mean is:</p>
 <div class="math notranslate nohighlight">
@@ -127,7 +129,7 @@ integrate the PDF.</p>
 
 <dl class="function">
 <dt id="mpsci.distributions.geninvgauss.mode">
-<code class="descclassname">mpsci.distributions.geninvgauss.</code><code class="descname">mode</code><span class="sig-paren">(</span><em>p</em>, <em>b</em>, <em>loc=0</em>, <em>scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.mode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">mode</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.mode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mode of the generalized inverse Gaussian distribution.</p>
 <p>The mode is:</p>
 <div class="math notranslate nohighlight">
@@ -139,6 +141,7 @@ integrate the PDF.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -147,8 +150,8 @@ integrate the PDF.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

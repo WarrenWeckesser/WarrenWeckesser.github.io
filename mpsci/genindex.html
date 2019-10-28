@@ -57,10 +57,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -70,6 +70,8 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
 
@@ -146,6 +148,8 @@
         <li><a href="distributions/ncx2.html#mpsci.distributions.ncx2.cdf">(in module mpsci.distributions.ncx2)</a>
 </li>
         <li><a href="distributions/negative_binomial.html#mpsci.distributions.negative_binomial.cdf">(in module mpsci.distributions.negative_binomial)</a>
+</li>
+        <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.cdf">(in module mpsci.distributions.negative_hypergeometric)</a>
 </li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.cdf">(in module mpsci.distributions.normal)</a>
 </li>
@@ -265,7 +269,11 @@
       <ul>
         <li><a href="distributions/negative_binomial.html#mpsci.distributions.negative_binomial.logpmf">(in module mpsci.distributions.negative_binomial)</a>
 </li>
+        <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.logpmf">(in module mpsci.distributions.negative_hypergeometric)</a>
+</li>
       </ul></li>
+      <li><a href="fun/logsumexp.html#mpsci.fun.logsumexp">logsumexp() (in module mpsci.fun)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -312,10 +320,10 @@
 </li>
       <li><a href="distributions/beta.html#module-mpsci.distributions.beta">mpsci.distributions.beta (module)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="distributions/cosine.html#module-mpsci.distributions.cosine">mpsci.distributions.cosine (module)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="distributions/exponweib.html#module-mpsci.distributions.exponweib">mpsci.distributions.exponweib (module)</a>
 </li>
       <li><a href="distributions/f.html#module-mpsci.distributions.f">mpsci.distributions.f (module)</a>
@@ -337,6 +345,8 @@
       <li><a href="distributions/ncx2.html#module-mpsci.distributions.ncx2">mpsci.distributions.ncx2 (module)</a>
 </li>
       <li><a href="distributions/negative_binomial.html#module-mpsci.distributions.negative_binomial">mpsci.distributions.negative_binomial (module)</a>
+</li>
+      <li><a href="distributions/negative_hypergeometric.html#module-mpsci.distributions.negative_hypergeometric">mpsci.distributions.negative_hypergeometric (module)</a>
 </li>
       <li><a href="distributions/normal.html#module-mpsci.distributions.normal">mpsci.distributions.normal (module)</a>
 </li>
@@ -409,6 +419,8 @@
       <ul>
         <li><a href="distributions/negative_binomial.html#mpsci.distributions.negative_binomial.pmf">(in module mpsci.distributions.negative_binomial)</a>
 </li>
+        <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.pmf">(in module mpsci.distributions.negative_hypergeometric)</a>
+</li>
       </ul></li>
       <li><a href="distributions/fishers_noncentral_hypergeometric.html#mpsci.distributions.fishers_noncentral_hypergeometric.pmf_dict">pmf_dict() (in module mpsci.distributions.fishers_noncentral_hypergeometric)</a>
 
@@ -453,6 +465,8 @@
 </li>
         <li><a href="distributions/negative_binomial.html#mpsci.distributions.negative_binomial.sf">(in module mpsci.distributions.negative_binomial)</a>
 </li>
+        <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.sf">(in module mpsci.distributions.negative_hypergeometric)</a>
+</li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.sf">(in module mpsci.distributions.normal)</a>
 </li>
         <li><a href="distributions/rice.html#mpsci.distributions.rice.sf">(in module mpsci.distributions.rice)</a>
@@ -468,6 +482,8 @@
         <li><a href="distributions/hypergeometric.html#mpsci.distributions.hypergeometric.support">(in module mpsci.distributions.hypergeometric)</a>
 </li>
         <li><a href="distributions/multivariate_hypergeometric.html#mpsci.distributions.multivariate_hypergeometric.support">(in module mpsci.distributions.multivariate_hypergeometric)</a>
+</li>
+        <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.support">(in module mpsci.distributions.negative_hypergeometric)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -516,6 +532,7 @@
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -524,8 +541,8 @@
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

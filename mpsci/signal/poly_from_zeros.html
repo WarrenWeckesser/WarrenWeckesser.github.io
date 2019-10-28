@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="poly-from-zeros">
 <span id="mpsci-signal-poly-from-zeros"></span><h1>poly_from_zeros<a class="headerlink" href="#poly-from-zeros" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.signal.poly_from_zeros">
-<code class="descclassname">mpsci.signal.</code><code class="descname">poly_from_zeros</code><span class="sig-paren">(</span><em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.signal.poly_from_zeros" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.signal.</code><code class="sig-name descname">poly_from_zeros</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.signal.poly_from_zeros" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the zeros of a polynomial to the coefficients.</p>
 <p>Coefficients are ordered from highest degree term to lowest.</p>
 <p>The leading coefficient will be 1.</p>
@@ -94,6 +96,7 @@
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -102,8 +105,8 @@
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

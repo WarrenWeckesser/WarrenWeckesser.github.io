@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="digammainv">
 <span id="mpsci-fun-digammainv"></span><h1>digammainv<a class="headerlink" href="#digammainv" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.fun.digammainv">
-<code class="descclassname">mpsci.fun.</code><code class="descname">digammainv</code><span class="sig-paren">(</span><em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.digammainv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.fun.</code><code class="sig-name descname">digammainv</code><span class="sig-paren">(</span><em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.digammainv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverse of the digamma function (real values only).</p>
 <p>The <cite>digamma function</cite> <a class="footnote-reference brackets" href="#id3" id="id1">1</a> <a class="footnote-reference brackets" href="#id4" id="id2">2</a> is the logarithmic derivative of the
 gamma function.</p>
@@ -113,6 +115,7 @@ same as <cite>mpmath.psi(0, x)</cite>.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -121,8 +124,8 @@ same as <cite>mpmath.psi(0, x)</cite>.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

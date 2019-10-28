@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <span class="target" id="module-mpsci.distributions.multivariate_hypergeometric"></span><div class="section" id="multivariate-hypergeometric-distribution">
 <h1>Multivariate hypergeometric distribution<a class="headerlink" href="#multivariate-hypergeometric-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.distributions.multivariate_hypergeometric.support">
-<code class="descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="descname">support</code><span class="sig-paren">(</span><em>colors</em>, <em>nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">support</code><span class="sig-paren">(</span><em class="sig-param">colors</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator of the support of the multivariate hypergeometric distribution.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">support</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">6</span><span class="p">))</span>
@@ -109,7 +111,7 @@
 
 <dl class="function">
 <dt id="mpsci.distributions.multivariate_hypergeometric.pmf_dict">
-<code class="descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="descname">pmf_dict</code><span class="sig-paren">(</span><em>colors</em>, <em>nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.pmf_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">pmf_dict</code><span class="sig-paren">(</span><em class="sig-param">colors</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.pmf_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dictionary of the PMF of the multivariate hypergeometric distr.</p>
 <p>The keys are the points in the support, and the values are the
 corresponding probabilities.</p>
@@ -127,6 +129,7 @@ corresponding probabilities.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -135,8 +138,8 @@ corresponding probabilities.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,6 +69,8 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <span class="target" id="module-mpsci.distributions.genextreme"></span><div class="section" id="generalized-extreme-value-distribution">
@@ -77,37 +79,37 @@
 of the corresponding shape parameter in <cite>scipy.stats.genextreme</cite>.</p>
 <dl class="function">
 <dt id="mpsci.distributions.genextreme.pdf">
-<code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">pdf</code><span class="sig-paren">(</span><em>x</em>, <em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.pdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.genextreme.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">xi</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.pdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generalized extreme value distribution probability density function.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.genextreme.logpdf">
-<code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">logpdf</code><span class="sig-paren">(</span><em>x</em>, <em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.logpdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.genextreme.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">xi</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.logpdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural logarithm of the PDF of the generalized extreme value distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.genextreme.cdf">
-<code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">cdf</code><span class="sig-paren">(</span><em>x</em>, <em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.genextreme.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">xi</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generalized extreme value distribution cumulative density function.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.genextreme.sf">
-<code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">sf</code><span class="sig-paren">(</span><em>x</em>, <em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.genextreme.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">xi</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generalized extreme value distribution survival function.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.genextreme.mean">
-<code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">mean</code><span class="sig-paren">(</span><em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.genextreme.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">xi</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the generalized extreme value distribution.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mpsci.distributions.genextreme.var">
-<code class="descclassname">mpsci.distributions.genextreme.</code><code class="descname">var</code><span class="sig-paren">(</span><em>xi</em>, <em>mu=0</em>, <em>sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.var" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.genextreme.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param">xi</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.genextreme.var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variance of the generalized extreme value distribution.</p>
 </dd></dl>
 
@@ -115,6 +117,7 @@ of the corresponding shape parameter in <cite>scipy.stats.genextreme</cite>.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -123,8 +126,8 @@ of the corresponding shape parameter in <cite>scipy.stats.genextreme</cite>.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

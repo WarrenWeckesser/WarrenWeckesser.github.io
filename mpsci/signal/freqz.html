@@ -56,10 +56,10 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -69,13 +69,15 @@
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="freqz">
 <span id="mpsci-signal-freqz"></span><h1>freqz<a class="headerlink" href="#freqz" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mpsci.signal.freqz">
-<code class="descclassname">mpsci.signal.</code><code class="descname">freqz</code><span class="sig-paren">(</span><em>b</em>, <em>a=1</em>, <em>worN=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.signal.freqz" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.signal.</code><code class="sig-name descname">freqz</code><span class="sig-paren">(</span><em class="sig-param">b</em>, <em class="sig-param">a=1</em>, <em class="sig-param">worN=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.signal.freqz" title="Permalink to this definition">¶</a></dt>
 <dd><p>Frequency response of a filter in (b, a) format (i.e. transfer function).</p>
 <p>This function is similar to <cite>scipy.signal.freqz</cite>, but the results are stored
 in lists.</p>
@@ -86,6 +88,7 @@ in lists.</p>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
@@ -94,8 +97,8 @@ in lists.</p>
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 
