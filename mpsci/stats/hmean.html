@@ -79,7 +79,48 @@
 <dt id="mpsci.stats.hmean">
 <code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">hmean</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.hmean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Harmonic mean of the values in the sequence x.</p>
-<p>All the values in x must be greater than zero.</p>
+<p>If any value in x is 0, the return value is 0.</p>
+<p>hmean accepts negative values. Usually the harmonic mean is defined
+for positive values only, but the formula is well-defined as long as
+1/x[0] + 1/x[1] + … + 1/x[-1] is not 0.</p>
+<p>If that expression is 0, and the signs of the x values are mixed, nan
+is returned.  If the signs are not mixed, then either all the values are
++inf or they are all -inf.  For those cases, +inf and -inf are returned,
+respectively.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.stats</span> <span class="kn">import</span> <span class="n">hmean</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">mpf(&#39;1.8&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">mpf(&#39;-45.0&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">mpf(&#39;3.181371861411137606957497545&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">mpf(&#39;nan&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
+<span class="go">mpf(&#39;+inf&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
+<span class="go">mpf(&#39;nan&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="o">-</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpf</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -95,7 +136,7 @@
       &copy;2019, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
