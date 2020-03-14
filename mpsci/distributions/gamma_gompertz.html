@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gamma-Gompertz distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.gamma_gompertz"></span><div class="section" id="gamma-gompertz-distribution">
+<h1>Gamma-Gompertz distribution<a class="headerlink" href="#gamma-gompertz-distribution" title="Permalink to this headline">¶</a></h1>
+<p>The distribution is described in:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Gamma/Gompertz_distribution">https://en.wikipedia.org/wiki/Gamma/Gompertz_distribution</a></p>
+</div></blockquote>
+<p>The parameters used here map to the wikipedia article as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpsci</span>    <span class="n">wikipedia</span>
+<span class="o">-----</span>    <span class="o">---------</span>
+<span class="n">c</span>        <span class="n">s</span>
+<span class="n">beta</span>     <span class="n">beta</span>
+<span class="n">scale</span>    <span class="mi">1</span><span class="o">/</span><span class="n">b</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="mpsci.distributions.gamma_gompertz.pdf">
+<code class="sig-prename descclassname">mpsci.distributions.gamma_gompertz.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">c</em>, <em class="sig-param">beta</em>, <em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma_gompertz.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability density function of the Gamma-Gompertz distribution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma_gompertz.cdf">
+<code class="sig-prename descclassname">mpsci.distributions.gamma_gompertz.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">c</em>, <em class="sig-param">beta</em>, <em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma_gompertz.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function of the Gamma-Gompertz distribution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma_gompertz.invcdf">
+<code class="sig-prename descclassname">mpsci.distributions.gamma_gompertz.</code><code class="sig-name descname">invcdf</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">c</em>, <em class="sig-param">beta</em>, <em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma_gompertz.invcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse CDF (i.e. quantile function) of the Gamma-Gompertz distribution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma_gompertz.sf">
+<code class="sig-prename descclassname">mpsci.distributions.gamma_gompertz.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">c</em>, <em class="sig-param">beta</em>, <em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma_gompertz.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function of the Gamma-Gompertz distribution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.gamma_gompertz.invsf">
+<code class="sig-prename descclassname">mpsci.distributions.gamma_gompertz.</code><code class="sig-name descname">invsf</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">c</em>, <em class="sig-param">beta</em>, <em class="sig-param">scale</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma_gompertz.invsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse survival function of the Gamma-Gompertz distribution.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2019, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
