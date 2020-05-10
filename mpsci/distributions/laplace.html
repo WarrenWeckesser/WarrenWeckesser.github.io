@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Laplace distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.laplace"></span><div class="section" id="laplace-distribution">
+<h1>Laplace distribution<a class="headerlink" href="#laplace-distribution" title="Permalink to this headline">¶</a></h1>
+<p>The parameters are mu (the location) and b (the scale).</p>
+<dl class="function">
+<dt id="mpsci.distributions.laplace.pdf">
+<code class="sig-prename descclassname">mpsci.distributions.laplace.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">b=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.laplace.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Laplace distribution probability density function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.laplace.logpdf">
+<code class="sig-prename descclassname">mpsci.distributions.laplace.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">b=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.laplace.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log of the PDF of the Laplace distribution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.laplace.cdf">
+<code class="sig-prename descclassname">mpsci.distributions.laplace.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">b=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.laplace.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Laplace distribution cumulative distribution function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.laplace.sf">
+<code class="sig-prename descclassname">mpsci.distributions.laplace.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">b=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.laplace.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Laplace distribution survival function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.laplace.invcdf">
+<code class="sig-prename descclassname">mpsci.distributions.laplace.</code><code class="sig-name descname">invcdf</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">b=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.laplace.invcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Laplace distribution inverse CDF.</p>
+<p>This function is also known as the quantile function or the percent
+point function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.laplace.invsf">
+<code class="sig-prename descclassname">mpsci.distributions.laplace.</code><code class="sig-name descname">invsf</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">b=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.laplace.invsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Laplace distribution inverse survival function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.laplace.mean">
+<code class="sig-prename descclassname">mpsci.distributions.laplace.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">mu=0</em>, <em class="sig-param">b=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.laplace.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the Laplace distribution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.laplace.var">
+<code class="sig-prename descclassname">mpsci.distributions.laplace.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param">mu=0</em>, <em class="sig-param">b=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.laplace.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the Laplace distribution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mpsci.distributions.laplace.mle">
+<code class="sig-prename descclassname">mpsci.distributions.laplace.</code><code class="sig-name descname">mle</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">mu=None</em>, <em class="sig-param">b=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.laplace.mle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Laplace distribution maximum likelihood parameter estimation.</p>
+<p>Returns (mu, b).</p>
+<p>Note: When len(x) is even, the maximum likelihood estimate for mu
+is not unique, because the likelihood function has a “flat top”.
+This function returns the median, with the convention that the
+median of x when len(x) is even is the midpoint of s[n//2-1] and
+s[n//2], where s is sorted(x) and n is len(x).  In fact, <em>any</em>
+value between s[n//2 - 1] and s[n//2] is a valid maximum likelihood
+estimate for mu.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
