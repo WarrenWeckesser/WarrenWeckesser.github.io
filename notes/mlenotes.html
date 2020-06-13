@@ -10,12 +10,17 @@
   </script>
 </head>
 <body>
-<h1>Rayleigh distribution</h1>
+<h2>Rayleigh distribution</h2>
 <p>
-    The PDF:
-    \[f(x, \mu, \sigma) = \frac{1}{\sigma}\left(\frac{x-\mu}{\sigma}\right)
-                          \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^{2}\right)
-    \]
+The PDF:
+\[f(x, \mu, \sigma) = \frac{1}{\sigma}\left(\frac{x-\mu}{\sigma}\right)
+                      \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^{2}\right)
+\]
+The likelihood function for the vector \(x = x_1, x_2, \ldots, x_N \):
+\[
+L(x, \mu, \sigma) = \prod_{i}^{N}\frac{1}{\sigma}\left(\frac{x_i-\mu}{\sigma}\right)
+                      \exp\left(-\frac{1}{2}\left(\frac{x_i - \mu}{\sigma}\right)^{2}\right)
+\]
 </p>
 </body>
 </html>
