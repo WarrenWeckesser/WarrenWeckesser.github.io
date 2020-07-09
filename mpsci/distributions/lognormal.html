@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log-normal distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -64,7 +65,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -78,50 +79,50 @@
 <p>The parameters mu and sigma are the mean and standard deviation
 of the underlying normal distribution.  These are not the same
 parameters as used in <cite>scipy.stats.lognorm</cite>.</p>
-<dl class="function">
-<dt id="mpsci.distributions.lognormal.pdf">
-<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.pdf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log-normal distribution probability density function.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="mpsci.distributions.lognormal.logpdf">
-<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.logpdf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Natural logarithm of the PDF of the log-normal distribution.</p>
-</dd></dl>
-
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.distributions.lognormal.cdf">
-<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">mu</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log-normal distribution cumulative distribution function.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mpsci.distributions.lognormal.sf">
-<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.sf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log-normal distribution survival function.</p>
-</dd></dl>
-
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.distributions.lognormal.invcdf">
-<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">invcdf</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.invcdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">invcdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">mu</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.invcdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log-normal distribution inverse CDF.</p>
 <p>This function is also known as the quantile function or the percent
 point function.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.distributions.lognormal.invsf">
-<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">invsf</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">mu=0</em>, <em class="sig-param">sigma=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.invsf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">invsf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">mu</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.invsf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log-normal distribution inverse survival function.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
+<dt id="mpsci.distributions.lognormal.logpdf">
+<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">mu</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Natural logarithm of the PDF of the log-normal distribution.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="mpsci.distributions.lognormal.mle">
-<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">mle</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.mle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">mle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.mle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log-normal distribution maximum likelihood parameter estimation.</p>
 <p>x must be a sequence of numbers.</p>
 <p>Returns (mu, sigma).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.lognormal.pdf">
+<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">mu</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log-normal distribution probability density function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.lognormal.sf">
+<code class="sig-prename descclassname">mpsci.distributions.lognormal.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">mu</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.lognormal.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log-normal distribution survival function.</p>
 </dd></dl>
 
 </div>
@@ -137,7 +138,7 @@ point function.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

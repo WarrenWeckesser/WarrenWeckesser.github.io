@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>distributions &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -66,7 +67,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -118,16 +119,19 @@ as the corresponding implementations in <cite>scipy.stats</cite>.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="distributions/laplace.html#module-mpsci.distributions.laplace" title="mpsci.distributions.laplace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplace</span></code></a></p></td>
 <td><p>Laplace distribution</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="distributions/lognormal.html#module-mpsci.distributions.lognormal" title="mpsci.distributions.lognormal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lognormal</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/logistic.html#module-mpsci.distributions.logistic" title="mpsci.distributions.logistic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logistic</span></code></a></p></td>
+<td><p>Logistic distribution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/lognormal.html#module-mpsci.distributions.lognormal" title="mpsci.distributions.lognormal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lognormal</span></code></a></p></td>
 <td><p>Log-normal distribution</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="distributions/ncx2.html#module-mpsci.distributions.ncx2" title="mpsci.distributions.ncx2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ncx2</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/ncx2.html#module-mpsci.distributions.ncx2" title="mpsci.distributions.ncx2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ncx2</span></code></a></p></td>
 <td><p>Noncentral chi-square distribution</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="distributions/normal.html#module-mpsci.distributions.normal" title="mpsci.distributions.normal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normal</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/normal.html#module-mpsci.distributions.normal" title="mpsci.distributions.normal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normal</span></code></a></p></td>
 <td><p>Normal distribution</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="distributions/rice.html#module-mpsci.distributions.rice" title="mpsci.distributions.rice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rice</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/rice.html#module-mpsci.distributions.rice" title="mpsci.distributions.rice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rice</span></code></a></p></td>
 <td><p>Rice distribution</p></td>
 </tr>
 </tbody>
@@ -153,6 +157,9 @@ as the corresponding implementations in <cite>scipy.stats</cite>.</p>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="distributions/negative_hypergeometric.html#module-mpsci.distributions.negative_hypergeometric" title="mpsci.distributions.negative_hypergeometric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">negative_hypergeometric</span></code></a></p></td>
 <td><p>Negative hypergeometric distribution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/poisson.html#module-mpsci.distributions.poisson" title="mpsci.distributions.poisson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poisson</span></code></a></p></td>
+<td><p>Poisson distribution</p></td>
 </tr>
 </tbody>
 </table>
@@ -180,7 +187,7 @@ as the corresponding implementations in <cite>scipy.stats</cite>.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inverse_pade &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -64,7 +65,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -75,9 +76,9 @@
             
   <div class="section" id="inverse-pade">
 <span id="mpsci-polyapprox-inverse-pade"></span><h1>inverse_pade<a class="headerlink" href="#inverse-pade" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.polyapprox.inverse_pade">
-<code class="sig-prename descclassname">mpsci.polyapprox.</code><code class="sig-name descname">inverse_pade</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">x0</em>, <em class="sig-param">m</em>, <em class="sig-param">n</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.polyapprox.inverse_pade" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.polyapprox.</code><code class="sig-name descname">inverse_pade</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">x0</span></em>, <em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.polyapprox.inverse_pade" title="Permalink to this definition">¶</a></dt>
 <dd><p>Padé approximant coefficients of the inverse of <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <p>Given a callable <span class="math notranslate nohighlight">\(f\)</span>, and a point <span class="math notranslate nohighlight">\(x_0\)</span>, find the Padé approximant of degree
 (m, n) of the inverse of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
@@ -85,12 +86,12 @@
 the Padé approximant coefficients of <span class="math notranslate nohighlight">\(g(y)\)</span> at <span class="math notranslate nohighlight">\(y_0\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(f'(x_0)\)</span> must be nonzero.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">40</span>
 </pre></div>
 </div>
 <p>Compute the Padé approximant to the inverse of sin(x) at x=1.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inverse_pade</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inverse_pade</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="go">([mpf(&#39;1.0&#39;),</span>
 <span class="go">  mpf(&#39;-5.428836087225345782152614868037223199487785&#39;),</span>
 <span class="go">  mpf(&#39;-14.59025586448337482707922792297134121701713&#39;),</span>
@@ -106,7 +107,7 @@ the Padé approximant coefficients of <span class="math notranslate nohighlight"
 </div>
 <p>Compare that to computing the Padé approximant of the arcsine
 function directly.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">taylor</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">asin</span><span class="p">,</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">taylor</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">asin</span><span class="p">,</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">pade</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="go">([mpf(&#39;1.0&#39;),</span>
 <span class="go">  mpf(&#39;-5.428836087225345782152614868037223199022362&#39;),</span>
@@ -136,7 +137,7 @@ function directly.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

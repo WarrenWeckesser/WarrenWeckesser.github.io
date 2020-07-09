@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hypergeometric distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -64,7 +65,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -75,35 +76,35 @@
             
   <span class="target" id="module-mpsci.distributions.hypergeometric"></span><div class="section" id="hypergeometric-distribution">
 <h1>Hypergeometric distribution<a class="headerlink" href="#hypergeometric-distribution" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="mpsci.distributions.hypergeometric.pmf">
-<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">pmf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.pmf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Probability mass function of the hypergeometric distribution.</p>
+<dl class="py function">
+<dt id="mpsci.distributions.hypergeometric.cdf">
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">ntotal</span></em>, <em class="sig-param"><span class="n">ngood</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function of the hypergeometric distribution.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.distributions.hypergeometric.logpmf">
-<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">logpmf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.logpmf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">logpmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">ntotal</span></em>, <em class="sig-param"><span class="n">ngood</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.logpmf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logarithm of the PMF of the hypergeometric distribution.</p>
 <p><cite>logpmf</cite> computes the natural logarithm of the probability mass function
 of the hypergeometric distribution.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mpsci.distributions.hypergeometric.cdf">
-<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.cdf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cumulative distribution function of the hypergeometric distribution.</p>
+<dl class="py function">
+<dt id="mpsci.distributions.hypergeometric.pmf">
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">pmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">ntotal</span></em>, <em class="sig-param"><span class="n">ngood</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.pmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability mass function of the hypergeometric distribution.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.distributions.hypergeometric.sf">
-<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">ntotal</span></em>, <em class="sig-param"><span class="n">ngood</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the hypergeometric distribution.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.distributions.hypergeometric.support">
-<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">support</code><span class="sig-paren">(</span><em class="sig-param">ntotal</em>, <em class="sig-param">ngood</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.support" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.hypergeometric.</code><code class="sig-name descname">support</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ntotal</span></em>, <em class="sig-param"><span class="n">ngood</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.support" title="Permalink to this definition">¶</a></dt>
 <dd><p>Support of the hypergeometric distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -116,7 +117,7 @@ get the list of integers in the support.)</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sup</span><span class="p">,</span> <span class="n">pvals</span> <span class="o">=</span> <span class="n">hypergeometric</span><span class="o">.</span><span class="n">support</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sup</span><span class="p">,</span> <span class="n">pvals</span> <span class="o">=</span> <span class="n">hypergeometric</span><span class="o">.</span><span class="n">support</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sup</span><span class="p">,</span> <span class="n">pvals</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:2}</span><span class="s2"> </span><span class="si">{:10.7f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="p">)))</span>
 <span class="gp">...</span>
@@ -143,7 +144,7 @@ get the list of integers in the support.)</p></li>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

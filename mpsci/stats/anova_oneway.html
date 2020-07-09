@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>anova_oneway &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -64,7 +65,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -75,14 +76,14 @@
             
   <div class="section" id="anova-oneway">
 <h1>anova_oneway<a class="headerlink" href="#anova-oneway" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.stats.anova_oneway">
-<code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">anova_oneway</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.anova_oneway" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">anova_oneway</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.anova_oneway" title="Permalink to this definition">¶</a></dt>
 <dd><p>One-way analysis of variance (ANOVA) test.</p>
 <p>The number of replicates in each group may be different.</p>
 <p>Returns the F statistic and the p-value.</p>
 <p class="rubric">Example</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.stats</span> <span class="kn">import</span> <span class="n">anova_oneway</span>
 </pre></div>
@@ -93,7 +94,7 @@
 Here are shell measurements from the mussel Mytilus trossulus from five
 locations: Tillamook, Oregon; Newport, Oregon; Petersburg, Alaska; Magadan,
 Russia; and Tvarminne, Finland.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmook</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0571</span><span class="p">,</span> <span class="mf">0.0813</span><span class="p">,</span> <span class="mf">0.0831</span><span class="p">,</span> <span class="mf">0.0976</span><span class="p">,</span> <span class="mf">0.0817</span><span class="p">,</span> <span class="mf">0.0859</span><span class="p">,</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmook</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0571</span><span class="p">,</span> <span class="mf">0.0813</span><span class="p">,</span> <span class="mf">0.0831</span><span class="p">,</span> <span class="mf">0.0976</span><span class="p">,</span> <span class="mf">0.0817</span><span class="p">,</span> <span class="mf">0.0859</span><span class="p">,</span>
 <span class="gp">... </span>         <span class="mf">0.0735</span><span class="p">,</span> <span class="mf">0.0659</span><span class="p">,</span> <span class="mf">0.0923</span><span class="p">,</span> <span class="mf">0.0836</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nport</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0873</span><span class="p">,</span> <span class="mf">0.0662</span><span class="p">,</span> <span class="mf">0.0672</span><span class="p">,</span> <span class="mf">0.0819</span><span class="p">,</span> <span class="mf">0.0749</span><span class="p">,</span> <span class="mf">0.0649</span><span class="p">,</span>
 <span class="gp">... </span>         <span class="mf">0.0835</span><span class="p">,</span> <span class="mf">0.0725</span><span class="p">]</span>
@@ -124,7 +125,7 @@ Russia; and Tvarminne, Finland.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

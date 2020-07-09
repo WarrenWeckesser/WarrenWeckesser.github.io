@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binomial distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -64,7 +65,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -75,21 +76,9 @@
             
   <span class="target" id="module-mpsci.distributions.binomial"></span><div class="section" id="binomial-distribution">
 <h1>Binomial distribution<a class="headerlink" href="#binomial-distribution" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="mpsci.distributions.binomial.pmf">
-<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">pmf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">n</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.pmf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Probability mass function of the binomial distribution.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="mpsci.distributions.binomial.logpmf">
-<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">logpmf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">n</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.logpmf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Natural log of the probability mass function of the binomial distribution.</p>
-</dd></dl>
-
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.distributions.binomial.cdf">
-<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">n</em>, <em class="sig-param">p</em>, <em class="sig-param">method='incbeta'</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'incbeta'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cumulative distribution function of the binomial distribution.</p>
 <p><cite>method</cite> must be either “sumpmf” or “incbeta”.  When <cite>method</cite> is “sumpmf”,
 the CDF is computed with a simple sum of the PMF values.  When <cite>method</cite>
@@ -98,15 +87,27 @@ generally faster than the “sumpmf” method, but for large values of k
 or n, the incomplete beta function of mpmath might fail.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
+<dt id="mpsci.distributions.binomial.logpmf">
+<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">logpmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.logpmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Natural log of the probability mass function of the binomial distribution.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="mpsci.distributions.binomial.mean">
-<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the binomial distribution.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
+<dt id="mpsci.distributions.binomial.pmf">
+<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">pmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.pmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability mass function of the binomial distribution.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="mpsci.distributions.binomial.var">
-<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param">n</em>, <em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.var" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variance of the binomial distribution.</p>
 </dd></dl>
 
@@ -123,7 +124,7 @@ or n, the incomplete beta function of mpmath might fail.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

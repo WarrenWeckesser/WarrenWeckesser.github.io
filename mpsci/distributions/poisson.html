@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poisson distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.poisson"></span><div class="section" id="poisson-distribution">
+<h1>Poisson distribution<a class="headerlink" href="#poisson-distribution" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="mpsci.distributions.poisson.cdf">
+<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>CDF of the Poisson distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.poisson.logpmf">
+<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">logpmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.logpmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Natural log of the probability mass function of the binomial distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.poisson.mean">
+<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the Poisson distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.poisson.mle">
+<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">mle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.mle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum likelihood estimate for the Poisson distribution.</p>
+<p>Returns lambda, the parameter of the Poisson distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.poisson.pmf">
+<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">pmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.pmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability mass function of the Poisson distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.poisson.sf">
+<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function of the Poisson distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.poisson.var">
+<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the Poisson distribution.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

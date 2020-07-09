@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multivariate hypergeometric distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -64,7 +65,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -75,12 +76,28 @@
             
   <span class="target" id="module-mpsci.distributions.multivariate_hypergeometric"></span><div class="section" id="multivariate-hypergeometric-distribution">
 <h1>Multivariate hypergeometric distribution<a class="headerlink" href="#multivariate-hypergeometric-distribution" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
+<dt id="mpsci.distributions.multivariate_hypergeometric.pmf_dict">
+<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">pmf_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.pmf_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of the PMF of the multivariate hypergeometric distr.</p>
+<p>The keys are the points in the support, and the values are the
+corresponding probabilities.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pmf</span> <span class="o">=</span> <span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">pmf_dict</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">pmf</span><span class="p">)</span>
+<span class="go">24</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="n">pmf</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="go">0.1798201798201798</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
 <dt id="mpsci.distributions.multivariate_hypergeometric.support">
-<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">support</code><span class="sig-paren">(</span><em class="sig-param">colors</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">support</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator of the support of the multivariate hypergeometric distribution.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">support</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">6</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">support</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">6</span><span class="p">))</span>
 <span class="go">[[0, 0, 6],</span>
 <span class="go"> [0, 1, 5],</span>
 <span class="go"> [0, 2, 4],</span>
@@ -109,22 +126,6 @@
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mpsci.distributions.multivariate_hypergeometric.pmf_dict">
-<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">pmf_dict</code><span class="sig-paren">(</span><em class="sig-param">colors</em>, <em class="sig-param">nsample</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.pmf_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a dictionary of the PMF of the multivariate hypergeometric distr.</p>
-<p>The keys are the points in the support, and the values are the
-corresponding probabilities.</p>
-<p class="rubric">Example</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pmf</span> <span class="o">=</span> <span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">pmf_dict</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">6</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">pmf</span><span class="p">)</span>
-<span class="go">24</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="n">pmf</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="go">0.1798201798201798</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </div>
 
 
@@ -138,7 +139,7 @@ corresponding probabilities.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

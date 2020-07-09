@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generalized inverse Gaussian distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -64,7 +65,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -75,9 +76,50 @@
             
   <span class="target" id="module-mpsci.distributions.geninvgauss"></span><div class="section" id="generalized-inverse-gaussian-distribution">
 <h1>Generalized inverse Gaussian distribution<a class="headerlink" href="#generalized-inverse-gaussian-distribution" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
+<dt id="mpsci.distributions.geninvgauss.cdf">
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">loc</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function of the generalized inverse Gaussian
+distribution.</p>
+<p>The CDF is computed by using mpmath.quad to numerically integrate the PDF.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.geninvgauss.logpdf">
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">loc</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log of the PDF of the generalized inverse Gaussian distribution.</p>
+<p>The PDF for <span class="math notranslate nohighlight">\(x &gt; \textsf{loc}\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{z^{(p - 1)}\exp\left(-\frac{b}{2}\left(z + \frac{1}{z}\right)\right)}
+      {s K_{p}(b)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> is the scale, <span class="math notranslate nohighlight">\(z = (x - \textsf{loc})/s\)</span>, and <span class="math notranslate nohighlight">\(K_p(b)\)</span> is the modified Bessel
+function of the second kind.  For <span class="math notranslate nohighlight">\(x \le \textsf{loc}\)</span>, the PDF is zero.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.geninvgauss.mean">
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">loc</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the generalized inverse Gaussian distribution.</p>
+<p>The mean is:</p>
+<div class="math notranslate nohighlight">
+\[\textsf{loc} + \textsf{scale} \frac{K_{p+1}(b)}{K_p(b)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(K_n(x)\)</span> is the modified Bessel function of the second kind
+(implemented in mpmath as besselk(n, x)).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.geninvgauss.mode">
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">mode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">loc</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mode of the generalized inverse Gaussian distribution.</p>
+<p>The mode is:</p>
+<div class="math notranslate nohighlight">
+\[\textsf{loc} +
+\textsf{scale} \frac{p - 1 + \sqrt{(p - 1)^2 + b^2}}{b}\]</div>
+</dd></dl>
+
+<dl class="py function">
 <dt id="mpsci.distributions.geninvgauss.pdf">
-<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.pdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">loc</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.pdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Probability density function of the generalized inverse Gaussian
 distribution.</p>
 <p>The PDF for <span class="math notranslate nohighlight">\(x &gt; \textsf{loc}\)</span> is:</p>
@@ -88,53 +130,12 @@ distribution.</p>
 function of the second kind.  For <span class="math notranslate nohighlight">\(x \le \textsf{loc}\)</span>, the PDF is zero.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mpsci.distributions.geninvgauss.logpdf">
-<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.logpdf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log of the PDF of the generalized inverse Gaussian distribution.</p>
-<p>The PDF for <span class="math notranslate nohighlight">\(x &gt; \textsf{loc}\)</span> is:</p>
-<div class="math notranslate nohighlight">
-\[\frac{z^{(p - 1)}\exp\left(-\frac{b}{2}\left(z + \frac{1}{z}\right)\right)}
-      {s K_{p}(b)}\]</div>
-<p>where <span class="math notranslate nohighlight">\(s\)</span> is the scale, <span class="math notranslate nohighlight">\(z = (x - \textsf{loc})/s\)</span>, and <span class="math notranslate nohighlight">\(K_p(b)\)</span> is the modified Bessel
-function of the second kind.  For <span class="math notranslate nohighlight">\(x \le \textsf{loc}\)</span>, the PDF is zero.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="mpsci.distributions.geninvgauss.cdf">
-<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.cdf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cumulative distribution function of the generalized inverse Gaussian
-distribution.</p>
-<p>The CDF is computed by using mpmath.quad to numerically integrate the PDF.</p>
-</dd></dl>
-
-<dl class="function">
+<dl class="py function">
 <dt id="mpsci.distributions.geninvgauss.sf">
-<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">loc</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the generalized inverse Gaussian distribution.</p>
 <p>The survival function is computed by using mpmath.quad to numerically
 integrate the PDF.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="mpsci.distributions.geninvgauss.mean">
-<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.mean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Mean of the generalized inverse Gaussian distribution.</p>
-<p>The mean is:</p>
-<div class="math notranslate nohighlight">
-\[\textsf{loc} + \textsf{scale} \frac{K_{p+1}(b)}{K_p(b)}\]</div>
-<p>where <span class="math notranslate nohighlight">\(K_n(x)\)</span> is the modified Bessel function of the second kind
-(implemented in mpmath as besselk(n, x)).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="mpsci.distributions.geninvgauss.mode">
-<code class="sig-prename descclassname">mpsci.distributions.geninvgauss.</code><code class="sig-name descname">mode</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">b</em>, <em class="sig-param">loc=0</em>, <em class="sig-param">scale=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.mode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Mode of the generalized inverse Gaussian distribution.</p>
-<p>The mode is:</p>
-<div class="math notranslate nohighlight">
-\[\textsf{loc} +
-\textsf{scale} \frac{p - 1 + \sqrt{(p - 1)^2 + b^2}}{b}\]</div>
 </dd></dl>
 
 </div>
@@ -150,7 +151,7 @@ integrate the PDF.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
