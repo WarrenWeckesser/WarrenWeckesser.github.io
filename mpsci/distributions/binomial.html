@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binomial distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -106,6 +106,17 @@ or n, the incomplete beta function of mpmath might fail.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="mpsci.distributions.binomial.sf">
+<code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'incbeta'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function of the binomial distribution.</p>
+<p><cite>method</cite> must be either “sumpmf” or “incbeta”.  When <cite>method</cite> is “sumpmf”,
+the survival function is computed with a simple sum of the PMF values.
+When <cite>method</cite> is “incbeta”, the incomplete beta function is used. This
+method is generally faster than the “sumpmf” method, but for large values
+of k or n, the incomplete beta function of mpmath might fail.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="mpsci.distributions.binomial.var">
 <code class="sig-prename descclassname">mpsci.distributions.binomial.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variance of the binomial distribution.</p>
@@ -124,7 +135,7 @@ or n, the incomplete beta function of mpmath might fail.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

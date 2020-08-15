@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>logsumexp &#8212; mpsci  documentation</title>
+    <title>variation &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -74,12 +74,20 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="logsumexp">
-<span id="mpsci-fun-logsumexp"></span><h1>logsumexp<a class="headerlink" href="#logsumexp" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="variation">
+<h1>variation<a class="headerlink" href="#variation" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="mpsci.fun.logsumexp">
-<code class="sig-prename descclassname">mpsci.fun.</code><code class="sig-name descname">logsumexp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.logsumexp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the log of the sum of exponentials of the input sequence.</p>
+<dt id="mpsci.stats.variation">
+<code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">variation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">ddof</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.variation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The variation of x.</p>
+<p>The variation the ratio of the standard deviation to the mean:</p>
+<blockquote>
+<div><p>std(x, ddof) / mean(x)</p>
+</div></blockquote>
+<p>Note that, unlike <cite>var</cite> and <cite>std</cite>, the default value of <cite>ddof</cite> is 1.
+This is the more typical value used when computing the variation.</p>
+<p>(The implementation is simply std(x, ddof) / mean(x); no special
+handling is provided for <cite>nan</cite> values, a mean of 0, etc.)</p>
 </dd></dl>
 
 </div>
