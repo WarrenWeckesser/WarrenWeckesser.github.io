@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pearsonr &#8212; mpsci  documentation</title>
+    <title>Multivariate t Distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -74,16 +74,26 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="pearsonr">
-<h1>pearsonr<a class="headerlink" href="#pearsonr" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="module-mpsci.distributions.multivariate_t"></span><div class="section" id="multivariate-t-distribution">
+<h1>Multivariate t Distribution<a class="headerlink" href="#multivariate-t-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="mpsci.stats.pearsonr">
-<code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">pearsonr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">alternative</span><span class="o">=</span><span class="default_value">'two-sided'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.pearsonr" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pearson’s correlation coefficient.</p>
-<p>Returns the correlation coefficient r and the p-value.</p>
-<p>x and y must be one-dimensional sequences with the same lengths.</p>
-<p>The function assumes all the values in x and y are finite
-(no <cite>inf</cite>, no <cite>nan</cite>).</p>
+<dt id="mpsci.distributions.multivariate_t.logpdf">
+<code class="sig-prename descclassname">mpsci.distributions.multivariate_t.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">nu</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em>, <em class="sig-param"><span class="n">scale_inv</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_t.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Natural logarithm of the PDF for the multivariate t distribution.</p>
+<p><cite>loc</cite> must be a sequence.  <cite>scale</cite> is the scale matrix; it
+must be an instance of <cite>mpmath.matrix</cite>.  <cite>scale</cite> must be
+positive definite.</p>
+<p>If given, <cite>scale_inv</cite> must be the inverse of <cite>scale</cite>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.multivariate_t.pdf">
+<code class="sig-prename descclassname">mpsci.distributions.multivariate_t.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">nu</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em>, <em class="sig-param"><span class="n">scale_inv</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_t.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>PDF for the multivariate t distribution.</p>
+<p><cite>loc</cite> must be a sequence.  <cite>scale</cite> is the scale matrix; it
+must be an instance of <cite>mpmath.matrix</cite>.  <cite>scale</cite> must be
+positive definite.</p>
+<p>If given, <cite>scale_inv</cite> must be the inverse of <cite>scale</cite>.</p>
 </dd></dl>
 
 </div>
