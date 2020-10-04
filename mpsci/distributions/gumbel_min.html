@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gumbel probability distribution (for minima) &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.gumbel_min"></span><div class="section" id="gumbel-probability-distribution-for-minima">
+<h1>Gumbel probability distribution (for minima)<a class="headerlink" href="#gumbel-probability-distribution-for-minima" title="Permalink to this headline">¶</a></h1>
+<p>This is the same distribution as:</p>
+<ul class="simple">
+<li><p><cite>scipy.stats.gumbel_l</cite>;</p></li>
+<li><p>Wolfram Alpha’s <cite>GumbelDistribution</cite>.</p></li>
+</ul>
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.cdf">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function for the Gumbel distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.invcdf">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">invcdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.invcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the CDF for the Gumbel distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.invsf">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">invsf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.invsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the survival function for the Gumbel distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.logpdf">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log of the PDF of the Gumbel distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.mean">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the Gumbel distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.mle">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">mle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">loc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.mle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum likelihood estimates for the Gumbel distribution.</p>
+<p><cite>x</cite> must be a sequence of numbers–it is the data to which the
+Gumbel distribution is to be fit.</p>
+<p>If either <cite>loc</cite> or <cite>scale</cite> is not None, the parameter is fixed
+at the given value, and only the other parameter will be fit.</p>
+<p>Returns maximum likelihood estimates of the <cite>loc</cite> and <cite>scale</cite>
+parameters.</p>
+<p class="rubric">Examples</p>
+<p>Imports and mpmath configuration:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="kn">import</span> <span class="n">gumbel_min</span>
+</pre></div>
+</div>
+<p>The data to be fit:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.86</span><span class="p">,</span> <span class="mf">14.8</span> <span class="p">,</span> <span class="mf">15.65</span><span class="p">,</span>  <span class="mf">8.72</span><span class="p">,</span>  <span class="mf">8.11</span><span class="p">,</span>  <span class="mf">8.15</span><span class="p">,</span> <span class="mf">13.01</span><span class="p">,</span> <span class="mf">13.36</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Unconstrained MLE:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gumbel_min</span><span class="o">.</span><span class="n">mle</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">(mpf(&#39;12.708439639698245696235&#39;), mpf(&#39;2.878444823276260896075&#39;))</span>
+</pre></div>
+</div>
+<p>If we know the scale is 2, we can add the argument <cite>scale=2</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gumbel_min</span><span class="o">.</span><span class="n">mle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">(mpf(&#39;13.18226169025112165358&#39;), mpf(&#39;2.0&#39;))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.nll">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">nll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.nll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative log-likelihood function for the Gumbel distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.pdf">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability density function for the Gumbel distribution (for minima).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.sf">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function for the Gumbel distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.gumbel_min.var">
+<code class="sig-prename descclassname">mpsci.distributions.gumbel_min.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gumbel_min.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the Gumbel distribution.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
