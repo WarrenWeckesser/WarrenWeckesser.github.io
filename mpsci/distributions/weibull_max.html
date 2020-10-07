@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weibull probability distribution (for maxima) &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.weibull_max"></span><div class="section" id="weibull-probability-distribution-for-maxima">
+<h1>Weibull probability distribution (for maxima)<a class="headerlink" href="#weibull-probability-distribution-for-maxima" title="Permalink to this headline">¶</a></h1>
+<p>This is the same distribution as:</p>
+<ul class="simple">
+<li><p><cite>scipy.stats.weibull_max</cite>;</p></li>
+<li><p>the Type III extreme value distribution used in the text “An Introduction
+to Statistical Modeling of Extreme Values” by Stuart Coles (Springer, 2001);</p></li>
+<li><p>the Weibull distribution given in the text “Modelling Extremal Events” by
+Embrechts, Klüppelberg and Mikosch (Springer, 1997);</p></li>
+</ul>
+<dl class="py function">
+<dt id="mpsci.distributions.weibull_max.cdf">
+<code class="sig-prename descclassname">mpsci.distributions.weibull_max.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function for the Weibull distribution (for maxima).</p>
+<p>This is a three-parameter version of the distribution.  The more typical
+two-parameter version has just the parameters k and scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.weibull_max.invcdf">
+<code class="sig-prename descclassname">mpsci.distributions.weibull_max.</code><code class="sig-name descname">invcdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.invcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the CDF for the Weibull distribution (for maxima).</p>
+<p>This is a three-parameter version of the distribution.  The more typical
+two-parameter version has just the parameters k and scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.weibull_max.invsf">
+<code class="sig-prename descclassname">mpsci.distributions.weibull_max.</code><code class="sig-name descname">invsf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.invsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the survival function for the Weibull distribution (for maxima).</p>
+<p>This is a three-parameter version of the distribution.  The more typical
+two-parameter version has just the parameters k and scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.weibull_max.logpdf">
+<code class="sig-prename descclassname">mpsci.distributions.weibull_max.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log of the PDF of the Weibull distribution (for maxima).</p>
+<p>This is a three-parameter version of the distribution.  The more typical
+two-parameter version has just the parameters k and scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.weibull_max.mean">
+<code class="sig-prename descclassname">mpsci.distributions.weibull_max.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the Weibull distribution (for maxima).</p>
+<p>This is a three-parameter version of the distribution.  The more typical
+two-parameter version has just the parameters k and scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.weibull_max.pdf">
+<code class="sig-prename descclassname">mpsci.distributions.weibull_max.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability density function for the Weibull distribution (for maxima).</p>
+<p>This is a three-parameter version of the distribution.  The more typical
+two-parameter version has just the parameters k and scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.weibull_max.sf">
+<code class="sig-prename descclassname">mpsci.distributions.weibull_max.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function for the Weibull distribution (for maxima).</p>
+<p>This is a three-parameter version of the distribution.  The more typical
+two-parameter version has just the parameters k and scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.weibull_max.var">
+<code class="sig-prename descclassname">mpsci.distributions.weibull_max.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the Weibull distribution (for maxima).</p>
+<p>This is a three-parameter version of the distribution.  The more typical
+two-parameter version has just the parameters k and scale.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
