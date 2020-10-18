@@ -8,19 +8,73 @@
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
+  <script>
+    window.MathJax = {
+        tex: {
+            tags: 'ams'
+        }
+    };
+  </script>
 </head>
 <body>
 <h2>Rayleigh distribution</h2>
+<p>
+Parameters: \(\mu\) is the location, \(\sigma\) is the scale.
+</p>
 <p>
 The PDF:
 \[f(x, \mu, \sigma) = \frac{1}{\sigma}\left(\frac{x-\mu}{\sigma}\right)
                       \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^{2}\right)
 \]
-The likelihood function for the vector \(x = x_1, x_2, \ldots, x_N \):
+The likelihood function for the vector \(\textbf{x} = \{x_1, x_2, \ldots, x_N\} \):
 \[
-L(x, \mu, \sigma) = \prod_{i}^{N}\frac{1}{\sigma}\left(\frac{x_i-\mu}{\sigma}\right)
+L(\textbf{x}, \mu, \sigma) = \prod_{i=1}^{N}\frac{1}{\sigma}\left(\frac{x_i-\mu}{\sigma}\right)
                       \exp\left(-\frac{1}{2}\left(\frac{x_i - \mu}{\sigma}\right)^{2}\right)
 \]
+The log-likelihood functions:
+\[
+\begin{split}
+\ell(\textbf{x}, \mu, \sigma)
+ & = \sum_{i=1}^{N} \left[
+    -2\log\sigma
+    + \log(x_i-\mu)
+    - \frac{1}{2}\left(\frac{x_i - \mu}{\sigma}\right)^{2}
+    \right] \\
+ & =
+    -2N\log\sigma
+    + \sum_{i=1}^{N} \left[
+        \log(x_i-\mu)
+        - \frac{1}{2}\left(\frac{x_i - \mu}{\sigma}\right)^{2}
+      \right]
+\end{split}
+\]
+Solve for the extremum:
+\begin{equation}
+\frac{\partial \ell}{\partial \sigma} =
+   \frac{-2N}{\sigma} + \frac{1}{\sigma^3}\sum_{i=1}^{N} (x_i - \mu)^2
+\end{equation}
+Setting \(\frac{\partial \ell}{\partial \sigma} = 0\) gives
+\begin{equation}
+    \sigma^2 = \frac{1}{2N}\sum_{i=1}^{N} (x_i - \mu)^2
+\end{equation}
+If the location parameter \(\mu\) is fixed, we're done.
+If \(\mu\) is not fixed, we need \(\frac{\partial \ell}{\partial \mu} \)
+\begin{equation}
+\frac{\partial \ell}{\partial \mu} =
+    \sum_{i=1}^{N} \left[ \frac{-1}{x_i - \mu} + \frac{x_i - \mu}{\sigma^2} \right]
+\end{equation}
+Setting \(\frac{\partial \ell}{\partial \mu} = 0\) gives
+\begin{equation}
+  \sum_{i=1}^{N}(x_i - \mu) - \sigma^2 \sum_{i=1}^{N}\frac{1}{x_i - \mu} = 0
+\end{equation}
+With neither \(\mu\) nor \(\sigma\) fixed, we have two equations to solve
+simultaneously.  There isn't an explicit solution, but we can use the
+expression for \(\sigma^2\) to reduce the problem to a single equation
+for \(\mu\) that must be solved numerically:
+\begin{equation}
+  \sum_{i=1}^{N}(x_i - \mu) - \left(\frac{1}{2N}\sum_{i=1}^{N} (x_i - \mu)^2\right) \sum_{i=1}^{N}\frac{1}{x_i - \mu} = 0
+
+\end{equation}
 </p>
 </body>
 </html>
