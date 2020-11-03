@@ -76,6 +76,107 @@
             
   <span class="target" id="module-mpsci.distributions.multivariate_hypergeometric"></span><div class="section" id="multivariate-hypergeometric-distribution">
 <h1>Multivariate hypergeometric distribution<a class="headerlink" href="#multivariate-hypergeometric-distribution" title="Permalink to this headline">¶</a></h1>
+<p>The multivariate hypergeometric distribution is a generalization of the
+hypergeometric distribution.</p>
+<dl class="py function">
+<dt id="mpsci.distributions.multivariate_hypergeometric.cov">
+<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">cov</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.cov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Covariance matrix of the multivariate hypergeometric distribution.</p>
+<p>Let n be the length of <cite>colors</cite>. The n x n covariance matrix is
+represented as a list of lists, where the length of the outer list
+and the lengths of the inner lists are all n.</p>
+<p class="rubric">Examples</p>
+<p>First configure the default mpmath precision.  Also import <cite>pprint</cite>
+for nicer printed output.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<p>Some examples of the <cite>cov</cite> function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="kn">import</span> <span class="n">multivariate_hypergeometric</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">cov</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">18</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">[[mpf(&#39;1.034482758620689655172413793&#39;),</span>
+<span class="go">  mpf(&#39;-0.4137931034482758620689655172&#39;),</span>
+<span class="go">  mpf(&#39;-0.6206896551724137931034482759&#39;)],</span>
+<span class="go"> [mpf(&#39;-0.4137931034482758620689655172&#39;),</span>
+<span class="go">  mpf(&#39;1.655172413793103448275862069&#39;),</span>
+<span class="go">  mpf(&#39;-1.241379310344827586206896552&#39;)],</span>
+<span class="go"> [mpf(&#39;-0.6206896551724137931034482759&#39;),</span>
+<span class="go">  mpf(&#39;-1.241379310344827586206896552&#39;),</span>
+<span class="go">  mpf(&#39;1.862068965517241379310344828&#39;)]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">cov</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">[[mpf(&#39;0.24&#39;),</span>
+<span class="go">  mpf(&#39;-0.03428571428571428571428571429&#39;),</span>
+<span class="go">  mpf(&#39;-0.06857142857142857142857142857&#39;),</span>
+<span class="go">  mpf(&#39;-0.1371428571428571428571428571&#39;)],</span>
+<span class="go"> [mpf(&#39;-0.03428571428571428571428571429&#39;),</span>
+<span class="go">  mpf(&#39;0.4457142857142857142857142857&#39;),</span>
+<span class="go">  mpf(&#39;-0.1371428571428571428571428571&#39;),</span>
+<span class="go">  mpf(&#39;-0.2742857142857142857142857143&#39;)],</span>
+<span class="go"> [mpf(&#39;-0.06857142857142857142857142857&#39;),</span>
+<span class="go">  mpf(&#39;-0.1371428571428571428571428571&#39;),</span>
+<span class="go">  mpf(&#39;0.7542857142857142857142857143&#39;),</span>
+<span class="go">  mpf(&#39;-0.5485714285714285714285714286&#39;)],</span>
+<span class="go"> [mpf(&#39;-0.1371428571428571428571428571&#39;),</span>
+<span class="go">  mpf(&#39;-0.2742857142857142857142857143&#39;),</span>
+<span class="go">  mpf(&#39;-0.5485714285714285714285714286&#39;),</span>
+<span class="go">  mpf(&#39;0.96&#39;)]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.multivariate_hypergeometric.entropy">
+<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">entropy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entropy of the multivariate hypergeometric distribution.</p>
+<p>The entropy is computed using the natural logarithm.</p>
+<p class="rubric">Examples</p>
+<p>First configure the default mpmath precision.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<p>Some examples of the <cite>entropy</cite> function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="kn">import</span> <span class="n">multivariate_hypergeometric</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">entropy</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">18</span><span class="p">)</span>
+<span class="go">mpf(&#39;3.046643631879764168841250566&#39;)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">entropy</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">6</span><span class="p">)</span>
+<span class="go">mpf(&#39;2.877874138861812367967354693&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.multivariate_hypergeometric.mean">
+<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the multivariate hypergeometric distribution.</p>
+<p class="rubric">Examples</p>
+<p>First configure the default mpmath precision.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<p>Some examples of the <cite>mean</cite> function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="kn">import</span> <span class="n">multivariate_hypergeometric</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">18</span><span class="p">)</span>
+<span class="go">[mpf(&#39;3.0&#39;), mpf(&#39;6.0&#39;), mpf(&#39;9.0&#39;)]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span> <span class="mi">20</span><span class="p">)</span>
+<span class="go">[mpf(&#39;0.6451612903225806451612903226&#39;),</span>
+<span class="go"> mpf(&#39;1.290322580645161290322580645&#39;),</span>
+<span class="go"> mpf(&#39;2.58064516129032258064516129&#39;),</span>
+<span class="go"> mpf(&#39;5.161290322580645161290322581&#39;),</span>
+<span class="go"> mpf(&#39;10.32258064516129032258064516&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="py function">
 <dt id="mpsci.distributions.multivariate_hypergeometric.pmf_dict">
 <code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">pmf_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.pmf_dict" title="Permalink to this definition">¶</a></dt>

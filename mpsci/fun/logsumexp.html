@@ -78,8 +78,41 @@
 <span id="mpsci-fun-logsumexp"></span><h1>logsumexp<a class="headerlink" href="#logsumexp" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mpsci.fun.logsumexp">
-<code class="sig-prename descclassname">mpsci.fun.</code><code class="sig-name descname">logsumexp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.logsumexp" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.fun.</code><code class="sig-name descname">logsumexp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logs</span></em>, <em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.logsumexp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the log of the sum of exponentials of the input sequence.</p>
+<p class="rubric">Examples</p>
+<p>Imports and configuration:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.fun</span> <span class="kn">import</span> <span class="n">logsumexp</span>
+</pre></div>
+</div>
+<p>Test data:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>  <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">logsumexp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">mpf(&#39;3.202253447679351758368594485&#39;)</span>
+</pre></div>
+</div>
+<p>Compare that result to:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">fsum</span><span class="p">([</span><span class="n">mpmath</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]))</span>
+<span class="go">mpf(&#39;3.202253447679351758368594507&#39;)</span>
+</pre></div>
+</div>
+<p>Weight the data with the weights [1, 2, 0, 2]:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">logsumexp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
+<span class="go">mpf(&#39;1.83838776432614447252849022&#39;)</span>
+</pre></div>
+</div>
+<p>Compare to:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">fsum</span><span class="p">([</span><span class="n">wi</span><span class="o">*</span><span class="n">mpmath</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span><span class="p">,</span> <span class="n">wi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)]))</span>
+<span class="go">mpf(&#39;1.838387764326144472528490234&#39;)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
