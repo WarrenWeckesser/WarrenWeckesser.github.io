@@ -15,11 +15,177 @@
         }
     };
   </script>
+  <style>
+  body {
+    margin: 42px;
+  }
+  </style>
 </head>
 <body>
-<h2>Rayleigh distribution</h2>
+<ul>
+  <li><a href="#powerlaw">Power law distribution</a></li>
+  <li><a href="#rayleigh">Rayleigh distribution</a></li>
+</ul>
+
+<h2 id="powerlaw">Power law distribution</h2>
 <p>
-Parameters: \(\mu\) is the location, \(\sigma\) is the scale.
+Parameters
+<ul>
+<li>\(a\): shape, \(a > 0\)</li>
+<li>\(\mu\): location</li>
+<li>\(\sigma\): scale, \(\sigma\) > 0</li>
+</ul>
+<p>
+Support: \(\mu < x \le \mu + \sigma\)
+<p>
+PDF:
+\[
+  f(a, \mu, \sigma) = \frac{a}{\sigma}\left(\frac{x - \mu}{\sigma}\right)^{a-1}
+  = \frac{a}{\sigma^a}\left(x - \mu\right)^{a-1}
+\]
+log PDF:
+\[
+  \log f(a, \mu, \sigma) = \log a - a\log\sigma + (a - 1)\log(x - \mu)
+\]
+The log-likelihood function:
+\[
+  \ell(a, \mu, \sigma) = n\log a - n a \log\sigma + (a - 1)\sum_{i=0}^{N-1}\log(x_i - \mu)
+\]
+</p>
+<h4>Maximum likelihood estimation</h4>
+<p>
+The power law distribution has some technical issues that might require
+that we impose additional constraints on the inputs to the MLE fit procedure.
+</p>
+<p>
+<dl>
+<dt>\(\mu\)</dt>
+<dd>
+<p>
+Note that as \(\mu\) varies, the only term
+in \(\ell(a, \mu, \sigma)\) that changes is
+\((a - 1)\sum_{i=0}^{N-1}\log(x_i - \mu)\).
+</p>
+<p>
+If \(a > 1\), decreasing \(\mu\) causes that term to increase, so for the MLE, make \(\mu\)
+as small as possible.  For each \(x_{i}\) to be in the support of the
+distribution, we require \(x_{\max} \le \mu + \sigma\), or \(\mu \ge x_{\max} - \sigma\), so set
+\[
+  \mu = x_{\max} - \sigma
+\]
+</p>
+<p>
+If \(0 < a < 1\), the sign of that term changes, so for the MLE,
+we want to make \(\mu\) as large as possible.  This leads to
+\[
+  \mu = x_{\min}
+\]
+</p>
+</dd>
+<dt>\(\sigma\)</dt>
+<dd>
+<p>
+Note that as \(\sigma\) varies, the only term
+in \(\ell(a, \mu, \sigma)\) that changes is
+\(-n a \log \sigma\).
+To maximize this term, make \(\sigma\) as small as possible.
+To ensure that each \(x_{i}\) is in the support of the distribution, the
+smallest that \(\sigma\) can be is \(x_{\max} - x_{\min}\), so the MLE for
+\(\sigma\) is
+\[
+  \sigma = x_{\max} - x_{\min}
+\]
+</p>
+</dd>
+<dt>\(a\)</dt>
+<dd>
+<p>
+We can find the MLE for \(a\) through the first order condition for the extremum
+of \(\ell(a, \mu, \sigma)\).  We have
+\[
+  \frac{\partial \ell}{\partial a} =
+    \frac{n}{a} + \sum_{i=0}^{N-1} \log\left(\frac{x_i - \mu}{\sigma}\right)
+\]
+By setting \(\frac{\partial \ell}{\partial a} = 0\), we obtain
+\[
+  a = \frac{-n}{\sum_{i=0}^{N-1} \log\left(\frac{x_i - \mu}{\sigma}\right)}
+\]
+</p>
+</dd>
+</dl>
+</p>
+<p>
+Note that if we combine the expressions shown above for the MLEs for \(\mu\) and \(\sigma\), we have
+\[
+  \mu = x_{\min}
+\]
+and
+\[
+  \sigma = x_{\max} - x_{\min}
+\]
+This causes a problem, because it implies that when \(x_{i}\) is \(x_{\min}\),
+the expression \(x_{i} - \mu\) is 0.  In that case, likelihood function is 0
+if \(a > 1\), or \(\infty\) if \(0 < a < 1\),
+regardless of the value of the other parameters.  So the MLE is indeterminate.
+</p>
+<p>
+We can avoid this problem by imposing constraints on the arguments to the fitting
+procedure.  A basic constraint is that \(\mu < x_{i} \le \mu + \sigma\), which
+leads to these conditions when either \(\mu\) or \(\sigma\) are fixed:
+<ul>
+  <li>
+    If \(\mu\) is fixed (regardless of whether any of the other parameters
+    are fixed), we require
+    \[
+       \mu < x_{\min}
+    \]
+    (Note that the inequality is strict.)
+  </li>
+  <li>
+    If \(\sigma\) is fixed but \(\mu\) is not, we require
+    \[
+      \sigma \ge x_{\max} - x_{\min}
+    \]
+  </li>
+  <li>
+    If both \(\sigma\) and \(\mu\) are fixed, we require
+    \[
+      \sigma \ge x_{\max} - \mu
+    \]
+  </li>
+</ul>
+To avoid the indeterminate case, we can impose these requirements on the
+input to the MLE fitting procedure:
+<ul>
+  <li>
+    One or both of \(\mu\) and \(\sigma\) <em>must</em> be fixed.
+  </li>
+  <li>
+    If \(\sigma\) is fixed but \(\mu\) is not, the regular constraint
+    on \(\sigma\) becomes a strict inequality,
+    \[
+      \sigma > x_{\max} - x_{\min}
+    \]
+    In this case, the MLE for \(\mu\) is
+    \[
+      \mu = x_{\max} - \sigma
+    \]
+  </li>
+  <li>
+    If \(\mu\) is fixed but \(\sigma\) is not, the MLE for \(\sigma\)
+    is
+    \[
+      \sigma = x_{\max} - \mu
+    \]
+</ul>
+</p>
+<h2 id="rayleigh">Rayleigh distribution</h2>
+<p>
+Parameters
+<ul>
+<li>\(\mu\): location</li>
+<li>\(\sigma\): scale</li>
+</ul>
 </p>
 <p>
 The PDF:
@@ -31,7 +197,7 @@ The likelihood function for the vector \(\textbf{x} = \{x_1, x_2, \ldots, x_N\} 
 L(\textbf{x}, \mu, \sigma) = \prod_{i=1}^{N}\frac{1}{\sigma}\left(\frac{x_i-\mu}{\sigma}\right)
                       \exp\left(-\frac{1}{2}\left(\frac{x_i - \mu}{\sigma}\right)^{2}\right)
 \]
-The log-likelihood functions:
+The log-likelihood function:
 \[
 \begin{split}
 \ell(\textbf{x}, \mu, \sigma)
