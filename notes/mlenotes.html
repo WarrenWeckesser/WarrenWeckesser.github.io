@@ -54,6 +54,9 @@ The log-likelihood function:
 </p>
 <h4>Maximum likelihood estimation</h4>
 <p>
+(FIXME:  This section is longer than necessary; it needs some editing to be more consice.)
+</p>
+<p>
 The power law distribution has some technical issues that might require
 that we impose additional constraints on the inputs to the MLE fit procedure.
 </p>
@@ -166,10 +169,16 @@ input to the MLE fitting procedure:
     \[
       \sigma > x_{\max} - x_{\min}
     \]
-    In this case, the MLE for \(\mu\) is
+    The MLE for \(\mu\) depends on \(a \).  If \(a > 1\), then
     \[
       \mu = x_{\max} - \sigma
     \]
+    Otherwise, \(0 < a < 1\) and
+    \[
+      \mu = x_{\min}
+    \]
+    This is a problem, because it makes the likelihood function
+    infinite.
   </li>
   <li>
     If \(\mu\) is fixed but \(\sigma\) is not, the MLE for \(\sigma\)
@@ -178,6 +187,15 @@ input to the MLE fitting procedure:
       \sigma = x_{\max} - \mu
     \]
 </ul>
+</p>
+<p>
+The problem with the above set of rules is that the MLE for \(\sigma\)
+depends on \(a\), and of course the MLE for \(a\) depends on \(\mu\)
+and \(\sigma\).  One way to avoid the problem is to simply always require
+\(\mu\) be fixed, with a value less than \(x_{\min}\).  Then the
+MLE for \(\sigma\) (if it is not also fixed) is \(x_{\max} - \mu\) (i.e.
+make \(\sigma\) as small as possible), and then use the first order
+condition for \(a\) (if \(a\) is not fixed).
 </p>
 <h2 id="rayleigh">Rayleigh distribution</h2>
 <p>
