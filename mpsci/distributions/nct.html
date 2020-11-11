@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>revert &#8212; mpsci  documentation</title>
+    <title>Noncentral t distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -74,21 +74,27 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="revert">
-<span id="mpsci-polyapprox-revert"></span><h1>revert<a class="headerlink" href="#revert" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="module-mpsci.distributions.nct"></span><div class="section" id="noncentral-t-distribution">
+<h1>Noncentral t distribution<a class="headerlink" href="#noncentral-t-distribution" title="Permalink to this headline">¶</a></h1>
+<p>Currently only the shape parameters (degrees of freedom <cite>df</cite> and
+noncentrality <cite>nc</cite>) are implemented.</p>
 <dl class="py function">
-<dt id="mpsci.polyapprox.revert">
-<code class="sig-prename descclassname">mpsci.polyapprox.</code><code class="sig-name descname">revert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coeffs</span></em>, <em class="sig-param"><span class="n">taylor</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.polyapprox.revert" title="Permalink to this definition">¶</a></dt>
-<dd><p>Series reversion.</p>
-<p>Given <cite>coeffs</cite>, the Taylor coefficients of a function, find the
-Taylor coefficients of the compositional inverse of the function.</p>
-<p>The calculation here is based on the formulas for the coefficients
-of the inverse in terms of Bell polynomials:
-<a class="reference external" href="https://en.wikipedia.org/wiki/Bell_polynomials#Reversion_of_series">https://en.wikipedia.org/wiki/Bell_polynomials#Reversion_of_series</a></p>
-<p>If the argument <cite>taylor</cite> is True, the coefficients must be the
-Taylor series coefficients.  If it is not True, the coefficients
-are the derivatives.  That is, they are the Taylor coefficients
-multiplied by the factorial terms.</p>
+<dt id="mpsci.distributions.nct.mean">
+<code class="sig-prename descclassname">mpsci.distributions.nct.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">nc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nct.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the noncentral t distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.nct.pdf">
+<code class="sig-prename descclassname">mpsci.distributions.nct.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">nc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nct.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability density function of the noncentral t distribution.</p>
+<p>The infinite series is estimated with <cite>mpmath.nsum</cite>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.nct.var">
+<code class="sig-prename descclassname">mpsci.distributions.nct.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">nc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nct.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the noncentral t distribution.</p>
 </dd></dl>
 
 </div>
