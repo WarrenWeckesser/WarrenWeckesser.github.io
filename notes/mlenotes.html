@@ -47,7 +47,13 @@ log PDF:
 \[
   \log f(a, \mu, \sigma) = \log a - a\log\sigma + (a - 1)\log(x - \mu)
 \]
-The log-likelihood function for the vector \(\textbf{x} = \{x_1, x_2, \ldots, x_N\}\):
+The likelihood function for the vector \(\textbf{x} = \{x_1, x_2, \ldots, x_N\}\):
+\[
+  L(\textbf{x}, a, \mu, \sigma)
+    = \prod_{i=1}^{N} \frac{a}{\sigma^a}\left(x_i - \mu\right)^{a-1}
+    = \frac{a^{N}}{\sigma^{Na}}\prod_{i=1}^{N} \left(x_i - \mu\right)^{a-1}
+\]
+The log-likelihood function:
 \[
   \ell(\textbf{x}, a, \mu, \sigma) = N\log a - N a \log\sigma + (a - 1)\sum_{i=1}^{N}\log(x_i - \mu)
 \]
