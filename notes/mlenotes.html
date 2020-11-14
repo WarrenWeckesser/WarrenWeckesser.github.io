@@ -66,7 +66,7 @@ that we impose additional constraints on the inputs to the MLE fit procedure.
 <dd>
 <p>
 Note that as \(\mu\) varies, the only term
-in \(\ell(a, \mu, \sigma)\) that changes is
+in \(\ell(\textbf{x}, a, \mu, \sigma)\) that changes is
 \((a - 1)\sum_{i=1}^{N}\log(x_i - \mu)\).
 </p>
 <p>
@@ -89,8 +89,8 @@ we want to make \(\mu\) as large as possible.  This leads to
 <dd>
 <p>
 Note that as \(\sigma\) varies, the only term
-in \(\ell(a, \mu, \sigma)\) that changes is
-\(-n a \log \sigma\).
+in \(\ell(\textbf{x}, a, \mu, \sigma)\) that changes is
+\(-N a \log \sigma\).
 To maximize this term, make \(\sigma\) as small as possible.
 To ensure that each \(x_{i}\) is in the support of the distribution, the
 smallest that \(\sigma\) can be is \(x_{\max} - x_{\min}\), so the MLE for
@@ -104,7 +104,7 @@ smallest that \(\sigma\) can be is \(x_{\max} - x_{\min}\), so the MLE for
 <dd>
 <p>
 We can find the MLE for \(a\) through the first order condition for the extremum
-of \(\ell(a, \mu, \sigma)\).  We have
+of \(\ell(\textbf{x}, a, \mu, \sigma)\).  We have
 \[
   \frac{\partial \ell}{\partial a} =
     \frac{N}{a} + \sum_{i=1}^{N} \log\left(\frac{x_i - \mu}{\sigma}\right)
