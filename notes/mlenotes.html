@@ -47,9 +47,9 @@ log PDF:
 \[
   \log f(a, \mu, \sigma) = \log a - a\log\sigma + (a - 1)\log(x - \mu)
 \]
-The log-likelihood function:
+The log-likelihood function for the vector \(\textbf{x} = \{x_1, x_2, \ldots, x_N\}\):
 \[
-  \ell(a, \mu, \sigma) = n\log a - n a \log\sigma + (a - 1)\sum_{i=0}^{N-1}\log(x_i - \mu)
+  \ell(\textbf{x}, a, \mu, \sigma) = N\log a - N a \log\sigma + (a - 1)\sum_{i=0}^{N-1}\log(x_i - \mu)
 \]
 </p>
 <h4>Maximum likelihood estimation</h4>
@@ -107,11 +107,11 @@ We can find the MLE for \(a\) through the first order condition for the extremum
 of \(\ell(a, \mu, \sigma)\).  We have
 \[
   \frac{\partial \ell}{\partial a} =
-    \frac{n}{a} + \sum_{i=0}^{N-1} \log\left(\frac{x_i - \mu}{\sigma}\right)
+    \frac{N}{a} + \sum_{i=0}^{N-1} \log\left(\frac{x_i - \mu}{\sigma}\right)
 \]
 By setting \(\frac{\partial \ell}{\partial a} = 0\), we obtain
 \[
-  a = \frac{-n}{\sum_{i=0}^{N-1} \log\left(\frac{x_i - \mu}{\sigma}\right)}
+  a = \frac{-N}{\sum_{i=0}^{N-1} \log\left(\frac{x_i - \mu}{\sigma}\right)}
 \]
 </p>
 </dd>
