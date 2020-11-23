@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log-series distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.logseries"></span><div class="section" id="log-series-distribution">
+<h1>Log-series distribution<a class="headerlink" href="#log-series-distribution" title="Permalink to this headline">¶</a></h1>
+<p>This discrete distributions is also known as the logarithmic
+distribution <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Logarithmic distribution,
+<a class="reference external" href="https://en.wikipedia.org/wiki/Logarithmic_distribution">https://en.wikipedia.org/wiki/Logarithmic_distribution</a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="mpsci.distributions.logseries.cdf">
+<code class="sig-prename descclassname">mpsci.distributions.logseries.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.logseries.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>CDF of the log-series distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.logseries.logpmf">
+<code class="sig-prename descclassname">mpsci.distributions.logseries.</code><code class="sig-name descname">logpmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.logseries.logpmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Natural log of the PMF of the log-series distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.logseries.mean">
+<code class="sig-prename descclassname">mpsci.distributions.logseries.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.logseries.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the log-series distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.logseries.mode">
+<code class="sig-prename descclassname">mpsci.distributions.logseries.</code><code class="sig-name descname">mode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.logseries.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mode of the log-series distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.logseries.pmf">
+<code class="sig-prename descclassname">mpsci.distributions.logseries.</code><code class="sig-name descname">pmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.logseries.pmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability mass function of the log-series distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.logseries.sf">
+<code class="sig-prename descclassname">mpsci.distributions.logseries.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.logseries.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function of the log-series distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.logseries.var">
+<code class="sig-prename descclassname">mpsci.distributions.logseries.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.logseries.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the log-series distribution.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
