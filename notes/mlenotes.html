@@ -60,9 +60,6 @@ The log-likelihood function:
 </p>
 <h4>Maximum likelihood estimation</h4>
 <p>
-(FIXME:  This section is longer than necessary; it needs some editing to be more concise.)
-</p>
-<p>
 The power law distribution has some technical issues that might require
 that we impose additional constraints on the inputs to the MLE fit procedure.
 </p>
@@ -78,7 +75,7 @@ in \(\ell(\textbf{x}, a, \mu, \sigma)\) that changes is
 <p>
 If \(a > 1\), decreasing \(\mu\) causes that term to increase, so for the MLE, make \(\mu\)
 as small as possible.  For each \(x_{i}\) to be in the support of the
-distribution, we require \(x_{\max} \le \mu + \sigma\), or \(\mu \ge x_{\max} - \sigma\), so set
+distribution, we require \(x_{\max} \le \mu + \sigma\), or \(\mu \ge x_{\max} - \sigma\), we have the constraint
 \[
   \mu = x_{\max} - \sigma
 \]
@@ -99,10 +96,10 @@ in \(\ell(\textbf{x}, a, \mu, \sigma)\) that changes is
 \(-N a \log \sigma\).
 To maximize this term, make \(\sigma\) as small as possible.
 To ensure that each \(x_{i}\) is in the support of the distribution, the
-smallest that \(\sigma\) can be is \(x_{\max} - x_{\min}\), so the MLE for
-\(\sigma\) is
+smallest that \(\sigma\) can be is \(x_{\max} - x_{\min}\), but the
+general constraint is that
 \[
-  \sigma = x_{\max} - x_{\min}
+  \sigma = x_{\max} - \mu
 \]
 </p>
 </dd>
@@ -124,84 +121,58 @@ By setting \(\frac{\partial \ell}{\partial a} = 0\), we obtain
 </dl>
 </p>
 <p>
-Note that if we combine the expressions shown above for the MLEs for \(\mu\) and \(\sigma\), we have
-\[
-  \mu = x_{\min}
-\]
-and
-\[
-  \sigma = x_{\max} - x_{\min}
-\]
-This causes a problem, because it implies that when \(x_{i}\) is \(x_{\min}\),
-the expression \(x_{i} - \mu\) is 0.  In that case, likelihood function is 0
-if \(a > 1\), or \(\infty\) if \(0 < a < 1\),
-regardless of the value of the other parameters.  So the MLE is indeterminate.
-</p>
-<p>
-We can avoid this problem by imposing constraints on the arguments to the fitting
-procedure.  A basic constraint is that \(\mu < x_{i} \le \mu + \sigma\), which
-leads to these conditions when either \(\mu\) or \(\sigma\) are fixed:
+Suppose we know a priori that \(a > 1\).
 <ul>
-  <li>
-    If \(\mu\) is fixed (regardless of whether any of the other parameters
-    are fixed), we require
-    \[
-       \mu < x_{\min}
-    \]
-    (Note that the inequality is strict.)
-  </li>
-  <li>
-    If \(\sigma\) is fixed but \(\mu\) is not, we require
-    \[
-      \sigma \ge x_{\max} - x_{\min}
-    \]
-  </li>
-  <li>
-    If both \(\sigma\) and \(\mu\) are fixed, we require
-    \[
-      \sigma \ge x_{\max} - \mu
-    \]
-  </li>
-</ul>
-To avoid the indeterminate case, we can impose these requirements on the
-input to the MLE fitting procedure:
-<ul>
-  <li>
-    One or both of \(\mu\) and \(\sigma\) <em>must</em> be fixed.
-  </li>
-  <li>
-    If \(\sigma\) is fixed but \(\mu\) is not, the regular constraint
-    on \(\sigma\) becomes a strict inequality,
-    \[
-      \sigma > x_{\max} - x_{\min}
-    \]
-    The MLE for \(\mu\) depends on \(a \).  If \(a > 1\), then
-    \[
-      \mu = x_{\max} - \sigma
-    \]
-    Otherwise, \(0 < a < 1\) and
-    \[
-      \mu = x_{\min}
-    \]
-    This is a problem, because it makes the likelihood function
-    infinite.
-  </li>
-  <li>
-    If \(\mu\) is fixed but \(\sigma\) is not, the MLE for \(\sigma\)
-    is
-    \[
-      \sigma = x_{\max} - \mu
-    \]
+<li>If both \(\mu\) and \(\sigma\) are free,
+the above shows that the MLE solution must satisfy the constraint
+\[
+  \sigma + \mu - x_{\max} = 0
+\]
+</li>
+<li>If \(\mu\) is fixed and \(\sigma\) is free, the MLE for \(\sigma\)
+is
+\[
+  \sigma = x_{\max} - \mu
+\]
+</li>
+<li>If \(\sigma\) is fixed and \(\mu\) is free, the MLE for \(\mu\)
+is
+\[
+  \mu = x_{\max} - \sigma
+\]
+</li>
 </ul>
 </p>
 <p>
-The problem with the above set of rules is that the MLE for \(\sigma\)
-depends on \(a\), and of course the MLE for \(a\) depends on \(\mu\)
-and \(\sigma\).  One way to avoid the problem is to simply always require
-\(\mu\) be fixed, with a value less than \(x_{\min}\).  Then the
-MLE for \(\sigma\) (if it is not also fixed) is \(x_{\max} - \mu\) (i.e.
-make \(\sigma\) as small as possible), and then use the first order
-condition for \(a\) (if \(a\) is not fixed).
+If we know a priori that \(0 < a < 1\), a problem arises.
+The discussion of \(\sigma\) still applies: if \(\sigma > x_{\max} - \mu\)
+(and \(\mu < x_{\min}\)), we can increase the likelihood by decreasing
+\(\sigma\).  So, for a fixed \(\mu < x_{\min}\), the MLE
+for \(\sigma\) is  \(\sigma = x_{\max} - \mu\).
+</p>
+<p>
+The earlier discussion of \(\mu\) above shows that, if \(\mu < x_{\min}\),
+we can increase the likelihood by increasing \(\mu\).  That suggests
+that the MLE for \(\mu\) is \(\mu = x_{\min}\).
+</p>
+<p>
+So it looks like the MLE for \(\mu\) and \(\sigma\) is
+\[
+    \mu = x_{\min}
+\]
+\[
+    \sigma = x_{\max} - x_{\min}
+\]
+The problem with this solution is that setting \(\mu = x_{\min}\) means
+that the term \((x_i - \mu)\) in the likelihood function is zero when
+\(x_i\) is \(x_{\min}\).  Then \((x_i - \mu)^{a - 1}\) "blows up" (i.e.
+the PDF blows up at \(x = x_{\min})\).
+Stated more carefully, the likelihood function diverges to infinity as
+\(\mu\) approaches \(x_{\min}\).  Should we then just accept this
+as the MLE?  The problem then is that it leaves \(a\) undetermined,
+because the blow up happens for any \(a\) in the interval
+\(0 < a < 1\).
+
 </p>
 <h2 id="rayleigh">Rayleigh distribution</h2>
 <p>
