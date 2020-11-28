@@ -6,8 +6,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>gmean &#8212; mpsci  documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -78,9 +78,11 @@
 <h1>gmean<a class="headerlink" href="#gmean" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mpsci.stats.gmean">
-<code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">gmean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.gmean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mpsci.stats.</code><code class="sig-name descname">gmean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.gmean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geometric mean of the values in the sequence x.</p>
 <p>All the values in x must be nonnegative.</p>
+<p>If weights is not None, it must be a sequence with the same length
+as x.  The sum of weights must not be zero.</p>
 </dd></dl>
 
 </div>
@@ -96,7 +98,7 @@
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
