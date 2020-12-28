@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Notes on the generalized hyperbolic distributions</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script>
+    window.MathJax = {
+        tex: {
+            tags: 'ams'
+        }
+    };
+  </script>
+  <style>
+  body {
+    margin: 42px;
+  }
+  </style>
+</head>
+<body>
+
+
+<h2 id="powerlaw">Generalized hyperbolic distribution</h2>
+<p>
+Parameters (notation from wikipedia)
+<ul>
+<li>\(\lambda\): shape</li>
+<li>\(\alpha\): shape</li>
+<li>\(\beta\): shape</li>
+<li>\(\delta\): scale (???)</li>
+<li>\(\mu\): location</li>
+</ul>
+<p>
+PDF:
+\begin{align}
+  f(x, \lambda, \alpha, \beta, \mu, \delta) &=
+    \frac{\left(\frac{\sqrt{\alpha^2 - \beta^2}}
+                     {\delta}
+          \right)^\lambda e^{\beta(x - \mu)}}
+         {\sqrt{2\pi} K_\lambda(\delta \sqrt{\alpha^2 - \beta^2} )}
+    \frac{K_{\lambda - \frac{1}{2}}\left(\alpha \sqrt{\delta^2 + (x - \mu)^2}\right)}
+         {\left(\frac{\sqrt{\delta^2 + (x - \mu)^2}}
+                     {\alpha}
+          \right)^{\frac{1}{2} - \lambda}} \\
+  &=
+    \frac{\left(\frac{\sqrt{\alpha^2 - \beta^2}}
+                     {\delta}
+          \right)^\lambda e^{\delta\beta\left(\frac{x - \mu}{\delta}\right)}}
+         {\sqrt{2\pi} K_\lambda(\delta \sqrt{\alpha^2 - \beta^2} )}
+    \frac{K_{\lambda - \frac{1}{2}}\left(\delta\alpha \sqrt{1 + \left(\frac{x - \mu}{\delta}\right)^2}\right)}
+         {\left(\frac{\delta}{\alpha}\sqrt{1 + \left(\frac{x - \mu}{\delta}\right)^2}
+          \right)^{\frac{1}{2} - \lambda}} \\
+  &=
+    \frac{1}{\delta}
+    \frac{\left(\frac{(\delta\alpha)^2 - (\delta\beta)^2}
+                     {\delta\alpha}\right)^\lambda (\delta\alpha)^\frac{1}{2}
+          e^{\delta\beta\left(\frac{x - \mu}{\delta}\right)}}
+         {\sqrt{2\pi} K_\lambda\left(\sqrt{(\delta\alpha)^2 - (\delta\beta)^2}\right)}
+    \frac{K_{\lambda - \frac{1}{2}}\left(\delta\alpha \sqrt{1 + \left(\frac{x - \mu}{\delta}\right)^2}\right)}
+         {\left(\sqrt{1 + \left(\frac{x - \mu}{\delta}\right)^2}
+          \right)^{\frac{1}{2} - \lambda}}
+\end{align}
+Note \(\alpha\) and \(\beta\) always occur as the a product
+\(\delta\alpha\) and \(\delta\beta\).  Let
+\begin{align}
+    \hat{\alpha} &= \delta \alpha \\
+    \hat{\beta}  & = \delta \beta
+\end{align}
+Then
+\[
+  f(x, \lambda, \hat{\alpha}, \hat{\beta}, \mu, \delta) =
+    \frac{1}{\delta}
+    \frac{\left(\frac{\hat{\alpha}^2 - \hat{\beta}^2}
+                     {\hat{\alpha}}\right)^\lambda \hat{\alpha}^\frac{1}{2}
+          e^{\hat{\beta}\left(\frac{x - \mu}{\delta}\right)}}
+         {\sqrt{2\pi} K_\lambda\left(\sqrt{\hat{\alpha}^2 - \hat{\beta}^2}\right)}
+    \frac{K_{\lambda - \frac{1}{2}}\left(\hat{\alpha} \sqrt{1 + \left(\frac{x - \mu}{\delta}\right)^2}\right)}
+         {\left(\sqrt{1 + \left(\frac{x - \mu}{\delta}\right)^2}
+          \right)^{\frac{1}{2} - \lambda}}
+\]
+This is now a loc-scale family, with location \(\mu\) and scale \(\delta\),
+but the defintion of two of the shape parameters is not the same as in the
+wikipedia article.
+</p>
+</body>
+</html>
