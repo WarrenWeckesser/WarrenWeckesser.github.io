@@ -12,8 +12,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -78,44 +76,44 @@
 <h1>Poisson distribution<a class="headerlink" href="#poisson-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mpsci.distributions.poisson.cdf">
-<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.poisson.</span></code><code class="sig-name descname"><span class="pre">cdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>CDF of the Poisson distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.poisson.logpmf">
-<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">logpmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.logpmf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.poisson.</span></code><code class="sig-name descname"><span class="pre">logpmf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.logpmf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural log of the probability mass function of the binomial distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.poisson.mean">
-<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.poisson.</span></code><code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the Poisson distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.poisson.mle">
-<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">mle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.mle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.poisson.</span></code><code class="sig-name descname"><span class="pre">mle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.mle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum likelihood estimate for the Poisson distribution.</p>
 <p>Returns lambda, the parameter of the Poisson distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.poisson.pmf">
-<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">pmf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.pmf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.poisson.</span></code><code class="sig-name descname"><span class="pre">pmf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.pmf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Probability mass function of the Poisson distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.poisson.sf">
-<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.poisson.</span></code><code class="sig-name descname"><span class="pre">sf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the Poisson distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.poisson.var">
-<code class="sig-prename descclassname">mpsci.distributions.poisson.</code><code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.var" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.poisson.</span></code><code class="sig-name descname"><span class="pre">var</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.poisson.var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variance of the Poisson distribution.</p>
 </dd></dl>
 
@@ -132,7 +130,7 @@
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

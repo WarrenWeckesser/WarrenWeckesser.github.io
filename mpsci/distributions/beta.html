@@ -12,8 +12,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -78,43 +76,56 @@
 <h1>Beta probability distribution<a class="headerlink" href="#beta-probability-distribution" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mpsci.distributions.beta.cdf">
-<code class="sig-prename descclassname">mpsci.distributions.beta.</code><code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.cdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">cdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cumulative distribution function of the beta distribution.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="mpsci.distributions.beta.interval_prob">
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">interval_prob</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.interval_prob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the probability of x in [x1, x2] for the beta distribution.</p>
+<p>Mathematically, this is the same as</p>
+<blockquote>
+<div><p>beta.cdf(x2, a, b) - beta.cdf(x1, a, b)</p>
+</div></blockquote>
+<p>but when the two CDF values are nearly equal, this function will give
+a more accurate result.</p>
+<p>x1 must be less than or equal to x2.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="mpsci.distributions.beta.invcdf">
-<code class="sig-prename descclassname">mpsci.distributions.beta.</code><code class="sig-name descname">invcdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.invcdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">invcdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.invcdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverse of the CDF of the beta distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.beta.invsf">
-<code class="sig-prename descclassname">mpsci.distributions.beta.</code><code class="sig-name descname">invsf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.invsf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">invsf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.invsf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverse of the survival function of the beta distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.beta.logpdf">
-<code class="sig-prename descclassname">mpsci.distributions.beta.</code><code class="sig-name descname">logpdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.logpdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">logpdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.logpdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural logarithm of the PDF of the beta distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.beta.mean">
-<code class="sig-prename descclassname">mpsci.distributions.beta.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the beta distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.beta.mle">
-<code class="sig-prename descclassname">mpsci.distributions.beta.</code><code class="sig-name descname">mle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">a</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">b</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.mle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">mle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.mle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum likelihood estimation for the beta distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.beta.mom">
-<code class="sig-prename descclassname">mpsci.distributions.beta.</code><code class="sig-name descname">mom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.mom" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">mom</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.mom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method of moments parameter estimation for the beta distribution.</p>
 <p>x must be a sequence of numbers from the interval (0, 1).</p>
 <p>Returns (a, b).</p>
@@ -122,13 +133,13 @@
 
 <dl class="py function">
 <dt id="mpsci.distributions.beta.pdf">
-<code class="sig-prename descclassname">mpsci.distributions.beta.</code><code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.pdf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">pdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.pdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Probability density function (PDF) for the beta distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="mpsci.distributions.beta.sf">
-<code class="sig-prename descclassname">mpsci.distributions.beta.</code><code class="sig-name descname">sf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.sf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.beta.</span></code><code class="sig-name descname"><span class="pre">sf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.beta.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the beta distribution.</p>
 </dd></dl>
 
@@ -145,7 +156,7 @@
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

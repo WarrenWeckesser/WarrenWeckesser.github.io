@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>odds_ratio &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="odds-ratio">
+<h1>odds_ratio<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="mpsci.stats.odds_ratio">
+<code class="sig-prename descclassname"><span class="pre">mpsci.stats.</span></code><code class="sig-name descname"><span class="pre">odds_ratio</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'conditional'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'two-sided'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.odds_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the odds ratio for a 2x2 contingency table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<em>array_like of ints</em>) – A 2x2 contingency table.  Elements must be non-negative integers.</p></li>
+<li><p><strong>kind</strong> (<em>str</em><em>, </em><em>optional</em>) – Which kind of odds ratio to compute, either the sample
+odds ratio (<code class="docutils literal notranslate"><span class="pre">kind='sample'</span></code>) or the conditional odds ratio
+(<code class="docutils literal notranslate"><span class="pre">kind='conditional'</span></code>).  Default is <code class="docutils literal notranslate"><span class="pre">'conditional'</span></code>.</p></li>
+<li><p><strong>alternative</strong> (<em>{'two-sided'</em><em>, </em><em>'less'</em><em>, </em><em>'greater'}</em><em>, </em><em>optional</em>) – <p>Defines the alternative hypothesis.
+The following options are available (default is ‘two-sided’):</p>
+<ul>
+<li><p>’two-sided’</p></li>
+<li><p>’less’: one-sided</p></li>
+<li><p>’greater’: one-sided</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>result</strong> – The returned object has two computed attributes:</p>
+<dl class="simple">
+<dt>odds_ratio<span class="classifier">mpmath.mpf</span></dt><dd><ul class="simple">
+<li><p>If <cite>kind</cite> is <code class="docutils literal notranslate"><span class="pre">'sample'</span></code>, this is
+<code class="docutils literal notranslate"><span class="pre">table[0,</span> <span class="pre">0]*table[1,</span> <span class="pre">1]/(table[0,</span> <span class="pre">1]*table[1,</span> <span class="pre">0])</span></code>.
+This is the prior odds ratio and not a posterior estimate.</p></li>
+<li><p>If <cite>kind</cite> is <code class="docutils literal notranslate"><span class="pre">'conditional'</span></code>, this is the conditional
+maximum likelihood estimate for the odds ratio. It is
+the noncentrality parameter of Fisher’s noncentral
+hypergeometric distribution with the same hypergeometric
+parameters as <cite>table</cite> and whose mean is <code class="docutils literal notranslate"><span class="pre">table[0,</span> <span class="pre">0]</span></code>.</p></li>
+</ul>
+</dd>
+<dt>pvalue<span class="classifier">fractions.Fraction or mpmath.mpf</span></dt><dd><p>The p-value associated with the computed odds ratio.</p>
+<ul class="simple">
+<li><p>If <cite>kind</cite> is <code class="docutils literal notranslate"><span class="pre">'sample'</span></code>, the p-value is based on the
+normal approximation to the distribution of the log of
+the sample odds ratio.</p></li>
+<li><p>If <cite>kind</cite> is <code class="docutils literal notranslate"><span class="pre">'conditional'</span></code>, the p-value is computed
+by <cite>mpsci.stats.fisher_exact</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<p>The object also stores the input arguments <cite>table</cite>, <cite>kind</cite>
+and <cite>alternative</cite> as attributes.</p>
+<p>The object has the method <cite>odds_ratio_ci</cite> that computes
+the confidence interval of the odds ratio.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>OddsRatioResult</cite> instance</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>J. Cornfield (1956), A statistical problem arising from
+retrospective studies. In Neyman, J. (ed.), Proceedings of
+the Third Berkeley Symposium on Mathematical Statistics and
+Probability 4, pp. 135-148.</p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">2</span></dt>
+<dd><p>H. Sahai and A. Khurshid (1996), Statistics in Epidemiology:
+Methods, Techniques, and Applications, CRC Press LLC, Boca
+Raton, Florida.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

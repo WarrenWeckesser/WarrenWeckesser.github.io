@@ -12,8 +12,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -80,7 +78,7 @@
 hypergeometric distribution.</p>
 <dl class="py function">
 <dt id="mpsci.distributions.multivariate_hypergeometric.cov">
-<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">cov</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.cov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.multivariate_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">cov</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.cov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Covariance matrix of the multivariate hypergeometric distribution.</p>
 <p>Let n be the length of <cite>colors</cite>. The n x n covariance matrix is
 represented as a list of lists, where the length of the outer list
@@ -130,7 +128,7 @@ for nicer printed output.</p>
 
 <dl class="py function">
 <dt id="mpsci.distributions.multivariate_hypergeometric.entropy">
-<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">entropy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.entropy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.multivariate_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">entropy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.entropy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Entropy of the multivariate hypergeometric distribution.</p>
 <p>The entropy is computed using the natural logarithm.</p>
 <p class="rubric">Examples</p>
@@ -153,7 +151,7 @@ for nicer printed output.</p>
 
 <dl class="py function">
 <dt id="mpsci.distributions.multivariate_hypergeometric.mean">
-<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.multivariate_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of the multivariate hypergeometric distribution.</p>
 <p class="rubric">Examples</p>
 <p>First configure the default mpmath precision.</p>
@@ -179,7 +177,7 @@ for nicer printed output.</p>
 
 <dl class="py function">
 <dt id="mpsci.distributions.multivariate_hypergeometric.pmf_dict">
-<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">pmf_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.pmf_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.multivariate_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">pmf_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.pmf_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dictionary of the PMF of the multivariate hypergeometric distr.</p>
 <p>The keys are the points in the support, and the values are the
 corresponding probabilities.</p>
@@ -195,7 +193,7 @@ corresponding probabilities.</p>
 
 <dl class="py function">
 <dt id="mpsci.distributions.multivariate_hypergeometric.support">
-<code class="sig-prename descclassname">mpsci.distributions.multivariate_hypergeometric.</code><code class="sig-name descname">support</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span></em>, <em class="sig-param"><span class="n">nsample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.multivariate_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">support</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator of the support of the multivariate hypergeometric distribution.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">multivariate_hypergeometric</span><span class="o">.</span><span class="n">support</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">6</span><span class="p">))</span>
@@ -240,7 +238,7 @@ corresponding probabilities.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

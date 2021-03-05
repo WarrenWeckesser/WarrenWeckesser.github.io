@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log-gamma probability distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.loggamma"></span><div class="section" id="log-gamma-probability-distribution">
+<h1>Log-gamma probability distribution<a class="headerlink" href="#log-gamma-probability-distribution" title="Permalink to this headline">¶</a></h1>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+<p>Unlike scipy, a location parameter is not included.</p>
+<dl class="py function">
+<dt id="mpsci.distributions.loggamma.cdf">
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></code><code class="sig-name descname"><span class="pre">cdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function of the log-gamma distribution.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.loggamma.interval_prob">
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></code><code class="sig-name descname"><span class="pre">interval_prob</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.interval_prob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the probability of x in [x1, x2] for the log-gamma distribution.</p>
+<p>Mathematically, this is the same as</p>
+<blockquote>
+<div><p>loggamma.cdf(x2, k, theta) - loggamma.cdf(x1, k, theta)</p>
+</div></blockquote>
+<p>but when the two CDF values are nearly equal, this function will give
+a more accurate result.</p>
+<p>x1 must be less than or equal to x2.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.loggamma.invcdf">
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></code><code class="sig-name descname"><span class="pre">invcdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.invcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the CDF for the log-gamma distribution.</p>
+<p>Also known as the quantile function.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.
+x0 is an initial guess for the quantile.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.loggamma.invsf">
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></code><code class="sig-name descname"><span class="pre">invsf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.invsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the survival functin for the log-gamma distribution.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.
+x0 is an initial guess for the quantile.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.loggamma.logpdf">
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></code><code class="sig-name descname"><span class="pre">logpdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log of the PDF of the log-gamma distribution.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.loggamma.pdf">
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></code><code class="sig-name descname"><span class="pre">pdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability density function for the log-gamma distribution.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="mpsci.distributions.loggamma.sf">
+<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></code><code class="sig-name descname"><span class="pre">sf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function of the log-gamma distribution.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

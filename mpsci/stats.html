@@ -12,8 +12,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -130,10 +128,13 @@ in <cite>scipy.stats</cite>.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="stats/gtest.html#mpsci.stats.gtest" title="mpsci.stats.gtest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gtest</span></code></a>(observed, expected)</p></td>
 <td><p>G-test (likelihood-ratio test, maximum likelihood test).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="stats/pearsonr.html#mpsci.stats.pearsonr" title="mpsci.stats.pearsonr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pearsonr</span></code></a>(x, y[, alternative])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="stats/odds_ratio.html#mpsci.stats.odds_ratio" title="mpsci.stats.odds_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">odds_ratio</span></code></a>(table[, kind, alternative])</p></td>
+<td><p>Compute the odds ratio for a 2x2 contingency table.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stats/pearsonr.html#mpsci.stats.pearsonr" title="mpsci.stats.pearsonr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pearsonr</span></code></a>(x, y[, alternative])</p></td>
 <td><p>Pearson’s correlation coefficient.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="stats/pearsonr_ci.html#mpsci.stats.pearsonr_ci" title="mpsci.stats.pearsonr_ci"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pearsonr_ci</span></code></a>(r, n, alpha[, alternative])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="stats/pearsonr_ci.html#mpsci.stats.pearsonr_ci" title="mpsci.stats.pearsonr_ci"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pearsonr_ci</span></code></a>(r, n, alpha[, alternative])</p></td>
 <td><p>Confidence interval of Pearson’s correlation coefficient.</p></td>
 </tr>
 </tbody>
@@ -150,7 +151,7 @@ in <cite>scipy.stats</cite>.</p>
       &copy;2020, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
