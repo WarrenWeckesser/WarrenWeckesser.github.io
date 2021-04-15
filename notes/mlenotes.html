@@ -23,9 +23,163 @@
 </head>
 <body>
 <ul>
+  <li><a href="#pareto">Pareto distribution</a></li>
   <li><a href="#powerlaw">Power law distribution</a></li>
   <li><a href="#rayleigh">Rayleigh distribution</a></li>
 </ul>
+
+<h2 id="pareto">Pareto distribution</h2>
+<p>
+Parameters
+<ul>
+<li>\(b\): shape, \(b > 0\)</li>
+<li>\(\mu\): location</li>
+<li>\(\sigma\): scale, \(\sigma\) > 0</li>
+</ul>
+</p>
+<p>
+Support: \(\frac{x - \mu}{\sigma} \ge 1\)
+</p>
+<p>
+PDF:
+\[
+  f(b, \mu, \sigma) = \frac{b\sigma^b}{\left(x - \mu\right)^{b+1}}
+\]
+log PDF:
+\[
+  \log f(b, \mu, \sigma) = \log(b) + b\log(\sigma) - (b+1)\log(x - \mu)
+\]
+The log-likelihood function:
+\begin{equation}
+  \ell(\textbf{x}, b, \mu, \sigma) =
+      N \log(b) + N b \log(\sigma) - (b+1)\sum_{i=1}^{N} \log(x_i - \mu)
+  \label{eq:pareto:ll}
+\end{equation}
+The first order derivative with respect to \(b\) is
+    \begin{equation}
+      \frac{\partial \ell}{\partial b}(\textbf{x}, b, \mu, \sigma) =
+         \frac{N}{b} + N\log(\sigma) - \sum_{i=1}^{N} \log(x_i - \mu)
+      \label{eq:pareto:bderiv}
+    \end{equation}
+</p>
+
+<h3>Maxiumum likelihood estimation for the Pareto distribution</h3>
+<p>
+Without loss of generality, assume that \(x_1\) is the smallest
+element in \(\textbf{x}\).  The condition that each data point remain
+in the support can be written
+\begin{equation}
+    x_1 \ge \mu + \sigma
+    \label{eq:pareto:support}
+\end{equation}
+</p>
+<p>
+The parameter \(\sigma\) appears in \(\ell(\textbf{x}, a, \mu, \sigma)\)
+in just one place, in the term \(N b \log(\sigma)\).  \(N b > 0\), so
+we can make the log-likelihood as large as we like by making \(\sigma\)
+large.  But we have to ensure that each point remains in the support,
+so the estimate for \( \sigma \) is determined by the boundary condition
+\eqref{eq:pareto:support}.  In particular, if \(\mu\) is fixed, then
+\(\sigma = x_1 - \mu\).
+
+The location parameter \(\mu\) appears in the sum in \eqref{eq:pareto:ll}.
+To maximize the log-likelihood, we should make \(\mu\) as large as possible,
+subject to the support constraint \eqref{eq:pareto:support}.
+
+So, if either \(\mu\) or \(\sigma\) are free, the following constraint
+must hold at the maximum likelihood estimate:
+\begin{equation}
+   \sigma + \mu = x_1
+   \label{eq:pareto:constraint}
+\end{equation}
+for the MLE.
+
+When both \(\mu\) and \(\sigma\) are free, we can use
+\eqref{eq:pareto:constraint} to eliminate \(\mu\) from the log-likelihood
+function, resulting in the reduced log-likelihood function:
+\begin{equation}
+  \tilde{\ell}(\textbf{x}, b, \sigma) =
+      N \log(b) + \left((N - 1) b - 1 \right) \log(\sigma) - (b+1)\sum_{i=2}^{N} \log(x_i - x_1 + \sigma)
+  \label{eq:pareto:llreduced}
+\end{equation}
+
+The first order conditions for the reduced log-likelihood function are
+\begin{equation}
+  \frac{\partial \tilde{\ell}}{\partial b}(\textbf{x}, b, \sigma) =
+    \frac{N}{b} + (N - 1)\log(\sigma) - \sum_{i=2}^{N}\log(x_i - x_1 + \sigma) = 0
+    \label{eq:pareto:bderiv0}
+\end{equation}
+and
+\begin{equation}
+  \frac{\partial \tilde{\ell}}{\partial \sigma}(\textbf{x}, b, \sigma) =
+    \frac{(N - 1) b - 1}{\sigma} - (b + 1)\sum_{i=2}^{N}\frac{1}{x_i - x_1 + \sigma} = 0
+  \label{eq:pareto:sigmaderiv0}
+\end{equation}
+
+</p>
+
+<p>
+Setting \eqref{eq:pareto:bderiv} equal to zero gives
+\begin{equation}
+  b = \frac{N}{-N\log(\sigma) + \sum_{i=1}^{N} \log(x_i - \mu) }
+    = \frac{1}{-\log(\sigma) + \frac{1}{N}\sum_{i=1}^{N} \log(x_i - \mu) }
+    \label{eq:pareto:b}
+\end{equation}
+</p>
+
+<p>
+To compute the MLE for the Pareto distribution, we have the following
+procedure.
+
+<ul>
+  <li>If the shape parameter \(b\) is free:
+    <ul>
+      <li>
+        If all three parameters are free:
+        <ul>
+          <li>Solve the pair of equations \eqref{eq:pareto:bderiv0} and
+            \eqref{eq:pareto:sigmaderiv0} for \(b\) and \(\sigma\).
+          </li>
+          <li>\(\mu = x_1 - \sigma\).</li>
+        </ul>
+      </li>
+      <li>
+        If either \(\mu\) is free or \(\sigma\) is free, but not both:
+        <ul>
+          <li>Determine \(\sigma\) or \(\mu\) (whichever is free) from
+            \eqref{eq:pareto:constraint}.
+          </li>
+          <li>Compute \(b\) from \eqref{eq:pareto:b}.</li>
+        </ul>
+      </li>
+      <li>
+        If both \(\mu\) and \(\sigma\) are fixed:
+        <ul>
+          <li>Compute \(b\) from \eqref{eq:pareto:b}.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>If the shape parameter \(b\) is fixed:
+    <ul>
+      <li>If both \(\mu\) and \(\sigma\) are free:
+        <ul>
+          <li>Solve \eqref{eq:pareto:sigmaderiv0} for \(\sigma\).
+          </li>
+          <li>\(\mu = x_1 - \sigma\).</li>
+        </ul>
+      <li>If either \(\mu\) is free or \(\sigma\) is free, but not both:
+        <ul>
+          <li>Determine \(\sigma\) or \(\mu\) (whichever is free) from
+            \eqref{eq:pareto:constraint}.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 <h2 id="powerlaw">Power law distribution</h2>
 <p>
@@ -174,6 +328,9 @@ because the blow up happens for any \(a\) in the interval
 \(0 < a < 1\).
 
 </p>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
 <h2 id="rayleigh">Rayleigh distribution</h2>
 <p>
 Parameters
