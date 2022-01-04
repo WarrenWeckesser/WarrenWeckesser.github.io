@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>cheby1_lp &#8212; mpsci  documentation</title>
+    <title>yeo_johnson &#8212; mpsci  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -73,18 +73,13 @@
 
           <div class="body" role="main">
             
-  <section id="cheby1-lp">
-<span id="mpsci-signal-cheby1-lp"></span><h1>cheby1_lp<a class="headerlink" href="#cheby1-lp" title="Permalink to this headline">¶</a></h1>
+  <section id="yeo-johnson">
+<span id="mpsci-fun-yeo-johnson"></span><h1>yeo_johnson<a class="headerlink" href="#yeo-johnson" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="mpsci.signal.cheby1_lp">
-<span class="sig-prename descclassname"><span class="pre">mpsci.signal.</span></span><span class="sig-name descname"><span class="pre">cheby1_lp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Wn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.signal.cheby1_lp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Chebyshev Type I lowpass digital filter design.</p>
-<p>This function computes the same result as</p>
-<blockquote>
-<div><p>scipy.signal.cheby1(n, rp, Wn, output=’zpk’)</p>
-</div></blockquote>
-<p>but it uses mpmath, and the results are returned in lists instead of
-numpy arrays.</p>
+<dt class="sig sig-object py" id="mpsci.fun.yeo_johnson">
+<span class="sig-prename descclassname"><span class="pre">mpsci.fun.</span></span><span class="sig-name descname"><span class="pre">yeo_johnson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmbda</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.yeo_johnson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yeo-Johnson transformation of x.</p>
+<p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Power_transform#Yeo%E2%80%93Johnson_transformation">https://en.wikipedia.org/wiki/Power_transform#Yeo%E2%80%93Johnson_transformation</a></p>
 </dd></dl>
 
 </section>

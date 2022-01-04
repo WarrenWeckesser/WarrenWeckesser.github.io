@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>distributions &#8212; mpsci  documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -60,7 +61,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -74,12 +75,12 @@
 
           <div class="body" role="main">
             
-  <span class="target" id="module-mpsci.distributions"><span id="distributions"></span></span><div class="section" id="id1">
+  <span class="target" id="module-mpsci.distributions"><span id="distributions"></span></span><section id="id1">
 <h1><code class="docutils literal notranslate"><span class="pre">distributions</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>A few probability distributions.</p>
 <p>Note that these implementations do not necessarily use the same parametrization
 as the corresponding implementations in <cite>scipy.stats</cite>.</p>
-</div>
+</section>
 <p><em>Univariate continuous distributions</em></p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -141,8 +142,19 @@ as the corresponding implementations in <cite>scipy.stats</cite>.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="distributions/gumbel_min.html#module-mpsci.distributions.gumbel_min" title="mpsci.distributions.gumbel_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gumbel_min</span></code></a></p></td>
 <td><p>Gumbel probability distribution (for minima)</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/invchi2.html#module-mpsci.distributions.invchi2" title="mpsci.distributions.invchi2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invchi2</span></code></a></p></td>
+<td><p>Inverse chi-square distribution</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/invgauss.html#module-mpsci.distributions.invgauss" title="mpsci.distributions.invgauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invgauss</span></code></a></p></td>
+<td><p>Inverse Gaussian distribution</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="distributions/laplace.html#module-mpsci.distributions.laplace" title="mpsci.distributions.laplace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplace</span></code></a></p></td>
-<td><p>Laplace distribution</p></td>
+<td><p>Laplace distribution
+
+:2: (WARNING/2) Title underline too short.
+
+Laplace distribution
+-------------------</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="distributions/levy.html#module-mpsci.distributions.levy" title="mpsci.distributions.levy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">levy</span></code></a></p></td>
 <td><p>Lévy Distribution</p></td>
@@ -172,15 +184,18 @@ as the corresponding implementations in <cite>scipy.stats</cite>.</p>
 <td><p>Rice distribution</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="distributions/t.html#module-mpsci.distributions.t" title="mpsci.distributions.t"><code class="xref py py-obj docutils literal notranslate"><span class="pre">t</span></code></a></p></td>
-<td><p>Student’s t distribution</p></td>
+<td><p>Student's t distribution</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="distributions/uniform.html#module-mpsci.distributions.uniform" title="mpsci.distributions.uniform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">uniform</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/truncnorm.html#module-mpsci.distributions.truncnorm" title="mpsci.distributions.truncnorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncnorm</span></code></a></p></td>
+<td><p>Truncated standard normal distribution</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/uniform.html#module-mpsci.distributions.uniform" title="mpsci.distributions.uniform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">uniform</span></code></a></p></td>
 <td><p>Uniform distribution</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="distributions/weibull_max.html#module-mpsci.distributions.weibull_max" title="mpsci.distributions.weibull_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weibull_max</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="distributions/weibull_max.html#module-mpsci.distributions.weibull_max" title="mpsci.distributions.weibull_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weibull_max</span></code></a></p></td>
 <td><p>Weibull probability distribution (for maxima)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="distributions/weibull_min.html#module-mpsci.distributions.weibull_min" title="mpsci.distributions.weibull_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weibull_min</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="distributions/weibull_min.html#module-mpsci.distributions.weibull_min" title="mpsci.distributions.weibull_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weibull_min</span></code></a></p></td>
 <td><p>Weibull probability distribution (for minima)</p></td>
 </tr>
 </tbody>
@@ -208,7 +223,7 @@ as the corresponding implementations in <cite>scipy.stats</cite>.</p>
 <td><p>Binomial distribution</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="distributions/fishers_noncentral_hypergeometric.html#module-mpsci.distributions.fishers_noncentral_hypergeometric" title="mpsci.distributions.fishers_noncentral_hypergeometric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fishers_noncentral_hypergeometric</span></code></a></p></td>
-<td><p>Fisher’s noncentral hypergeometric distribution</p></td>
+<td><p>Fisher's noncentral hypergeometric distribution</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="distributions/hypergeometric.html#module-mpsci.distributions.hypergeometric" title="mpsci.distributions.hypergeometric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hypergeometric</span></code></a></p></td>
 <td><p>Hypergeometric distribution</p></td>
@@ -248,10 +263,10 @@ as the corresponding implementations in <cite>scipy.stats</cite>.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2020, Warren Weckesser.
+      &copy;2021, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

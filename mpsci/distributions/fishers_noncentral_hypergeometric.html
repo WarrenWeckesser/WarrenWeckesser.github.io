@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Fisher’s noncentral hypergeometric distribution &#8212; mpsci  documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -59,7 +60,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -73,18 +74,18 @@
 
           <div class="body" role="main">
             
-  <span class="target" id="module-mpsci.distributions.fishers_noncentral_hypergeometric"></span><div class="section" id="fisher-s-noncentral-hypergeometric-distribution">
+  <span class="target" id="module-mpsci.distributions.fishers_noncentral_hypergeometric"></span><section id="fisher-s-noncentral-hypergeometric-distribution">
 <h1>Fisher’s noncentral hypergeometric distribution<a class="headerlink" href="#fisher-s-noncentral-hypergeometric-distribution" title="Permalink to this headline">¶</a></h1>
 <p><em>Preliminary version.  The parameters may change.</em></p>
 <dl class="py function">
-<dt id="mpsci.distributions.fishers_noncentral_hypergeometric.cdf">
-<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">cdf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.cdf" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mpsci.distributions.fishers_noncentral_hypergeometric.cdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>CDF of Fisher’s noncentral hypergeometric distribution.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mpsci.distributions.fishers_noncentral_hypergeometric.mean">
-<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.mean" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mpsci.distributions.fishers_noncentral_hypergeometric.mean">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean of Fisher’s noncentral hypergeometric distribution.</p>
 <p>This calculation is implemented as a weighted sum over the support.
 It may be very slow for large parameters.</p>
@@ -107,8 +108,8 @@ It may be very slow for large parameters.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mpsci.distributions.fishers_noncentral_hypergeometric.mode">
-<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">mode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.mode" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mpsci.distributions.fishers_noncentral_hypergeometric.mode">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></span><span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.mode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mode of Fisher’s noncentral hypergeometric distribution.</p>
 <p>In cases where the maximum of the PMF occurs twice, the larger index
 of the two is returned.</p>
@@ -146,26 +147,26 @@ mode.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mpsci.distributions.fishers_noncentral_hypergeometric.pmf">
-<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">pmf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.pmf" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mpsci.distributions.fishers_noncentral_hypergeometric.pmf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></span><span class="sig-name descname"><span class="pre">pmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.pmf" title="Permalink to this definition">¶</a></dt>
 <dd><p>PMF of Fisher’s noncentral hypergeometric distribution.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mpsci.distributions.fishers_noncentral_hypergeometric.pmf_dict">
-<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">pmf_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.pmf_dict" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mpsci.distributions.fishers_noncentral_hypergeometric.pmf_dict">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></span><span class="sig-name descname"><span class="pre">pmf_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.pmf_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>PMF as a dictionary.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mpsci.distributions.fishers_noncentral_hypergeometric.sf">
-<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">sf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.sf" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mpsci.distributions.fishers_noncentral_hypergeometric.sf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of Fisher’s noncentral hypergeometric distribution.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mpsci.distributions.fishers_noncentral_hypergeometric.support">
-<code class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></code><code class="sig-name descname"><span class="pre">support</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mpsci.distributions.fishers_noncentral_hypergeometric.support">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>Full</em> PMF for Fisher’s noncentral hypergeometric distribution.</p>
 <p>Requires 0 &lt; nc &lt;<span class="math notranslate nohighlight">\(\infty\)</span>.</p>
 <p>The support of the distribution is <span class="math notranslate nohighlight">\(k_{\textsf{min}} \le k \le k_{\textsf{max}}\)</span>, where</p>
@@ -208,7 +209,7 @@ mode.</p>
 </div>
 </dd></dl>
 
-</div>
+</section>
 
 
           </div>
@@ -218,10 +219,10 @@ mode.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2020, Warren Weckesser.
+      &copy;2021, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
