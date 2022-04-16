@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Truncated standard normal distribution</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script>
+    window.MathJax = {
+        tex: {
+            tags: 'ams'
+        }
+    };
+  </script>
+  <style>
+  body {
+    margin: 42px;
+  }
+  code {
+    color: rgb(0, 0, 160);
+    font-size: 125%;
+  }
+  pre {
+    color: rgb(0, 0, 160);
+    font-size: 125%;
+  }
+  </style>
+</head>
+<body>
+
+
+<h2 id="powerlaw">Notes for the truncated standard normal distribution</h2>
+<p>
+References
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Truncated_normal_distribution">Truncated normal distribution</a>
+  on wikipedia
+  </li>
+  <li><a href="https://people.sc.fsu.edu/~jburkardt/presentations/truncated_normal.pdf">The Truncated Normal Distribution</a>
+   (PDF), by John Burkardt</li>
+  <li><a href="https://warrenweckesser.github.io/mpsci/distributions/truncnorm.html#module-mpsci.distributions.truncnorm">mpsci.distributions.truncnorm</a>
+  provides an implementation of the truncated standard normal distribution based on <a href="https://mpmath.org/">mpmath</a>.
+  </li>
+</ul>
+</p>
+<p>
+Shape parameters are \(a\) and \(b\), which define the truncation interval \([a, b]\).
+</p>
+<p>
+We assume \(a \lt b\).
+</p>
+<h3>The standard normal distribution</h3>
+<p>
+Let \(\phi(x)\) and \(\Phi(x)\) the PDF and CDF, respectively, of the
+<a href="https://en.wikipedia.org/wiki/Normal_distribution#Standard_normal_distribution">standard normal distribution</a>.
+Let \(\bar{\Phi}(x)\) be the complementary CDF of the standard normal function.
+This function, also known as the survival function, is \(1 - \Phi(x)\).
+</p>
+<p>
+For future reference,
+
+\begin{equation}
+    \phi(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+    \label{eq:phi}
+\end{equation}
+
+\begin{align}
+    \Phi(x) &= \frac{1}{2} \left[1 + \textrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right] \\
+            &= 1 - \frac{1}{2}\textrm{erfc}\left(\frac{x}{\sqrt{2}}\right)
+\end{align}
+
+\begin{align}
+    \bar{\Phi}(x) &= \frac{1}{2} \left[1 - \textrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right] \\
+                  &= \frac{1}{2}\textrm{erfc}\left(\frac{x}{\sqrt{2}}\right)
+\end{align}
+
+where \(\textrm{erf}(x)\) is the
+<a href="https://en.wikipedia.org/wiki/Error_function">error function</a>,
+and \(\textrm{erfc}\) is the
+<a href="https://en.wikipedia.org/wiki/Error_function#Complementary_error_function">complementary error function</a>,
+\(\textrm{erfc}(x) = 1 - \textrm{erf}(x)\).
+We will also use the scaled complementary error function \(\textrm{erfcx}(x)\),
+
+\begin{equation}
+    \textrm{erfcx}(x) = e^{x^2}\textrm{erfc}(x)
+\end{equation}
+
+</p>
+<h3>The truncated standard normal distribution</h3>
+<p>
+We will frequently use the expression \(\Phi(b) - \Phi(a)\) (and several other mathematically equivalent expressions),
+so for convenience, define
+\begin{equation}
+    \Delta(a, b) = \Phi(b) - \Phi(a) = \bar{\Phi}(a) - \bar{\Phi}(b)
+\end{equation}
+
+\(\Delta(a, b)\) can be expressed many ways:
+\begin{align}
+    \Delta(a, b) &= \frac{1}{2}\left(\textrm{erf}\left(\frac{b}{\sqrt{2}}\right) - \textrm{erf}\left(\frac{a}{\sqrt{2}}\right)\right) \\
+                 &= \frac{1}{2}\left(\textrm{erfc}\left(\frac{a}{\sqrt{2}}\right) - \textrm{erfc}\left(\frac{b}{\sqrt{2}}\right)\right) \\
+                 &= \frac{1}{2}\left( e^{-a^2/2}\textrm{erfcx}\left(\frac{a}{\sqrt{2}}\right)
+                                     -e^{-b^2/2}\textrm{erfcx}\left(\frac{b}{\sqrt{2}}\right)\right) \\
+                 &= \frac{1}{2}e^{-a^2/2}\left(\textrm{erfcx}\left(\frac{a}{\sqrt{2}}\right)
+                                     -e^{(a^2-b^2)/2}\textrm{erfcx}\left(\frac{b}{\sqrt{2}}\right)\right) \\
+                 &= \frac{1}{\sqrt{2\pi}}\int_a^b e^{-t^2/2}\,dt \label{eq:delta_integral}
+\end{align}
+</p>
+<p>
+In the following formulas, \( a \le x \le b \) is assumed.
+</p>
+<h4>Probability density function</h4>
+<p>
+The PDF of truncated normal distribution
+\begin{equation}
+    f(x, a, b) = \frac{\phi(x)}{\Delta(a, b)}
+\end{equation}
+</p>
+<p>
+The CDF of the truncation normal distribution
+\begin{equation}
+    F(x, a, b) = \frac{\Delta(a, x)}{\Delta(a, b)}
+\end{equation}
+</p>
+<p>
+  The complementary CDF (i.e. the survival function) of the truncation normal distribution
+  \begin{equation}
+      S(x, a, b) = \bar{F}(x, a, b) = \frac{\Delta(x, b)}{\Delta(a, b)}
+  \end{equation}
+  </p>
+<p>
+In the following, \(X\) refers to a random variable with the truncated standard normal
+distribution, and \(E\) is the expectation operator.
+</p>
+<p>
+Mean
+\begin{equation}
+    \mu = E(X) =  f(a, a, b) - f(b, a, b) = \frac{\phi(a) - \phi(b)}{\Delta(a, b)}
+\end{equation}
+</p>
+<p>
+Variance
+\begin{align}
+    \mu_2 = E((X - \mu)^2) &= 1 + af(a, a, b) - bf(b, a, b) - \left(f(a, a, b) - f(b, a, b)\right)^2 \\
+                           &= 1 + \frac{a\phi(a) - b\phi(b)}{\Delta(a, b)} - \left(\frac{\phi(a) - \phi(b)}{\Delta(a, b)}\right)^2
+\end{align}
+</p>
+
+<h3>Computational issues</h3>
+<p>
+The naive implementations of the PDF, CDF and moment functions run into numerical problems.
+Before dealing with those, we first look at the most basic problem, that of computing \(\Delta(a, b)\).
+</p>
+
+<h4>Computing \(\Delta(a, b)\)</h4>
+
+<p>
+The naive method for computing \(\Delta(a, b)\) is to use a function
+that computes \(\Phi(x)\) such as <code>scipy.special.ndtr</code> and write
+<code>ndtr(b) - ndtr(a)</code>.  The problem with this implementation
+occurs when both \(a\) and \(b\) are positive and of sufficient magnitude that
+\(\Phi(a) \approx \Phi(b) \approx 1\).  The subtraction results in
+<a href="https://en.wikipedia.org/wiki/Catastrophic_cancellation">catastrophic loss of precision</a>.
+For example, \(\Delta(9, 9.5)\) is approximately 1.118093890878478e-19, as can
+be verified with <a href="https://mpmath.org/doc/current/functions/expintegrals.html#ncdf"><code>mpmath.ncdf</code></a>:
+<pre>
+  >>> import mpmath
+  >>> mpmath.mp.dps = 100
+  >>> float(mpmath.ncdf(9.5) - mpmath.ncdf(9))
+  1.118093890878478e-19
+</pre>
+With the naive calculation, we get 0:
+<pre>
+  >>> from scipy.special import ndtr
+  >>> ndtr(9.5) - ndtr(9)
+  0.0
+</pre>
+The standard method to compute \(\Delta(a, b)\) is to switch to the equivalent
+expression \(\bar{\Phi}(a) - \bar{\Phi}(b)\) when both \(a\) and \(b\) are
+positive. This expression can be implemented
+using <code>ndtr</code> by taking advantage of the symmetry of \(\Phi(x)\):
+<pre>
+  >>> ndtr(-9) - ndtr(-9.5)
+  1.1180938908784698e-19
+</pre>
+Loss of precision also occurs when \(a\) and \(b\) have "moderate" values
+(i.e. not far into the tails of the distribution) but are very close
+together.  For example, suppose \(b\) is -0.1, and \(a = b - \textrm{1e-7}\).
+With <code>mpmath</code> we compute
+<pre>
+  >>> b = -0.1
+  >>> a = b - 1e-7
+  >>> float(mpmath.ncdf(b) - mpmath.ncdf(a))
+  3.96952545503663e-08
+</pre>
+With <code>ndtr</code>,
+<pre>
+  >>> ndtr(b) - ndtr(a)
+  3.96952545278495e-08
+</pre>
+which has a relative error of approximately 6e-10.  That might be acceptable
+in some contexts, but when this result is used as a starting point for
+further calculations, the error might be amplified.
+</p>
+
+<h4>Computing the PDF</h4>
+
+<p>
+The PDF can be implemented in a straightforward way: use the standard formula
+for \(\phi(x)\), and use a "smart" implementation of \(\Delta(a, b)\).
+There are a few problems that arise:
+<ul>
+<li>
+  If the truncation interval is far in the tail of the normal
+  distribution, both \(\phi(x)\) and \(\Delta(a, b)\) could underflow to 0,
+  even though the ratio \(\phi(x)/\Delta(a, b)\) is a value that is
+  representable as, say, a double precision value.  For example,
+  consider \(a = 39\), \(b = 40\) and \(x = a = 39\).  Attempting
+  to compute \(f(x, a, b)\) with the straightforward formula
+  would result in <code>nan</code>,
+  because both the numerator and denominator are 0:
+  <pre>
+  >>> from scipy.stats import norm
+  >>> a = 39
+  >>> b = 40
+  >>> x = a
+  >>> norm.pdf(x)              # phi(x)
+  0.0
+  >>> norm.sf(a) - norm.sf(b)  # Delta(a, b)
+  0.0
+  </pre>
+  We can compute the true value with <code>truncnorm</code> from <code>mpsci.distributions</code>
+  (<code>mpmath.mp.dps</code> is still 100, as above):
+  <pre>
+  >>> from mpsci.distributions import truncnorm
+  >>> float(truncnorm.pdf(x, a, b))
+  39.02560741993011
+  </pre>
+<li>
+  Precision is lost when the truncation interval is small.  For example,
+  let \(a = 1\) and \(b = a + 10^{-8}\).  The value of the PDF at
+  \(x = a\) is 100000001.10774711:
+  <pre>
+  >>> a = 1
+  >>> b = a + 1e-8
+  >>> x = a
+  >>> float(truncnorm.pdf(x, a, b))
+  100000001.10774711
+  </pre>
+  The calculation using the straightforward formula gives only about 9 significant
+  digits:
+  <pre>
+  >>> norm.pdf(x) / (norm.sf(a) - norm.sf(b))
+  100000001.35619442
+  </pre>
+</li>
+</li>
+</ul>
+</p>
+We can avoid the underflow problem by reformulating the expression that is
+used to compute the PDF, as follows:
+\begin{align}
+    f(x, a, b) &= \frac{\phi(x)}{\Delta(a, b)} \\
+               &= \frac{1}{\sqrt{2\pi}}
+                  \frac{e^{-x^2/2}}
+                       {\frac{1}{2}e^{-a^2/2}\left(\textrm{erfcx}\left(\frac{a}{\sqrt{2}}\right)
+                                                   -e^{(a^2-b^2)/2}\textrm{erfcx}\left(\frac{b}{\sqrt{2}}\right)\right)} \\
+               &= \sqrt{\frac{2}{\pi}}
+                  \frac{e^{(a^2-x^2)/2}}
+                       {\textrm{erfcx}\left(\frac{a}{\sqrt{2}}\right)
+                        -e^{(a^2-b^2)/2}\textrm{erfcx}\left(\frac{b}{\sqrt{2}}\right)}
+\end{align}
+A Python implementation might look like
+<pre>
+  import numpy as np
+  from scipy.special import erfcx
+
+  SQRT2 = np.sqrt(2)
+  SQRT2_PI = np.sqrt(2 / np.pi)
+
+  def truncnorm_pdf(x, a, b):
+      if abs(a) > abs(b):
+          a, b = -b, -a
+      d = (a - b)*((a + b)/2))  # (a**2 - b**2)/2
+      t = (a - x)*((a + x)/2))  # (a**2 - x**2)/2
+      a2 = a / SQRT2
+      b2 = b / SQRT2
+      return SQRT2_PI * np.exp(t)/(erfcx(a2) - np.exp(d)*erfcx(b2))
+</pre>
+With this function, the result for the example given above is computed accurately:
+<pre>
+  >>> truncnorm_pdf(39, 39, 40)  # Should be 39.02560741993011
+  39.025607419930104
+</pre>
+For large \(x\), \(\textrm{erfcx(x)}\) behaves like \(\frac{1}{\sqrt{\pi} x}\), so
+the truncation interval would have to extremely far into the tail of the normal
+distribution to encounter an underflow problem in the denominator.  The numerator
+can still underflow, but that is acceptable; it just means that the best
+floating point representation of the PDF is, in fact, 0.
+<p>
+The above reformulation does not fix the problem of loss of precision when
+the truncation interval is small.
+<pre>
+  >>> a = 1
+  >>> b = 1 + 1e-8
+  >>> x = a
+  >>> truncnorm_pdf(x, a, b)  # Should be 100000001.10774711
+  100000003.08114655
+</pre>
+(The relative error in that example is actually worse than that of the straightforward
+calculation shown earlier.)
+</p>
+<p>
+A possible solution to the loss of precision is to detect when it is likely to
+happen, and use an alternative method to compute the PDF.  Possible alternatives
+include:
+<ol>
+  <li>
+    <p>
+    Use higher precision numbers for
+    the intermediate calculation.  Ultimately there would still be loss of precision
+    for even smaller intervals, but something like quad-precision or double-double
+    would cover most conceivably useful edge cases.
+    </p>
+    <p>
+    It would be nice if this could be implemented in C or C++ by just upgrading the
+    type of the variables from <code>double</code> to <code>long double</code>.
+    This won't work, however, because <code>long double</code> does not have
+    a standard number of bits of precision.  Depending on the platform and
+    compiler, <code>long double</code> might be 80 bit "extended precision", true 128 bit quad
+    precision, or the same 64 bit precision as <code>double</code>.
+    GCC provides the type <code>__float128</code>, but that is a GCC extension
+    that is not available with other compilers.
+    <p>
+    Alternatives include using Boost's multiprecision (since we now have boost
+    available), or using some other high precision floating point library.
+    </p>
+    <p>
+    As an experiment, I implemented a relatively simple double-double class in C++
+    called <code>DoubleDouble</code>, and created a function <code>truncnorm_pdf(x, a, b)</code>
+    for the <code>DoubleDouble</code> type.  This main program
+    <pre>  
+  int main(void)
+  {
+      DoubleDouble a, b, pa;
+
+      a = DoubleDouble{1.0, 0.0};
+      b = DoubleDouble{1.00000001, 0.0};  // 1 + 1e-8
+      pa = truncnorm_pdf(a, a, b);
+      disp("pa ", pa);
+
+      a = DoubleDouble{39.0, 0.0};
+      b = DoubleDouble{40.0, 0.0};
+      pa = truncnorm_pdf(a, a, b);
+      disp("pa ", pa);
+
+      return 0;
+  }
+    </pre>
+    prints
+    <pre>
+  pa     1.00000001107747108e+08 +   -4.45843655745240463e-09
+  pa     3.90256074199301111e+01 +   -2.34094507259581111e-15
+    </pre>
+    The first component of each result matches the expected double precision value exactly;
+    the discrepancies in the last few digits are the result of the <code>disp</code> function
+    printing a digit or two more than necessary.
+    </p>
+  </li>
+  <li>
+    <p>
+    Instead of computing the denominator with subtraction, use the integral (\ref{eq:delta_integral})
+    to compute the denominator.  This could be done using any numerical quadrature
+    method, such as those used in <code>scipy.integrate.quad</code> or in
+    <code>boost::math::quadrature::gauss_kronrod</code>.  We still need to avoid simultaneuous
+    underflow of the numerator and denominator; we can do this by writing \(f(x, a, b)\)
+    as
+    \begin{equation}
+        f(x, a, b) = \frac{e^{-x^2/2}}{\int_a^b e^{-t^2/2}\,dt} = \frac{1}{\int_a^b e^{(x^2 - t^2)/2}\,dt}
+    \end{equation}
+    </p>
+    <p>
+    A Python prototype using <code>scipy.integrate.quad</code> is
+    <pre>
+    from scipy.integrate import quad
+
+    def truncnorm_pdf_quad(x, a, b):
+        def integrand(t, x):
+            z = (x - t)*((x + t)/2)  # (x**2 - t**2)/2
+            return np.exp(z)
+        return 1/quad(integrand, a, b, args=(x,), epsrel=1e-13, epsabs=2e-15)[0]
+    </pre>
+    With this function, we get an accurate value for the above example:
+    <pre>
+    >>> truncnorm_pdf_quad(1, 1, 1+1e-8)  # Should be 100000001.10774711
+    100000001.10774708
+    </pre>
+    We can verify that this method also avoids underflow:
+    <pre>
+    >>> truncnorm_pdf_quad(39, 39, 40)  # Should be 39.02560741993011
+    39.02560741993146
+    </pre>
+    A drawback of this method is that it is potentially very slow; preliminary tests with
+    a C++ implementation based on  <code>boost::math::quadrature::gauss_kronrod</code>
+    were not encouraging.
+    </p>
+  </li>
+</ol>
+</p>
+<p>
+If this approach is to be used, there must be a way to detect that the subtraction
+will result in a significant loss of precision.  The code currently does this by
+computing the ratio of the numbers to be subtracted, and checking if the ratio is
+close to 1.  We know that both terms are positive, and that the second term is smaller
+than the first, so a condition for potential loss of precision in the expression
+\(s_1 - s_2\) is \(s_2/s_1 \gt \frac{1}{2} \).  (A higher threshold might also
+give acceptable results.)
+</p>
+
+<h4>Computing the mean</h4>
+
+<p>
+The mean is
+\begin{align}
+    \mu &= \frac{\phi(a) - \phi(b)}{\Delta(a, b)} \\
+        &= \sqrt{\frac{2}{\pi}} \frac{e^{-a^2/2} - e^{-b^2/2}}{\textrm{erfc}\left(\frac{a}{\sqrt{2}}\right) - \textrm{erfc}\left(\frac{b}{\sqrt{2}}\right)} \\
+        &= \sqrt{\frac{2}{\pi}} \frac{e^{-a^2/2} - e^{-b^2/2}}{e^{-a^2/2}\textrm{erfcx}\left(\frac{a}{\sqrt{2}}\right) - e^{-b^2/2}\textrm{erfcx}\left(\frac{b}{\sqrt{2}}\right)} \\
+        &= \sqrt{\frac{2}{\pi}} \frac{1 - e^{(a^2 -b^2)/2}}{\textrm{erfcx}\left(\frac{a}{\sqrt{2}}\right) - e^{(a^2-b^2)/2}\textrm{erfcx}\left(\frac{b}{\sqrt{2}}\right)}
+\end{align}
+</p>
+</body>
+</html>
