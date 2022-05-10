@@ -24,7 +24,7 @@
 <body>
 
 
-<h2 id="nakagmi">Nakagami distribution</h2>
+<h2 id="nakagami">Nakagami distribution</h2>
 <p>
 Parameters
 <ul>
@@ -59,6 +59,7 @@ F(x, \nu, a, s) = \frac{\gamma\left(\nu, \nu\left(\frac{x - a}{s}\right)\right)}
 \]
 where \(\gamma(u, v)\) is the lower incomplete Gamma function.
 </p>
+<h3>Maximum Likelihood Estimation</h3>
 <p>
 Likelihood function:
 \[
@@ -68,12 +69,32 @@ L(\textbf{x}, \nu, a, s) = \left(\frac{2 \nu^{\nu}}{s\Gamma(\nu)}\right)^N
 </p>
 <p>
 Log-likelihood function:
-\[
-\ell(\textbf{x}, \nu, a, s) =
+\begin{split}
+\ell(\textbf{x}, \nu, a, s) & =
     N\log 2 + N \nu \log \nu - N\log \Gamma(\nu) - N\log s
     + \left(2\nu - 1\right)\sum_{i=1}^{N}\log\left(\frac{x_i - a}{s}\right)
-    - \nu \sum_{i=1}^{N}\left(\frac{x_i - a}{s}\right)^2
+    - \nu \sum_{i=1}^{N}\left(\frac{x_i - a}{s}\right)^2 \\
+    & = N \left\{\log 2 + \nu\log\nu - \log\Gamma(\nu) - 2\nu\log s\right\} + (2\nu - 1)\sum_{i=1}^N\log(x_i - a) - \frac{\nu}{s^2} \sum_{i=1}^N (x_i - a)^2
+\end{split}
+</p>
+<p>
+Derivatives of the log-likelihood function:
+
+\begin{split}
+\frac{\partial \ell}{\partial \nu} & =
+    N\left\{1 + \log\nu - \psi(\nu) - 2\log s \right\} + 2\sum_{i=1}^N \log(x_i - a) - \frac{1}{s^2}\sum_{i=1}^N (x_i - a)^2 \\
+    & = N\left\{1 + \log\nu - \psi(\nu)\right\} + 2\sum_{i=1}^N\log z_i - \sum_{i=1}^N z_i^2
+\end{split}
+where \(z_i = (x_i - a)/s\) and \(\psi(\nu)\) is the digamma function, \(\psi(\nu) = \Gamma'(\nu)/\Gamma(\nu)\).
+
+\[
+\frac{\partial \ell}{\partial a} = -(2\nu - 1)\sum_{i=1}^N \frac{1}{x_i - a} + \frac{2\nu}{s^2}\sum_{i=1}^N (x_i - a)
 \]
+
+\begin{split}
+\frac{\partial \ell}{\partial s} & = -\frac{2N\nu}{s} + \frac{2\nu}{s^3}\sum_{i=1}^N (x_i - a)^2 \\
+    & = \frac{2\nu}{s}\left(-N + \frac{1}{s^2}\sum_{i=1}^N (x_i - a)^2 \right)
+\end{split}
 </p>
 </body>
 </html>
