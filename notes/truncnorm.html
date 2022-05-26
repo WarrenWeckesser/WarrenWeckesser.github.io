@@ -134,6 +134,16 @@ The CDF of the truncation normal distribution
 In the following, \(X\) refers to a random variable with the truncated standard normal
 distribution, and \(E\) is the expectation operator.
 </p>
+<h4>Moments</h4>
+<p>
+Noncentral momemts (moments about 0)
+\begin{split}
+  \mu_0' & = 1 \\
+  \mu_1' & = f(a, a, b) - f(b, a, b) \\
+  \mu_2' & = 1 + a f(a, a, b) - b f(b, a, b) \\
+  \mu_{k+1}' & = k\mu_{k-1}' + a^k f(a, a, b) - b^k f(b, a, b)
+\end{split}
+</p>
 <p>
 Mean
 \begin{equation}
@@ -147,7 +157,23 @@ Variance
                            &= 1 + \frac{a\phi(a) - b\phi(b)}{\Delta(a, b)} - \left(\frac{\phi(a) - \phi(b)}{\Delta(a, b)}\right)^2
 \end{align}
 </p>
-
+<p>
+Skewness (standard formula in terms of noncentral moments)
+\begin{equation}
+    \tilde{\mu}_3 = \frac{\mu_3}{\sigma^3}
+                  = \frac{\mu_3' + \mu_1'(-3\mu_2' + 2\mu_1'^2)}
+                         {\left(\mu_2' - \mu_1'^2\right)^\frac{3}{2}}
+\end{equation}
+</p>
+<p>
+Kurtosis (standard formula in terms of noncentral moments)
+\begin{equation}
+    \tilde{\mu}_4 = \frac{\mu_4}{\sigma^4}
+                  = \frac{\mu_4' + \mu_1' (-4\mu_3' + 3\mu_1(2\mu_2' - \mu_1'^2))}
+                         {\left(\mu_2' - \mu_1'^2\right)^4}
+\end{equation}
+The <em>excess kurtosis</em> is \(\tilde{\mu}_4 - 3\).
+</p>
 <h3>Computational issues</h3>
 <p>
 The naive implementations of the PDF, CDF and moment functions run into numerical problems.
