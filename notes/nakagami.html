@@ -96,5 +96,15 @@ where \(z_i = (x_i - a)/s\) and \(\psi(\nu)\) is the digamma function, \(\psi(\n
     & = \frac{2\nu}{s}\left(-N + \frac{1}{s^2}\sum_{i=1}^N (x_i - a)^2 \right)
 \end{split}
 </p>
+If the location parameter \(a\) is fixed, then the scale determined by \(\frac{\partial \ell}{\partial s} = 0\)
+can be solved for explicitly:
+\[
+  s = \left(\frac{1}{N} \sum_{i=1}^N(x_i - a)^2\right)^{\frac{1}{2}}
+\]
+Then \(\frac{\partial \ell}{\partial \nu} = 0\) gives
+\[
+  \log\nu - \psi(\nu) = -1 + \frac{1}{N}\sum_{i=1}^N z_i^2 - \frac{2}{N}\sum_{i=1}^N \log(x_i - a)
+\]
+and \(\nu\) can be found by numerically inverting \(\log\nu - \psi(\nu)\).
 </body>
 </html>
