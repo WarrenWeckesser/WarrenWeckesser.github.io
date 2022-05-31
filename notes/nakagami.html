@@ -59,13 +59,20 @@ F(x, \nu, a, s) = \frac{\gamma\left(\nu, \nu\left(\frac{x - a}{s}\right)\right)}
 \]
 where \(\gamma(u, v)\) is the lower incomplete Gamma function.
 </p>
+<p>
+Mean:
+\[
+     E(X(\nu, a, s)) = a + s\frac{\Gamma(\nu + 1/2)}{m^{1/2}\Gamma(\nu)}
+\]
+</p>
 <h3>Maximum Likelihood Estimation</h3>
 <p>
 Likelihood function:
-\[
+\begin{equation}
 L(\textbf{x}, \nu, a, s) = \left(\frac{2 \nu^{\nu}}{s\Gamma(\nu)}\right)^N
                            \prod_{i=1}^N \left(\frac{x_i - a}{s}\right)^{2\nu - 1}\exp\left(-\nu\left(\frac{x_i - a}{s}\right)^2\right)
-\]
+\label{eqn:likelihood}
+\end{equation}
 </p>
 <p>
 Log-likelihood function:
@@ -96,6 +103,8 @@ where \(z_i = (x_i - a)/s\) and \(\psi(\nu)\) is the digamma function, \(\psi(\n
     & = \frac{2\nu}{s}\left(-N + \frac{1}{s^2}\sum_{i=1}^N (x_i - a)^2 \right)
 \end{split}
 </p>
+<h5>Location parameter fixed</h5>
+<p>
 If the location parameter \(a\) is fixed, then the scale determined by \(\frac{\partial \ell}{\partial s} = 0\)
 can be solved for explicitly:
 \[
@@ -106,5 +115,17 @@ Then \(\frac{\partial \ell}{\partial \nu} = 0\) gives
   \log\nu - \psi(\nu) = -1 + \frac{1}{N}\sum_{i=1}^N z_i^2 - \frac{2}{N}\sum_{i=1}^N \log(x_i - a)
 \]
 and \(\nu\) can be found by numerically inverting \(\log\nu - \psi(\nu)\).
+</p>
+<h5>Location parameter not fixed</h5>
+<p>
+Suppose all three parameters are available for fitting the distribution.
+Then the problem is not well posed.  To see this, consider \(\eqref{eqn:likelihood}\),
+and without loss of generality, let \(x_1\) be the minimum of the elements of \(\textbf{x}\).
+Let \(\nu\) be any value in the interval \(0 \lt \nu \lt 1/2\), and let \(s\) be any
+positive value.  We can make the likelihood \(L(\textbf{x}, \nu, a, s)\) as large as
+we like by letting \(a\) approach \(x_1\) from below, because in that case, the \(2\nu - 1\)
+is negative, and the term \(((x_1 - a)/s)^{2\nu-1}\) goes to infinity while the other
+terms in the expression approach constants.
+</p>
 </body>
 </html>
