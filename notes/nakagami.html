@@ -65,6 +65,17 @@ Mean:
      E(X(\nu, a, s)) = a + s\frac{\Gamma(\nu + 1/2)}{m^{1/2}\Gamma(\nu)}
 \]
 </p>
+<h3>Qualitative changes as \(\nu\) is varied</h3>
+<p>
+There are qualitative changes in the PDF at \(\nu = 1/2\).  For \(0 \lt \nu \lt 1/2\),
+the PDF blows up at \(x = 0\).  For \(\nu > 1/2\), \(f(0, \nu, a, s)\) is 0.  For
+\(\nu = 1/2\), the distribution is the "half normal" distribution.
+</p>
+<p>
+<img src="nakagami_plots.svg" />
+</p>
+
+</p>
 <h3>Maximum Likelihood Estimation</h3>
 <p>
 Likelihood function:
@@ -76,44 +87,53 @@ L(\textbf{x}, \nu, a, s) = \left(\frac{2 \nu^{\nu}}{s\Gamma(\nu)}\right)^N
 </p>
 <p>
 Log-likelihood function:
-\begin{split}
-\ell(\textbf{x}, \nu, a, s) & =
+\begin{equation}
+\ell(\textbf{x}, \nu, a, s)  =
     N\log 2 + N \nu \log \nu - N\log \Gamma(\nu) - N\log s
     + \left(2\nu - 1\right)\sum_{i=1}^{N}\log\left(\frac{x_i - a}{s}\right)
-    - \nu \sum_{i=1}^{N}\left(\frac{x_i - a}{s}\right)^2 \\
-    & = N \left\{\log 2 + \nu\log\nu - \log\Gamma(\nu) - 2\nu\log s\right\} + (2\nu - 1)\sum_{i=1}^N\log(x_i - a) - \frac{\nu}{s^2} \sum_{i=1}^N (x_i - a)^2
-\end{split}
+    - \nu \sum_{i=1}^{N}\left(\frac{x_i - a}{s}\right)^2
+\label{eqn:loglikelihood}
+\end{equation}
 </p>
 <p>
 Derivatives of the log-likelihood function:
 
-\begin{split}
-\frac{\partial \ell}{\partial \nu} & =
-    N\left\{1 + \log\nu - \psi(\nu) - 2\log s \right\} + 2\sum_{i=1}^N \log(x_i - a) - \frac{1}{s^2}\sum_{i=1}^N (x_i - a)^2 \\
-    & = N\left\{1 + \log\nu - \psi(\nu)\right\} + 2\sum_{i=1}^N\log z_i - \sum_{i=1}^N z_i^2
-\end{split}
-where \(z_i = (x_i - a)/s\) and \(\psi(\nu)\) is the digamma function, \(\psi(\nu) = \Gamma'(\nu)/\Gamma(\nu)\).
+\begin{equation}
+\frac{\partial \ell}{\partial \nu} =
+    N\left\{1 + \log\nu - \psi(\nu)\right\} + 2\sum_{i=1}^N\log\left(\frac{x_i - a}{s}\right) - \frac{1}{s^2}\sum_{i=1}^N (x_i - a)^2
+\label{eqn:dl_dnu}
+\end{equation}
+where \(\psi(\nu)\) is the digamma function, \(\psi(\nu) = \Gamma'(\nu)/\Gamma(\nu)\).
 
-\[
+\begin{equation}
 \frac{\partial \ell}{\partial a} = -(2\nu - 1)\sum_{i=1}^N \frac{1}{x_i - a} + \frac{2\nu}{s^2}\sum_{i=1}^N (x_i - a)
-\]
+\label{eqn:dl_da}
+\end{equation}
 
+\begin{equation}
 \begin{split}
 \frac{\partial \ell}{\partial s} & = -\frac{2N\nu}{s} + \frac{2\nu}{s^3}\sum_{i=1}^N (x_i - a)^2 \\
     & = \frac{2\nu}{s}\left(-N + \frac{1}{s^2}\sum_{i=1}^N (x_i - a)^2 \right)
 \end{split}
+\label{eqn:dl_ds}
+\end{equation}
 </p>
-<h5>Location parameter fixed</h5>
 <p>
-If the location parameter \(a\) is fixed, then the scale determined by \(\frac{\partial \ell}{\partial s} = 0\)
-can be solved for explicitly:
-\[
+By setting  \(\frac{\partial \ell}{\partial s} = 0\) we obtain
+
+\begin{equation}
   s = \left(\frac{1}{N} \sum_{i=1}^N(x_i - a)^2\right)^{\frac{1}{2}}
-\]
-Then \(\frac{\partial \ell}{\partial \nu} = 0\) gives
-\[
-  \log\nu - \psi(\nu) = -1 + \frac{1}{N}\sum_{i=1}^N z_i^2 - \frac{2}{N}\sum_{i=1}^N \log(x_i - a)
-\]
+\label{eqn:s}
+\end{equation}
+
+<h5>Location parameter fixed</h5>
+
+If the location parameter \(a\) is fixed and the scale \(s\) is not fixed,
+then setting \(\frac{\partial \ell}{\partial \nu} = 0\)
+and using \eqref{eqn:s} gives
+\begin{equation}
+  \log\nu - \psi(\nu) =  - \frac{2}{N}\sum_{i=1}^N \log\left(\frac{x_i - a}{s}\right)
+\end{equation}
 and \(\nu\) can be found by numerically inverting \(\log\nu - \psi(\nu)\).
 </p>
 <h5>Location parameter not fixed</h5>
