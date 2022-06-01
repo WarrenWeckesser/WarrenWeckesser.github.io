@@ -40,30 +40,34 @@ The parametrization in the wikipedia article does not include a location paramet
 </p>
 <p>
 PDF:
-\[
+\begin{equation}
 f(x, \nu, a, s) = \frac{2 \nu^{\nu}}{s\Gamma(\nu)}\left(\frac{x - a}{s}\right)^{2\nu - 1}\exp\left(-\nu\left(\frac{x - a}{s}\right)^2\right)
-\]
+\label{eqn:pdf}
+\end{equation}
 </p>
 <p>
 Logarithm of the PDF:
-\[
+\begin{equation}
 \log f(x, \nu, a, s) = \log 2 + \nu \log \nu - \log \Gamma(\nu) - \log s
                      + \left(2\nu - 1\right)\log\left(\frac{x - a}{s}\right)
                      - \nu \left(\frac{x - a}{s}\right)^2
-\]
+\label{eqn:logpdf}
+\end{equation}
 </p>
 <p>
 CDF:
-\[
+\begin{equation}
 F(x, \nu, a, s) = \frac{\gamma\left(\nu, \nu\left(\frac{x - a}{s}\right)\right)}{\Gamma(\nu)}
-\]
+\label{eqn:cdf}
+\end{equation}
 where \(\gamma(u, v)\) is the lower incomplete Gamma function.
 </p>
 <p>
 Mean:
-\[
+\begin{equation}
      E(X(\nu, a, s)) = a + s\frac{\Gamma(\nu + 1/2)}{m^{1/2}\Gamma(\nu)}
-\]
+\label{eqn:mean}
+\end{equation}
 </p>
 <h3>Qualitative changes as \(\nu\) is varied</h3>
 <p>
@@ -118,23 +122,33 @@ where \(\psi(\nu)\) is the digamma function, \(\psi(\nu) = \Gamma'(\nu)/\Gamma(\
 \label{eqn:dl_ds}
 \end{equation}
 </p>
-<p>
-By setting  \(\frac{\partial \ell}{\partial s} = 0\) we obtain
 
+<h5>Location parameter fixed</h5>
+
+<p>
+Assume that the location parameter is fixed.
+</p>
+<p>
+If the scale is not fixed, then by setting  \(\frac{\partial \ell}{\partial s} = 0\) we obtain
 \begin{equation}
   s = \left(\frac{1}{N} \sum_{i=1}^N(x_i - a)^2\right)^{\frac{1}{2}}
 \label{eqn:s}
 \end{equation}
-
-<h5>Location parameter fixed</h5>
-
-If the location parameter \(a\) is fixed and the scale \(s\) is not fixed,
-then setting \(\frac{\partial \ell}{\partial \nu} = 0\)
-and using \eqref{eqn:s} gives
+</p>
+<p>
+If the shape parameter \(\nu\) is not fixed, then by setting
+\(\frac{\partial \ell}{\partial \nu} = 0\) we obtain
+\begin{equation}
+  \log\nu - \psi(\nu) = -1 + \frac{1}{N} \left(\frac{1}{s^2}\sum_{i=1}^N(x_i - a)^2 - 2\sum_{i=1}^N \log\left(\frac{x_i - a}{s}\right)\right)
+\label{eqn:nu_implicit}
+\end{equation}
+If the scale is also not fixed, the expression on the right can be simplified, resulting
+in
 \begin{equation}
   \log\nu - \psi(\nu) =  - \frac{2}{N}\sum_{i=1}^N \log\left(\frac{x_i - a}{s}\right)
+\label{eqn:nu_implicit_scale_free}
 \end{equation}
-and \(\nu\) can be found by numerically inverting \(\log\nu - \psi(\nu)\).
+In either case, \(\nu\) can be found by numerically inverting \(\log\nu - \psi(\nu)\).
 </p>
 <h5>Location parameter not fixed</h5>
 <p>
