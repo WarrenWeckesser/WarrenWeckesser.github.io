@@ -161,5 +161,20 @@ we like by letting \(a\) approach \(x_1\) from below, because in that case, the 
 is negative, and the term \(((x_1 - a)/s)^{2\nu-1}\) goes to infinity while the other
 terms in the expression approach constants.
 </p>
+<p>
+If the shape parameter \(\nu\) is fixed with \(\nu > 1/2\), then the problem
+described above is avoided.  The location \(a\) is found numerically by solving
+\(\frac{\partial \ell}{\partial \nu} = 0\), which is
+\begin{equation}
+  -(2\nu - 1)\sum_{i=1}^N \frac{1}{x_i - a} + \frac{2\nu}{s^2}\sum_{i=1}^N(x_i - a) = 0
+\end{equation}
+If the scale is not fixed, we can use \eqref{eqn:s} to eliminate \(s^2\) and obtain
+\begin{equation}
+  -(2\nu - 1)\sum_{i=1}^N \frac{1}{x_i - a} + 2\nu N\frac{\sum_{i=1}^N(x_i - a)}{\sum_{i=1}^N (x_i - a)^2} = 0
+\end{equation}
+In either version of the implicit equation for \(a\), the numerical solver must ensure
+that the solution where \(a \lt \textrm{min}\{x_i\}\) is returned.  (Typically there is a solution
+between each adjacent pair of values in the ordered set \(\{x_i\}\).)
+</p>
 </body>
 </html>
