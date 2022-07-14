@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Nakagami distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.nakagami"></span><section id="nakagami-distribution">
+<h1>Nakagami distribution<a class="headerlink" href="#nakagami-distribution" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Nakagami_distribution">https://en.wikipedia.org/wiki/Nakagami_distribution</a>.</p>
+<p>The parametrization used here matches that of SciPy:</p>
+<ul class="simple">
+<li><p>ν &gt; 0 is the shape parameter (same as m in the wikipedia article).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loc</span></code> is the location parameter.  (The wikipedia article does not
+include a location parameter for the distribution.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code> is the scale parameter. (<code class="docutils literal notranslate"><span class="pre">scale</span></code> = sqrt(Ω), where Ω
+is the “spread” parameter used in the wikipedia article.</p></li>
+</ul>
+<p>When ν = 1/2, the distribution is a half-normal distribution.  For
+ν &lt; 1/2, the PDF is 0 at x = 0; for ν &gt; 1/2, the PDF approaches
+infinity as x approaches 0.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.nakagami.cdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.nakagami.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nakagami.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function for the Nakagami distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.nakagami.logpdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.nakagami.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nakagami.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Natural logarithm of the PDF of the Nakagami distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.nakagami.mean">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.nakagami.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nakagami.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the Nakagami distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.nakagami.mle">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.nakagami.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nakagami.mle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum likelihood parameter estimation for the Nakagami distribution.</p>
+<p>x must be a sequence of numbers.</p>
+<p>Returns (nu, loc, scale).</p>
+<p>Currently a fixed loc <em>must</em> be given.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.nakagami.nll">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.nakagami.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nakagami.nll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative log-likelihood function for the Nakagami distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.nakagami.pdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.nakagami.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nakagami.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability density function for the Nakagami distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.nakagami.sf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.nakagami.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nakagami.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function for the Nakagami distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.nakagami.var">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.nakagami.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.nakagami.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the Nakagami distribution.</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2022, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -75,9 +75,14 @@
             
   <span class="target" id="module-mpsci.distributions.loggamma"></span><section id="log-gamma-probability-distribution">
 <h1>Log-gamma probability distribution<a class="headerlink" href="#log-gamma-probability-distribution" title="Permalink to this headline">¶</a></h1>
-<p>k is the shape parameter of the gamma distribution.
-theta is the scale parameter of the log-gamma distribution.</p>
-<p>Unlike scipy, a location parameter is not included.</p>
+<ul class="simple">
+<li><p>k is the shape parameter of the gamma distribution.</p></li>
+<li><p>theta is the scale parameter of the log-gamma distribution.</p></li>
+</ul>
+<p>In SciPy, this distribution is implemented as <cite>scipy.stats.loggamma</cite>.</p>
+<p>In the Wolfram language, this distribution is called <cite>ExpGammaDistribution</cite>.</p>
+<p>Unlike SciPy and Wolfram, a location parameter is not included in this
+implementation of the log-gamma distribution.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.loggamma.cdf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.cdf" title="Permalink to this definition">¶</a></dt>
@@ -121,9 +126,25 @@ x0 is an initial guess for the quantile.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.loggamma.kurtosis">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></span><span class="sig-name descname"><span class="pre">kurtosis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.kurtosis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Excess kurtosis of the log-gamma distribution.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.loggamma.logpdf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.logpdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log of the PDF of the log-gamma distribution.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.loggamma.mean">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the log-gamma distribution.</p>
 <p>k is the shape parameter of the gamma distribution.
 theta is the scale parameter of the log-gamma distribution.</p>
 </dd></dl>
@@ -140,6 +161,22 @@ theta is the scale parameter of the log-gamma distribution.</p>
 <dt class="sig sig-object py" id="mpsci.distributions.loggamma.sf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the log-gamma distribution.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.loggamma.skewness">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></span><span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.skewness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the log-gamma distribution.</p>
+<p>k is the shape parameter of the gamma distribution.
+theta is the scale parameter of the log-gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.loggamma.var">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.loggamma.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.loggamma.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the log-gamma distribution.</p>
 <p>k is the shape parameter of the gamma distribution.
 theta is the scale parameter of the log-gamma distribution.</p>
 </dd></dl>

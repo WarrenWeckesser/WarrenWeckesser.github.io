@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Gauss-Kuzmin distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.gauss_kuzmin"></span><section id="gauss-kuzmin-distribution">
+<h1>Gauss-Kuzmin distribution<a class="headerlink" href="#gauss-kuzmin-distribution" title="Permalink to this headline">¶</a></h1>
+<p>The Gauss–Kuzmin distribution is a discrete probability distribution
+that arises as the limit probability distribution of the coefficients
+in the continued fraction expansion of a random variable uniformly
+distributed in (0, 1).</p>
+<p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Kuzmin_distribution">https://en.wikipedia.org/wiki/Gauss%E2%80%93Kuzmin_distribution</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.cdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>CDF of the Gauss-Kuzmin distribution.</p>
+<p><cite>k</cite> is expected be an integer; the code does not check this.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.invcdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">invcdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.invcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the CDF of the Gauss-Kuzmin distribution.</p>
+<p>The distribution is discrete, but mpmath.mpf values are returned,
+to allow for returning <cite>inf</cite> when p is 1.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.invsf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">invsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.invsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the survival function of the Gauss-Kuzmin distribution.</p>
+<p>The distribution is discrete, but mpmath.mpf values are returned,
+to allow for returning <cite>inf</cite> when p is 0.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.logpmf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">logpmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.logpmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logarithm of the PMF of the Gauss-Kuzmin distribution.</p>
+<p><cite>k</cite> is expected be an integer; the code does not check this.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.mean">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the Gauss-Kuzmin distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.median">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">median</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.median" title="Permalink to this definition">¶</a></dt>
+<dd><p>Median of the Gauss-Kuzmin distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.mode">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mode of the Gauss-Kuzmin distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.pmf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">pmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.pmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability mass function (PMF) of the Gauss-Kuzmin distribution.</p>
+<p><cite>k</cite> is expected be an integer; the code does not check this.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.sf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function of the Gauss-Kuzmin distribution.</p>
+<p><cite>k</cite> is expected be an integer; the code does not check this.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gauss_kuzmin.var">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gauss_kuzmin.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gauss_kuzmin.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the Gauss-Kuzmin distribution.</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2022, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
