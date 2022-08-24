@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>odds_ratio &#8212; mpsci  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -64,7 +65,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -74,13 +75,13 @@
           <div class="body" role="main">
             
   <section id="odds-ratio">
-<h1>odds_ratio<a class="headerlink" href="#odds-ratio" title="Permalink to this headline">¶</a></h1>
+<h1>odds_ratio<a class="headerlink" href="#odds-ratio" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.stats.odds_ratio">
 <span class="sig-prename descclassname"><span class="pre">mpsci.stats.</span></span><span class="sig-name descname"><span class="pre">odds_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'conditional'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'two-sided'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.odds_ratio" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the odds ratio for a 2x2 contingency table.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>table</strong> (<em>array_like of ints</em>) – A 2x2 contingency table.  Elements must be non-negative integers.</p></li>
 <li><p><strong>kind</strong> (<em>str</em><em>, </em><em>optional</em>) – Which kind of odds ratio to compute, either the sample
@@ -96,7 +97,7 @@ The following options are available (default is ‘two-sided’):</p>
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p><strong>result</strong> – The returned object has two computed attributes:</p>
 <dl class="simple">
 <dt>odds_ratio<span class="classifier">mpmath.mpf</span></dt><dd><ul class="simple">
@@ -126,24 +127,26 @@ and <cite>alternative</cite> as attributes.</p>
 the confidence interval of the odds ratio.</p>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>OddsRatioResult</cite> instance</p>
 </dd>
 </dl>
 <p class="rubric">References</p>
-<dl class="footnote brackets">
-<dt class="label" id="id1"><span class="brackets">1</span></dt>
-<dd><p>J. Cornfield (1956), A statistical problem arising from
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>J. Cornfield (1956), A statistical problem arising from
 retrospective studies. In Neyman, J. (ed.), Proceedings of
 the Third Berkeley Symposium on Mathematical Statistics and
 Probability 4, pp. 135-148.</p>
-</dd>
-<dt class="label" id="id2"><span class="brackets">2</span></dt>
-<dd><p>H. Sahai and A. Khurshid (1996), Statistics in Epidemiology:
+</aside>
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>H. Sahai and A. Khurshid (1996), Statistics in Epidemiology:
 Methods, Techniques, and Applications, CRC Press LLC, Boca
 Raton, Florida.</p>
-</dd>
-</dl>
+</aside>
+</aside>
 </dd></dl>
 
 </section>
@@ -159,7 +162,7 @@ Raton, Florida.</p>
       &copy;2022, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

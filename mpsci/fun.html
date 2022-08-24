@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>fun &#8212; mpsci  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
@@ -67,7 +68,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="documentwrapper">
@@ -77,15 +78,11 @@
           <div class="body" role="main">
             
   <span class="target" id="module-mpsci.fun"><span id="fun"></span></span><section id="id1">
-<h1><code class="docutils literal notranslate"><span class="pre">fun</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><code class="docutils literal notranslate"><span class="pre">fun</span></code><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <p>This module contains an assortment of functions that arise
 in scientific computing.</p>
 </section>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="fun/boxcox.html#mpsci.fun.boxcox" title="mpsci.fun.boxcox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">boxcox</span></code></a>(x, lmbda)</p></td>
 <td><p>Box-Cox transformation of x.</p></td>
@@ -114,34 +111,31 @@ in scientific computing.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="fun/inv_yeo_johnson.html#mpsci.fun.inv_yeo_johnson" title="mpsci.fun.inv_yeo_johnson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inv_yeo_johnson</span></code></a>(x, lmbda)</p></td>
 <td><p>Inverse Yeo-Johnson transformation.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="fun/linspace.html#mpsci.fun.linspace" title="mpsci.fun.linspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">linspace</span></code></a>(a, b, n)</p></td>
-<td><p>Return a list of <code class="docutils literal notranslate"><span class="pre">n</span></code> evenly spaced numbers starting at <code class="docutils literal notranslate"><span class="pre">a</span></code> and ending at <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="fun/logbeta.html#mpsci.fun.logbeta" title="mpsci.fun.logbeta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logbeta</span></code></a>(x, y)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="fun/logbeta.html#mpsci.fun.logbeta" title="mpsci.fun.logbeta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logbeta</span></code></a>(x, y)</p></td>
 <td><p>Natural logarithm of <span class="math notranslate nohighlight">\(B(x, y)\)</span>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="fun/logbinomial.html#mpsci.fun.logbinomial" title="mpsci.fun.logbinomial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logbinomial</span></code></a>(n, k)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="fun/logbinomial.html#mpsci.fun.logbinomial" title="mpsci.fun.logbinomial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logbinomial</span></code></a>(n, k)</p></td>
 <td><p>Natural logarithm of binomial(n, k).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="fun/logsumexp.html#mpsci.fun.logsumexp" title="mpsci.fun.logsumexp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logsumexp</span></code></a>(logs[, weights])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="fun/logsumexp.html#mpsci.fun.logsumexp" title="mpsci.fun.logsumexp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logsumexp</span></code></a>(logs[, weights])</p></td>
 <td><p>Compute the log of the sum of exponentials of the input sequence.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="fun/marcumq.html#mpsci.fun.marcumq" title="mpsci.fun.marcumq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">marcumq</span></code></a>(m, a, b)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="fun/marcumq.html#mpsci.fun.marcumq" title="mpsci.fun.marcumq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">marcumq</span></code></a>(m, a, b)</p></td>
 <td><p>The Marcum Q function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="fun/pow1pm1.html#mpsci.fun.pow1pm1" title="mpsci.fun.pow1pm1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow1pm1</span></code></a>(x, y)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="fun/pow1pm1.html#mpsci.fun.pow1pm1" title="mpsci.fun.pow1pm1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow1pm1</span></code></a>(x, y)</p></td>
 <td><p>Compute <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">+</span> <span class="pre">1)**y</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="fun/roots_legendre.html#mpsci.fun.roots_legendre" title="mpsci.fun.roots_legendre"><code class="xref py py-obj docutils literal notranslate"><span class="pre">roots_legendre</span></code></a>(n)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="fun/roots_legendre.html#mpsci.fun.roots_legendre" title="mpsci.fun.roots_legendre"><code class="xref py py-obj docutils literal notranslate"><span class="pre">roots_legendre</span></code></a>(n)</p></td>
 <td><p>Compute the roots of the Legendre polynomial, and quadrature weights.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="fun/xlog1py.html#mpsci.fun.xlog1py" title="mpsci.fun.xlog1py"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xlog1py</span></code></a>(x, y)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="fun/xlog1py.html#mpsci.fun.xlog1py" title="mpsci.fun.xlog1py"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xlog1py</span></code></a>(x, y)</p></td>
 <td><p><span class="math notranslate nohighlight">\(x\textrm{log}(1+y)\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="fun/xlogy.html#mpsci.fun.xlogy" title="mpsci.fun.xlogy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xlogy</span></code></a>(x, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="fun/xlogy.html#mpsci.fun.xlogy" title="mpsci.fun.xlogy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xlogy</span></code></a>(x, y)</p></td>
 <td><p><span class="math notranslate nohighlight">\(x\textrm{log}(y)\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="fun/yeo_johnson.html#mpsci.fun.yeo_johnson" title="mpsci.fun.yeo_johnson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">yeo_johnson</span></code></a>(x, lmbda)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="fun/yeo_johnson.html#mpsci.fun.yeo_johnson" title="mpsci.fun.yeo_johnson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">yeo_johnson</span></code></a>(x, lmbda)</p></td>
 <td><p>Yeo-Johnson transformation of x.</p></td>
 </tr>
 </tbody>
@@ -158,7 +152,7 @@ in scientific computing.</p>
       &copy;2022, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
