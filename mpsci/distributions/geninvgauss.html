@@ -78,6 +78,31 @@
             
   <span class="target" id="module-mpsci.distributions.geninvgauss"></span><section id="generalized-inverse-gaussian-distribution">
 <h1>Generalized inverse Gaussian distribution<a class="headerlink" href="#generalized-inverse-gaussian-distribution" title="Permalink to this heading">¶</a></h1>
+<p>The parametrization used here is not the same as the parametrization
+used in the wikipedia article</p>
+<blockquote>
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Generalized_inverse_Gaussian_distribution">https://en.wikipedia.org/wiki/Generalized_inverse_Gaussian_distribution</a></p>
+</div></blockquote>
+<p>A location parameters is not included in the parameters used in the wikipedia
+article.</p>
+<p>Given the parmeters (a, b, p) used in the wikipedia article, the corresponding
+parameters used here are:</p>
+<blockquote>
+<div><p>mpsci     wikipedia
+p      =  p
+b      =  sqrt(a*b)
+loc    =  0
+scale  =  sqrt(b/a)</p>
+</div></blockquote>
+<p>Going the other way, and assuming the location is zero, the formulas to
+convert from the parameters use here to those used in the wikipedia article
+are:</p>
+<blockquote>
+<div><p>wikipedia     mpsci
+a          =  b/scale
+b          =  scale*b
+p          =  p</p>
+</div></blockquote>
 </section>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.geninvgauss.cdf">
@@ -85,6 +110,12 @@
 <dd><p>Cumulative distribution function of the generalized inverse Gaussian
 distribution.</p>
 <p>The CDF is computed by using mpmath.quad to numerically integrate the PDF.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.geninvgauss.entropy">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.geninvgauss.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Differential entropy of the generalized inverse Gaussian distribution.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -139,6 +170,12 @@ function of the second kind.  For <span class="math notranslate nohighlight">\(x
 <dd><p>Survival function of the generalized inverse Gaussian distribution.</p>
 <p>The survival function is computed by using mpmath.quad to numerically
 integrate the PDF.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.geninvgauss.var">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.geninvgauss.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.geninvgauss.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the generalized inverse Gaussian distribution.</p>
 </dd></dl>
 
 

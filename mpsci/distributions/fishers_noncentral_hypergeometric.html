@@ -97,13 +97,13 @@ It may be very slow for large parameters.</p>
 <dd class="field-odd"><p><strong>m</strong> – The mean of the distribution.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>mpmath.mpf</p>
+<dd class="field-even"><p>mpmath.mp.mpf</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="kn">import</span> <span class="n">fishers_noncentral_hypergeometric</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">24</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fishers_noncentral_hypergeometric</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="go">mpf(&#39;5.89685838859408792634258808&#39;)</span>
 </pre></div>
@@ -121,7 +121,7 @@ of the two is returned.</p>
 <dd class="field-odd"><p><strong>m</strong> – The mode of the distribution.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>mpmath.mpf</p>
+<dd class="field-even"><p>mpmath.mp.mpf</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -194,9 +194,9 @@ mode.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="kn">import</span> <span class="n">fishers_noncentral_hypergeometric</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">24</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sup</span><span class="p">,</span> <span class="n">pmf</span> <span class="o">=</span> <span class="n">fishers_noncentral_hypergeometric</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sup</span>
 <span class="go">range(2, 9)</span>

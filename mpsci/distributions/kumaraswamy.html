@@ -77,11 +77,26 @@
             
   <span class="target" id="module-mpsci.distributions.kumaraswamy"></span><section id="kumaraswamy-probability-distribution">
 <h1>Kumaraswamy probability distribution<a class="headerlink" href="#kumaraswamy-probability-distribution" title="Permalink to this heading">¶</a></h1>
+<p class="rubric">References</p>
+<p>Kumaraswamy, P. (1980). “A generalized probability density function for
+double-bounded random processes”. Journal of Hydrology. 46 (1-2): 79-88.
+doi:10.1016/0022-1694(80)90036-0.</p>
+<p>Jones, M.C. (2009). “Kumaraswamy’s distribution: A beta-type distribution
+with some tractability advantages”. Statistical Methodology. 6 (1): 70-81.
+doi:10.1016/j.stamet.2008.04.001.</p>
+<p>“Kumaraswamy distribution”. Wikipedia,
+<a class="reference external" href="https://en.wikipedia.org/wiki/Kumaraswamy_distribution">https://en.wikipedia.org/wiki/Kumaraswamy_distribution</a>.</p>
 </section>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.kumaraswamy.cdf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.kumaraswamy.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.kumaraswamy.cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cumulative distribution function of the beta distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.kumaraswamy.entropy">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.kumaraswamy.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.kumaraswamy.entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Differential entropy of the Kumaraswamy distribution.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -115,6 +130,34 @@
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.kumaraswamy.mle">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.kumaraswamy.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.kumaraswamy.mle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum likelihood estimate for the Kumaraswamy distribution.</p>
+<p><cite>x</cite> must be a sequence of numbers with values in the open interval (0, 1).</p>
+<p>Returns (a, b), the maximum likelihood estimate for the given data.</p>
+<p>When <cite>a</cite> is not given, the MLE equations are solved numerically,
+and the solver may fail to converge for some inputs.  If this happens,
+a different initial guess for <cite>a</cite> may be given by setting the input
+parameter to <cite>mpsci.distributions.Initial(a0)</cite>, where <cite>a0</cite> is the
+initial guess to use for the estimate of <cite>a</cite>.  The default initial
+guess for <cite>a</cite> is 1.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.kumaraswamy.nll">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.kumaraswamy.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.kumaraswamy.nll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative log-likelihood function for the Kumaraswamy distribution.</p>
+<p><cite>x</cite> must be a sequence of numbers with values in the open interval (0, 1).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.kumaraswamy.noncentral_moment">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.kumaraswamy.</span></span><span class="sig-name descname"><span class="pre">noncentral_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.kumaraswamy.noncentral_moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>n-th noncentral moment of the Kumaraswamy distribution.</p>
+<p>n must be a nonnegativre integer.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.kumaraswamy.pdf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.kumaraswamy.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.kumaraswamy.pdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Probability density function (PDF) for the Kumaraswamy distribution.</p>
@@ -124,6 +167,12 @@
 <dt class="sig sig-object py" id="mpsci.distributions.kumaraswamy.sf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.kumaraswamy.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.kumaraswamy.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function of the beta distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.kumaraswamy.skewness">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.kumaraswamy.</span></span><span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.kumaraswamy.skewness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skewness of the Kumaraswamy distribution.</p>
 </dd></dl>
 
 <dl class="py function">

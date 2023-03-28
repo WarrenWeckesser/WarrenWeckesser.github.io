@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Relativistic Breit-Wigner distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.rel_breitwigner"></span><section id="relativistic-breit-wigner-distribution">
+<h1>Relativistic Breit-Wigner distribution<a class="headerlink" href="#relativistic-breit-wigner-distribution" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><cite>rho</cite> is the shape parameter.</p></li>
+<li><p><cite>scale</cite> is (not surprisingly) the scale parameter.  This is a true scale
+parameter, in the sense of <a class="reference external" href="https://en.wikipedia.org/wiki/Scale_parameter">https://en.wikipedia.org/wiki/Scale_parameter</a>.</p></li>
+</ul>
+<p>In the wikipedia article
+<a class="reference external" href="https://en.wikipedia.org/wiki/Relativistic_Breit%E2%80%93Wigner_distribution">https://en.wikipedia.org/wiki/Relativistic_Breit%E2%80%93Wigner_distribution</a>,
+the parameters are M and Γ.  The relations between those parameters and
+the parameters use here are:</p>
+<ul>
+<li><p>from (M, Γ) to mpsci’s (rho, scale):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">M</span><span class="o">/</span><span class="n">Γ</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="n">Γ</span>
+</pre></div>
+</div>
+</li>
+<li><p>from mpsci’s (rho, scale) to (M, Γ):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">scale</span>
+<span class="n">Γ</span> <span class="o">=</span> <span class="n">scale</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>See <a class="reference external" href="https://github.com/scipy/scipy/issues/6414">https://github.com/scipy/scipy/issues/6414</a> for the details.</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.cdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function of the relativistic Breit-Wigner distr.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.invcdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">invcdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.invcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the CDF of the relativistic Breit-Wigner distribution.</p>
+<p>The implementation uses a numerical root finder, so it may be slow, and
+it may fail to converge for some inputs.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.invsf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">invsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.invsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the survival function of the relativistic Breit-Wigner distr.</p>
+<p>The implementation uses a numerical root finder, so it may be slow, and
+it may fail to converge for some inputs.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.logpdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logarithm of the PDF of the relativistic Breit-Wigner distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.mean">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the relativistic Breit-Wigner distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.mode">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mode of the relativistic Breit-Wigner distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.noncentral_moment">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">noncentral_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.noncentral_moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>n-th noncentral moment of the relativistic Breit-Wigner distribution.</p>
+<p>n must be a nonnegative integer.  For n &gt; 2, the noncentral moment
+diverges, so <cite>inf</cite> is returned.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.pdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability density function of the relativistic Breit-Wigner distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.sf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function of the relativistic Breit-Wigner distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.rel_breitwigner.var">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.rel_breitwigner.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.rel_breitwigner.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the relativistic Breit-Wigner distribution.</p>
+</dd></dl>
+
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2022, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
