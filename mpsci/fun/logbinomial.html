@@ -82,8 +82,8 @@
 <span class="sig-prename descclassname"><span class="pre">mpsci.fun.</span></span><span class="sig-name descname"><span class="pre">logbinomial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.logbinomial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural logarithm of binomial(n, k).</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.fun</span> <span class="kn">import</span> <span class="n">logbinomial</span>
 </pre></div>
 </div>
@@ -93,7 +93,7 @@
 </pre></div>
 </div>
 <p>Verify that it is the expected value.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">450</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">450</span><span class="p">))</span>
 <span class="go">mpf(&#39;912.5010192350457701746286773&#39;)</span>
 </pre></div>
 </div>

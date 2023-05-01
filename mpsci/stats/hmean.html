@@ -91,8 +91,8 @@ is returned.  If the signs are not mixed, then either all the values are
 respectively.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.stats</span> <span class="kn">import</span> <span class="n">hmean</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -111,15 +111,15 @@ respectively.</p>
 <span class="go">mpf(&#39;nan&#39;)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="n">mp</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">mp</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">mp</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
 <span class="go">mpf(&#39;+inf&#39;)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="n">mp</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">mp</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">mp</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
 <span class="go">mpf(&#39;nan&#39;)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="o">-</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">mpmath</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hmean</span><span class="p">([</span><span class="o">-</span><span class="n">mp</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">mp</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">mp</span><span class="o">.</span><span class="n">inf</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mpf</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>

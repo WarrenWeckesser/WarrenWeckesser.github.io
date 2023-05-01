@@ -79,6 +79,16 @@
 <h1>Multivariate t Distribution<a class="headerlink" href="#multivariate-t-distribution" title="Permalink to this heading">¶</a></h1>
 </section>
 <dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.multivariate_t.entropy">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.multivariate_t.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_t.entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Differential entropy of the multivariate t distribution.</p>
+<p><cite>loc</cite> must be a sequence.  <cite>scale</cite> is the scale matrix; it must be an
+instance of <cite>mpmath.matrix</cite>.  <cite>scale</cite> must be positive definite; the
+function does not check this.  If <cite>scale</cite> is not positive definite,
+the return value might not be meaningful.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.multivariate_t.logpdf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.multivariate_t.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_inv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.multivariate_t.logpdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural logarithm of the PDF for the multivariate t distribution.</p>

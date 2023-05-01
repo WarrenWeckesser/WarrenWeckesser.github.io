@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>inv_boxcox1p &#8212; mpsci  documentation</title>
+    <title>yeojohnson_llf &#8212; mpsci  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -15,6 +15,7 @@
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -75,13 +76,34 @@
 
           <div class="body" role="main">
             
-  <section id="inv-boxcox1p">
-<span id="mpsci-fun-inv-boxcox1p"></span><h1>inv_boxcox1p<a class="headerlink" href="#inv-boxcox1p" title="Permalink to this heading">¶</a></h1>
+  <section id="yeojohnson-llf">
+<h1>yeojohnson_llf<a class="headerlink" href="#yeojohnson-llf" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="mpsci.fun.inv_boxcox1p">
-<span class="sig-prename descclassname"><span class="pre">mpsci.fun.</span></span><span class="sig-name descname"><span class="pre">inv_boxcox1p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmbda</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.inv_boxcox1p" title="Permalink to this definition">¶</a></dt>
-<dd><p>Inverse with respect to x of boxcox1p(x, lmbda).</p>
-<p><em>See also:</em> <a class="reference internal" href="boxcox1p.html#mpsci.fun.boxcox1p" title="mpsci.fun.boxcox1p"><code class="xref py py-func docutils literal notranslate"><span class="pre">boxcox1p()</span></code></a></p>
+<dt class="sig sig-object py" id="mpsci.stats.yeojohnson_llf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.stats.</span></span><span class="sig-name descname"><span class="pre">yeojohnson_llf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.yeojohnson_llf" title="Permalink to this definition">¶</a></dt>
+<dd><p>The log-likelihood function for the Yeo-Johnson transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lam</strong> (<em>scalar</em>) – Parameter for Yeo-Johnson transformation. See <cite>yeojohnson</cite> for
+details.</p></li>
+<li><p><strong>x</strong> (<em>sequence</em><em> of </em><em>numbers</em>) – Data to calculate Yeo-Johnson log-likelihood for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>llf</strong> – Yeo-Johnson log-likelihood of <cite>x</cite> given <cite>lam</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The Yeo-Johnson log-likelihood is</p>
+<div class="math notranslate nohighlight">
+\[\frac{-N}{2} \log\left(\hat{\sigma}^2\right)
++ (\lambda - 1)\sum_{i}\textrm{sign}(x_i) \log(|x_i| + 1)\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is <code class="docutils literal notranslate"><span class="pre">len(x)</span></code> and <span class="math notranslate nohighlight">\(\hat{\sigma}^2\)</span> is the estimated variance of the Yeo-Johnson
+transformed input data <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 </dd></dl>
 
 </section>

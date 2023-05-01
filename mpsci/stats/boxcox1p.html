@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>marcumq &#8212; mpsci  documentation</title>
+    <title>boxcox1p &#8212; mpsci  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -76,36 +76,21 @@
 
           <div class="body" role="main">
             
-  <section id="marcumq">
-<span id="mpsci-fun-marcumq"></span><h1>marcumq<a class="headerlink" href="#marcumq" title="Permalink to this heading">¶</a></h1>
+  <section id="boxcox1p">
+<h1>boxcox1p<a class="headerlink" href="#boxcox1p" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="mpsci.fun.marcumq">
-<span class="sig-prename descclassname"><span class="pre">mpsci.fun.</span></span><span class="sig-name descname"><span class="pre">marcumq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.marcumq" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Marcum Q function.</p>
-<p>The function is defined as</p>
+<dt class="sig sig-object py" id="mpsci.stats.boxcox1p">
+<span class="sig-prename descclassname"><span class="pre">mpsci.stats.</span></span><span class="sig-name descname"><span class="pre">boxcox1p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmbda</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.stats.boxcox1p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Box-Cox transformation of 1 + x.</p>
+<p>The transformation is</p>
 <div class="math notranslate nohighlight">
-\[Q_M(a, b) = \int_b^{\infty} x \left(\frac{x}{a}\right)^{M-1}
-            \exp\left(-\frac{x^2 + a^2}{2}\right) I_{M-1}(ax)\,dx\]</div>
-<p>where <span class="math notranslate nohighlight">\(I_{M-1}(z)\)</span> is the modified Bessel function of order <span class="math notranslate nohighlight">\(M-1\)</span></p>
-<p><em>See also:</em> <a class="reference internal" href="cmarcumq.html#mpsci.fun.cmarcumq" title="mpsci.fun.cmarcumq"><code class="xref py py-func docutils literal notranslate"><span class="pre">cmarcumq()</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>q</strong> – The function value.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>mpmath.mpf</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>The function uses numerical integration, so it can be very slow.</p>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.fun</span> <span class="kn">import</span> <span class="n">marcumq</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">marcumq</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
-<span class="go">mpf(&#39;0.07558718754263240906718640000640082605610073&#39;)</span>
-</pre></div>
-</div>
+\[\begin{split}f(x; \lambda) = \begin{cases}
+                   \log(x + 1) &amp; \textrm{if} \; \lambda = 0 \\
+                   \frac{(x + 1)^{\lambda} - 1}{\lambda}  &amp; \textrm{if} \; \lambda \ne 0
+                \end{cases}\end{split}\]</div>
+<p>This function is mathematically equivalent to <cite>boxcox(1+x, lmbda)</cite>.
+It avoids the loss of precision that can occur if x is very small.</p>
+<p><em>See also:</em> <a class="reference internal" href="boxcox.html#mpsci.stats.boxcox" title="mpsci.stats.boxcox"><code class="xref py py-func docutils literal notranslate"><span class="pre">boxcox()</span></code></a>, <a class="reference internal" href="inv_boxcox1p.html#mpsci.stats.inv_boxcox1p" title="mpsci.stats.inv_boxcox1p"><code class="xref py py-func docutils literal notranslate"><span class="pre">inv_boxcox1p()</span></code></a></p>
 </dd></dl>
 
 </section>

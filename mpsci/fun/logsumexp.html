@@ -83,8 +83,8 @@
 <dd><p>Compute the log of the sum of exponentials of the input sequence.</p>
 <p class="rubric">Examples</p>
 <p>Imports and configuration:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mpmath</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.fun</span> <span class="kn">import</span> <span class="n">logsumexp</span>
 </pre></div>
 </div>
@@ -97,7 +97,7 @@
 </pre></div>
 </div>
 <p>Compare that result to:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">fsum</span><span class="p">([</span><span class="n">mpmath</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">fsum</span><span class="p">([</span><span class="n">mp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]))</span>
 <span class="go">mpf(&#39;3.202253447679351758368594507&#39;)</span>
 </pre></div>
 </div>
@@ -110,7 +110,7 @@
 </pre></div>
 </div>
 <p>Compare to:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mpmath</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mpmath</span><span class="o">.</span><span class="n">fsum</span><span class="p">([</span><span class="n">wi</span><span class="o">*</span><span class="n">mpmath</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span><span class="p">,</span> <span class="n">wi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)]))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">fsum</span><span class="p">([</span><span class="n">wi</span><span class="o">*</span><span class="n">mp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span><span class="p">,</span> <span class="n">wi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)]))</span>
 <span class="go">mpf(&#39;1.838387764326144472528490234&#39;)</span>
 </pre></div>
 </div>

@@ -112,9 +112,22 @@
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.chi.noncentral_moment">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.chi.</span></span><span class="sig-name descname"><span class="pre">noncentral_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.chi.noncentral_moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>n-th noncentral moment of the chi distribution.</p>
+<p>n must be a nonnegative integer.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.chi.pdf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.chi.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.chi.pdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>PDF for the chi distribution.</p>
+<p>The PDF is</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[f(x; k) = \frac{x^{k-1}e^{-x^2/2}}{2^{k/2-1}\Gamma\left(\frac{k}{2}\right)}\]</div>
+</div></blockquote>
+<p>for <span class="math notranslate nohighlight">\(x \ge 0\)</span>.</p>
 </dd></dl>
 
 <dl class="py function">

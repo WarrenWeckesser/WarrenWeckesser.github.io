@@ -77,6 +77,10 @@
             
   <span class="target" id="module-mpsci.distributions.gamma"></span><section id="gamma-probability-distribution">
 <h1>Gamma probability distribution<a class="headerlink" href="#gamma-probability-distribution" title="Permalink to this heading">¶</a></h1>
+<p>The parameters used here are <cite>k</cite>, the shape parameter, and
+<cite>theta</cite>, the scale parameter.</p>
+<p>Another common parameterization is shape <cite>k</cite> and the “rate” <cite>lambda</cite>.
+<cite>theta</cite> is the reciprocal of <cite>lambda</cite>.</p>
 </section>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.cdf">
@@ -104,6 +108,18 @@ theta is the scale parameter (reciprocal of the rate parameter)</p>
 <p>but when the two CDF values are nearly equal, this function will give
 a more accurate result.</p>
 <p>x1 must be less than or equal to x2.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gamma.invcdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">invcdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.invcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the CDF of the gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.gamma.invsf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">invsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.invsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the survival function of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -169,7 +185,7 @@ of the gamma distribution.</p>
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.noncentral_moment">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">noncentral_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.noncentral_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>n-th noncentral moment of the gamma distribution.</p>
-<p>n must be a nonnegativre integer.</p>
+<p>n must be a nonnegative integer.</p>
 </dd></dl>
 
 <dl class="py function">
