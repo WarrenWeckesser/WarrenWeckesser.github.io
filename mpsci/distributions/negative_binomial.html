@@ -42,6 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html#mpsci.distributions.Initial"><code class="docutils literal notranslate"><span class="pre">Initial</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
 </ul>
 
@@ -122,6 +123,13 @@ a “success”.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.negative_binomial.mle">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.negative_binomial.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_noninteger_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.mle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum likelihood estimation for the negative binomial distribution.</p>
+<p>x  must be a sequence of nonnegative integers.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.negative_binomial.nll">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.negative_binomial.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.negative_binomial.nll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Negative log-likelihood of sample for the negative binomial distribution.</p>
@@ -187,7 +195,7 @@ a “success”.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2022, Warren Weckesser.
+      &copy;2023, Warren Weckesser.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
