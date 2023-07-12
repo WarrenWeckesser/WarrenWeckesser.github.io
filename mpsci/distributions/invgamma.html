@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Inverse gamma distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -42,7 +42,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../distributions.html#mpsci.distributions.Initial"><code class="docutils literal notranslate"><span class="pre">Initial</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
 </ul>
 
@@ -80,7 +79,7 @@ location and scale parameters, but typically discussions and implementations
 of the inverse gamma distribution do not include the location parameter that
 we include here and in SciPy (see, for example, the wikipedia article <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>).</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="doc-footnote">
+<aside class="footnote brackets" id="id2" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Inverse-gamma distribution, Wikipedia,
 <a class="reference external" href="https://en.wikipedia.org/wiki/Inverse-gamma_distribution">https://en.wikipedia.org/wiki/Inverse-gamma_distribution</a></p>
@@ -109,6 +108,12 @@ we include here and in SciPy (see, for example, the wikipedia article <a class="
 <dt class="sig sig-object py" id="mpsci.distributions.invgamma.invsf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.invgamma.</span></span><span class="sig-name descname"><span class="pre">invsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.invgamma.invsf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverse of the survival function for the inverse gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.invgamma.kurtosis">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.invgamma.</span></span><span class="sig-name descname"><span class="pre">kurtosis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.invgamma.kurtosis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Excess kurtosis of the inverse gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -147,6 +152,12 @@ we include here and in SciPy (see, for example, the wikipedia article <a class="
 <dt class="sig sig-object py" id="mpsci.distributions.invgamma.sf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.invgamma.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.invgamma.sf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Survival function for the inverse gamma distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.invgamma.skewness">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.invgamma.</span></span><span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.invgamma.skewness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skewness of the inverse gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">

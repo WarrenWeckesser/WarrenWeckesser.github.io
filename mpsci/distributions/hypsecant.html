@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Hyperbolic secant distribution &#8212; mpsci  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mpsci</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polyapprox.html"><code class="docutils literal notranslate"><span class="pre">polyapprox</span></code></a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://github.com/WarrenWeckesser/mpsci">Source code</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mpsci.distributions.hypsecant"></span><section id="hyperbolic-secant-distribution">
+<h1>Hyperbolic secant distribution<a class="headerlink" href="#hyperbolic-secant-distribution" title="Permalink to this heading">¶</a></h1>
+<p>The wikipedia article</p>
+<blockquote>
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hyperbolic_secant_distribution">https://en.wikipedia.org/wiki/Hyperbolic_secant_distribution</a></p>
+</div></blockquote>
+<p>provides information about the distribution.  The scale parameter
+used here matches that of SciPy’s <cite>scipy.special.hypsecant</cite>; it is
+2/pi times the scale parameter used in the wikipedia article.</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.cdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function for the hyperbolic secant distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.entropy">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Differential entropy of the hyperbolic secant distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.invcdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">invcdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.invcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the CDF for the hyperbolic secant distribution.</p>
+<p>This function is also known as the quantile function or the percent
+point function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.invsf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">invsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.invsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of the survival function of the hyperblic secant distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.logpdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.logpdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logarithm of the PDF of the hyperbolic secant distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.mean">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the hyperbolic secant distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.mle">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.mle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum likelihood estimate for the hyperbolic secant distribution.</p>
+<p><cite>x</cite> must be a sequence of numbers.</p>
+<p>Provide a numerical argument to <cite>loc</cite> or <cite>scale</cite> to fix that
+parameter.  Provide an instance of <cite>mpsci.distributions.Initial</cite>
+to override the default initial value for the parmeter to be used
+in the numerical root-finding.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.nll">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.nll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative log-likelihood of the hyperbolic secant distribution.</p>
+<p><cite>x</cite> must be a sequence of nonnegative numbers.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.pdf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability density function for the hyperbolic secant distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.sf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function for the hyperbolic secant distribution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.hypsecant.var">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypsecant.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypsecant.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the hyperbolic secant distribution.</p>
+</dd></dl>
+
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2023, Warren Weckesser.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
