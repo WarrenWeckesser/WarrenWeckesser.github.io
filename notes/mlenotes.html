@@ -43,11 +43,11 @@ Support: \(\frac{x - \mu}{\sigma} \ge 1\)
 <p>
 PDF:
 \[
-  f(b, \mu, \sigma) = \frac{b\sigma^b}{\left(x - \mu\right)^{b+1}}
+  f(x, b, \mu, \sigma) = \frac{b\sigma^b}{\left(x - \mu\right)^{b+1}}
 \]
 log PDF:
 \[
-  \log f(b, \mu, \sigma) = \log(b) + b\log(\sigma) - (b+1)\log(x - \mu)
+  \log f(x, b, \mu, \sigma) = \log(b) + b\log(\sigma) - (b+1)\log(x - \mu)
 \]
 The log-likelihood function:
 \begin{equation}
@@ -194,12 +194,12 @@ Support: \(\mu < x \le \mu + \sigma\)
 <p>
 PDF:
 \[
-  f(a, \mu, \sigma) = \frac{a}{\sigma}\left(\frac{x - \mu}{\sigma}\right)^{a-1}
+  f(x, a, \mu, \sigma) = \frac{a}{\sigma}\left(\frac{x - \mu}{\sigma}\right)^{a-1}
   = \frac{a}{\sigma^a}\left(x - \mu\right)^{a-1}
 \]
 log PDF:
 \[
-  \log f(a, \mu, \sigma) = \log a - a\log\sigma + (a - 1)\log(x - \mu)
+  \log f(x, a, \mu, \sigma) = \log a - a\log\sigma + (a - 1)\log(x - \mu)
 \]
 The likelihood function for the vector \(\textbf{x} = \{x_1, x_2, \ldots, x_N\}\):
 \[
