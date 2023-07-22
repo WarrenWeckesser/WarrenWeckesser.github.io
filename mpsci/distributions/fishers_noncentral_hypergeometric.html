@@ -129,7 +129,7 @@ of the two is returned.</p>
 <p>In this example, the PMF is symmetric about the mean, and the maximum
 value of the PMF occurs at k=3 and k=4.  The value 4 is returned for the
 mode.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fishers_noncentral_hypergeometric</span><span class="o">.</span><span class="n">support</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fishers_noncentral_hypergeometric</span><span class="o">.</span><span class="n">support_pmf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 <span class="go">(range(0, 8),</span>
 <span class="go"> [mpf(&#39;0.00029137529137529148&#39;),</span>
 <span class="go">  mpf(&#39;0.014277389277389273&#39;),</span>
@@ -166,7 +166,23 @@ mode.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.fishers_noncentral_hypergeometric.support">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.support" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>Full</em> PMF for Fisher’s noncentral hypergeometric distribution.</p>
+<dd><p>Support for Fisher’s noncentral hypergeometric distribution.</p>
+<p>The support of this distribution is the same as that of the
+hypergeometric distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sup</strong> – The range of integers in the support.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>range</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.fishers_noncentral_hypergeometric.support_pmf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.fishers_noncentral_hypergeometric.</span></span><span class="sig-name descname"><span class="pre">support_pmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.fishers_noncentral_hypergeometric.support_pmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Support and PMF values for Fisher’s noncentral hypergeometric distr.</p>
 <p>Requires 0 &lt; nc &lt;<span class="math notranslate nohighlight">\(\infty\)</span>.</p>
 <p>The support of the distribution is <span class="math notranslate nohighlight">\(k_{\textsf{min}} \le k \le k_{\textsf{max}}\)</span>, where</p>
 <div class="math notranslate nohighlight">

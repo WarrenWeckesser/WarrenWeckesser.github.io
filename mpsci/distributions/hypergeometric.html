@@ -107,9 +107,9 @@ of the hypergeometric distribution.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mpsci.distributions.hypergeometric.support">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypergeometric.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.support" title="Permalink to this definition">¶</a></dt>
-<dd><p>Support of the hypergeometric distribution.</p>
+<dt class="sig sig-object py" id="mpsci.distributions.hypergeometric.support_pmf">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.hypergeometric.</span></span><span class="sig-name descname"><span class="pre">support_pmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ntotal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngood</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.hypergeometric.support_pmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Support and PMF of the hypergeometric distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><ul class="simple">
@@ -121,7 +121,7 @@ get the list of integers in the support.)</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sup</span><span class="p">,</span> <span class="n">pvals</span> <span class="o">=</span> <span class="n">hypergeometric</span><span class="o">.</span><span class="n">support</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sup</span><span class="p">,</span> <span class="n">pvals</span> <span class="o">=</span> <span class="n">hypergeometric</span><span class="o">.</span><span class="n">support_pmf</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sup</span><span class="p">,</span> <span class="n">pvals</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:2}</span><span class="s2"> </span><span class="si">{:10.7f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="p">)))</span>
 <span class="gp">...</span>
