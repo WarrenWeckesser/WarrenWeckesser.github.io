@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -8,9 +9,12 @@
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="_static/favicon.png"/>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
    
@@ -108,6 +112,8 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="fun/betaincinv.html#mpsci.fun.betaincinv">betaincinv() (in module mpsci.fun)</a>
+</li>
       <li><a href="stats/boxcox.html#mpsci.stats.boxcox">boxcox() (in module mpsci.stats)</a>
 </li>
       <li><a href="stats/boxcox1p.html#mpsci.stats.boxcox1p">boxcox1p() (in module mpsci.stats)</a>
@@ -224,6 +230,8 @@
         <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.cdf">(in module mpsci.distributions.negative_hypergeometric)</a>
 </li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.cdf">(in module mpsci.distributions.normal)</a>
+</li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.cdf">(in module mpsci.distributions.pareto)</a>
 </li>
         <li><a href="distributions/poisson.html#mpsci.distributions.poisson.cdf">(in module mpsci.distributions.poisson)</a>
 </li>
@@ -441,6 +449,8 @@
 </li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.invcdf">(in module mpsci.distributions.normal)</a>
 </li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.invcdf">(in module mpsci.distributions.pareto)</a>
+</li>
         <li><a href="distributions/power_normal.html#mpsci.distributions.power_normal.invcdf">(in module mpsci.distributions.power_normal)</a>
 </li>
         <li><a href="distributions/rel_breitwigner.html#mpsci.distributions.rel_breitwigner.invcdf">(in module mpsci.distributions.rel_breitwigner)</a>
@@ -522,6 +532,8 @@
         <li><a href="distributions/maxwell.html#mpsci.distributions.maxwell.invsf">(in module mpsci.distributions.maxwell)</a>
 </li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.invsf">(in module mpsci.distributions.normal)</a>
+</li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.invsf">(in module mpsci.distributions.pareto)</a>
 </li>
         <li><a href="distributions/power_normal.html#mpsci.distributions.power_normal.invsf">(in module mpsci.distributions.power_normal)</a>
 </li>
@@ -661,7 +673,11 @@
 </li>
         <li><a href="distributions/nakagami.html#mpsci.distributions.nakagami.logpdf">(in module mpsci.distributions.nakagami)</a>
 </li>
+        <li><a href="distributions/nct.html#mpsci.distributions.nct.logpdf">(in module mpsci.distributions.nct)</a>
+</li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.logpdf">(in module mpsci.distributions.normal)</a>
+</li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.logpdf">(in module mpsci.distributions.pareto)</a>
 </li>
         <li><a href="distributions/power_normal.html#mpsci.distributions.power_normal.logpdf">(in module mpsci.distributions.power_normal)</a>
 </li>
@@ -706,8 +722,6 @@
         <li><a href="distributions/poisson.html#mpsci.distributions.poisson.logpmf">(in module mpsci.distributions.poisson)</a>
 </li>
       </ul></li>
-      <li><a href="distributions/multivariate_hypergeometric.html#mpsci.distributions.multivariate_hypergeometric.logpmf_dict">logpmf_dict() (in module mpsci.distributions.multivariate_hypergeometric)</a>
-</li>
       <li><a href="distributions/burr12.html#mpsci.distributions.burr12.logsf">logsf() (in module mpsci.distributions.burr12)</a>
 
       <ul>
@@ -813,6 +827,8 @@
 </li>
         <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.mean">(in module mpsci.distributions.negative_hypergeometric)</a>
 </li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.mean">(in module mpsci.distributions.pareto)</a>
+</li>
         <li><a href="distributions/poisson.html#mpsci.distributions.poisson.mean">(in module mpsci.distributions.poisson)</a>
 </li>
         <li><a href="distributions/rel_breitwigner.html#mpsci.distributions.rel_breitwigner.mean">(in module mpsci.distributions.rel_breitwigner)</a>
@@ -876,6 +892,8 @@
         <li><a href="distributions/negative_binomial.html#mpsci.distributions.negative_binomial.mle">(in module mpsci.distributions.negative_binomial)</a>
 </li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.mle">(in module mpsci.distributions.normal)</a>
+</li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.mle">(in module mpsci.distributions.pareto)</a>
 </li>
         <li><a href="distributions/poisson.html#mpsci.distributions.poisson.mle">(in module mpsci.distributions.poisson)</a>
 </li>
@@ -1025,6 +1043,8 @@
         <li><a href="distributions/negative_hypergeometric.html#module-mpsci.distributions.negative_hypergeometric">mpsci.distributions.negative_hypergeometric</a>
 </li>
         <li><a href="distributions/normal.html#module-mpsci.distributions.normal">mpsci.distributions.normal</a>
+</li>
+        <li><a href="distributions/pareto.html#module-mpsci.distributions.pareto">mpsci.distributions.pareto</a>
 </li>
         <li><a href="distributions/poisson.html#module-mpsci.distributions.poisson">mpsci.distributions.poisson</a>
 </li>
@@ -1435,6 +1455,13 @@
 </li>
       </ul></li>
       <li>
+    mpsci.distributions.pareto
+
+      <ul>
+        <li><a href="distributions/pareto.html#module-mpsci.distributions.pareto">module</a>
+</li>
+      </ul></li>
+      <li>
     mpsci.distributions.poisson
 
       <ul>
@@ -1577,6 +1604,8 @@
         <li><a href="distributions/nakagami.html#mpsci.distributions.nakagami.nll">(in module mpsci.distributions.nakagami)</a>
 </li>
         <li><a href="distributions/negative_binomial.html#mpsci.distributions.negative_binomial.nll">(in module mpsci.distributions.negative_binomial)</a>
+</li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.nll">(in module mpsci.distributions.pareto)</a>
 </li>
         <li><a href="distributions/weibull_max.html#mpsci.distributions.weibull_max.nll">(in module mpsci.distributions.weibull_max)</a>
 </li>
@@ -1724,6 +1753,8 @@
 </li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.pdf">(in module mpsci.distributions.normal)</a>
 </li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.pdf">(in module mpsci.distributions.pareto)</a>
+</li>
         <li><a href="distributions/power_normal.html#mpsci.distributions.power_normal.pdf">(in module mpsci.distributions.power_normal)</a>
 </li>
         <li><a href="distributions/rel_breitwigner.html#mpsci.distributions.rel_breitwigner.pdf">(in module mpsci.distributions.rel_breitwigner)</a>
@@ -1773,12 +1804,6 @@
         <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.pmf">(in module mpsci.distributions.negative_hypergeometric)</a>
 </li>
         <li><a href="distributions/poisson.html#mpsci.distributions.poisson.pmf">(in module mpsci.distributions.poisson)</a>
-</li>
-      </ul></li>
-      <li><a href="distributions/fishers_noncentral_hypergeometric.html#mpsci.distributions.fishers_noncentral_hypergeometric.pmf_dict">pmf_dict() (in module mpsci.distributions.fishers_noncentral_hypergeometric)</a>
-
-      <ul>
-        <li><a href="distributions/multivariate_hypergeometric.html#mpsci.distributions.multivariate_hypergeometric.pmf_dict">(in module mpsci.distributions.multivariate_hypergeometric)</a>
 </li>
       </ul></li>
       <li><a href="signal/poly_from_zeros.html#mpsci.signal.poly_from_zeros">poly_from_zeros() (in module mpsci.signal)</a>
@@ -1893,6 +1918,8 @@
         <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.sf">(in module mpsci.distributions.negative_hypergeometric)</a>
 </li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.sf">(in module mpsci.distributions.normal)</a>
+</li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.sf">(in module mpsci.distributions.pareto)</a>
 </li>
         <li><a href="distributions/poisson.html#mpsci.distributions.poisson.sf">(in module mpsci.distributions.poisson)</a>
 </li>
@@ -2052,6 +2079,8 @@
 </li>
         <li><a href="distributions/negative_hypergeometric.html#mpsci.distributions.negative_hypergeometric.var">(in module mpsci.distributions.negative_hypergeometric)</a>
 </li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.var">(in module mpsci.distributions.pareto)</a>
+</li>
         <li><a href="distributions/poisson.html#mpsci.distributions.poisson.var">(in module mpsci.distributions.poisson)</a>
 </li>
         <li><a href="distributions/rel_breitwigner.html#mpsci.distributions.rel_breitwigner.var">(in module mpsci.distributions.rel_breitwigner)</a>
@@ -2122,7 +2151,7 @@
       &copy;2023, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>
