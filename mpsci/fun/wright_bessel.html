@@ -4,9 +4,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>butter_lp_ord &#8212; mpsci  documentation</title>
+    <title>wright_bessel &#8212; mpsci  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -14,7 +14,6 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -43,7 +42,6 @@
 <h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
 </ul>
@@ -74,12 +72,30 @@
 
           <div class="body" role="main">
             
-  <section id="butter-lp-ord">
-<span id="mpsci-signal-butter-lp-ord"></span><h1>butter_lp_ord<a class="headerlink" href="#butter-lp-ord" title="Permalink to this heading">¶</a></h1>
+  <section id="wright-bessel">
+<span id="mpsci-fun-wright-bessel"></span><h1>wright_bessel<a class="headerlink" href="#wright-bessel" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="mpsci.signal.butter_lp_ord">
-<span class="sig-prename descclassname"><span class="pre">mpsci.signal.</span></span><span class="sig-name descname"><span class="pre">butter_lp_ord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ws</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deltap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deltas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.signal.butter_lp_ord" title="Permalink to this definition">¶</a></dt>
-<dd><p>(deltap and deltas are not in dB!)</p>
+<dt class="sig sig-object py" id="mpsci.fun.wright_bessel">
+<span class="sig-prename descclassname"><span class="pre">mpsci.fun.</span></span><span class="sig-name descname"><span class="pre">wright_bessel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.wright_bessel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wright’s generalized Bessel function.</p>
+<p>The parameter naming follows</p>
+<blockquote>
+<div><p><a class="reference external" href="https://dlmf.nist.gov/10.46">https://dlmf.nist.gov/10.46</a></p>
+</div></blockquote>
+<p>but here the <cite>z</cite> parameter is given first.</p>
+<p>z and beta can be complex.
+rho must be real and greater than -1.</p>
+<p><em>Warning</em>: In the general case, this function uses <cite>mpmath.mp.nsum</cite>
+to compute the approximate sum of the Wright-Bessel series.  This
+might require setting the mpmath precision very high to ensure that
+the result is accurate.</p>
+<p>See also:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://appliedmath.brown.edu/sites/default/files/fractional/36%20TheWrightFunctions.pdf">https://appliedmath.brown.edu/sites/default/files/fractional/36%20TheWrightFunctions.pdf</a></p></li>
+<li><p><a class="reference external" href="http://arxiv.org/pdf/2304.02903">http://arxiv.org/pdf/2304.02903</a></p></li>
+<li><p><a class="reference external" href="http://arxiv.org/pdf/2306.11381">http://arxiv.org/pdf/2306.11381</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Bessel%E2%80%93Maitland_function">https://en.wikipedia.org/wiki/Bessel%E2%80%93Maitland_function</a></p></li>
+</ul>
 </dd></dl>
 
 </section>
@@ -92,11 +108,11 @@
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2023, Warren Weckesser.
+      &copy;2024, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

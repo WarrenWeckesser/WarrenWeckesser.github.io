@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>von Mises distribution &#8212; mpsci  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -14,7 +14,6 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -43,7 +42,6 @@
 <h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
 </ul>
@@ -81,7 +79,6 @@ wikipedia article:</p>
 <blockquote>
 <div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Von_Mises_distribution">https://en.wikipedia.org/wiki/Von_Mises_distribution</a></p>
 </div></blockquote>
-</section>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.vonmises.circmean">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.vonmises.</span></span><span class="sig-name descname"><span class="pre">circmean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kappa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.vonmises.circmean" title="Permalink to this definition">¶</a></dt>
@@ -119,6 +116,19 @@ first kind.</p>
 <dd><p>Probability density function of the von Mises distribution.</p>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.vonmises.support">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.vonmises.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kappa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.vonmises.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Support of the von Mises distribution.</p>
+<p>The von Mises distribution is periodic, so the PDF is nonzero
+at any x value.  However, the most useful definition of <em>support</em>
+for this distribution is the fundamental period of the distribution.
+So this function returns (-pi + mu, pi + mu).  Then, for example,
+the integral of the PDF over the support results in the expected
+value of 1.</p>
+</dd></dl>
+
+</section>
 
 
           </div>
@@ -128,11 +138,11 @@ first kind.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2023, Warren Weckesser.
+      &copy;2024, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

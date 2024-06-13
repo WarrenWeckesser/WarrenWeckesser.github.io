@@ -13,7 +13,6 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
@@ -42,7 +41,6 @@
 <h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fun.html"><code class="docutils literal notranslate"><span class="pre">fun</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="signal.html"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="distributions.html"><code class="docutils literal notranslate"><span class="pre">distributions</span></code></a></li>
 </ul>
@@ -95,9 +93,9 @@
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
  | <a href="#X"><strong>X</strong></a>
  | <a href="#Y"><strong>Y</strong></a>
- | <a href="#Z"><strong>Z</strong></a>
  
 </div>
 <h2 id="A">A</h2>
@@ -115,19 +113,13 @@
 </li>
       <li><a href="stats/boxcox.html#mpsci.stats.boxcox">boxcox() (in module mpsci.stats)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stats/boxcox1p.html#mpsci.stats.boxcox1p">boxcox1p() (in module mpsci.stats)</a>
 </li>
       <li><a href="stats/boxcox_llf.html#mpsci.stats.boxcox_llf">boxcox_llf() (in module mpsci.stats)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stats/boxcox_mle.html#mpsci.stats.boxcox_mle">boxcox_mle() (in module mpsci.stats)</a>
-</li>
-      <li><a href="signal/butter_bp.html#mpsci.signal.butter_bp">butter_bp() (in module mpsci.signal)</a>
-</li>
-      <li><a href="signal/butter_lp.html#mpsci.signal.butter_lp">butter_lp() (in module mpsci.signal)</a>
-</li>
-      <li><a href="signal/butter_lp_ord.html#mpsci.signal.butter_lp_ord">butter_lp_ord() (in module mpsci.signal)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -255,8 +247,6 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="signal/cheby1_lp.html#mpsci.signal.cheby1_lp">cheby1_lp() (in module mpsci.signal)</a>
-</li>
       <li><a href="stats/chisquare.html#mpsci.stats.chisquare">chisquare() (in module mpsci.stats)</a>
 </li>
       <li><a href="distributions/vonmises.html#mpsci.distributions.vonmises.circmean">circmean() (in module mpsci.distributions.vonmises)</a>
@@ -265,13 +255,21 @@
 </li>
       <li><a href="fun/cmarcumq.html#mpsci.fun.cmarcumq">cmarcumq() (in module mpsci.fun)</a>
 </li>
-      <li><a href="distributions/multivariate_hypergeometric.html#mpsci.distributions.multivariate_hypergeometric.cov">cov() (in module mpsci.distributions.multivariate_hypergeometric)</a>
+      <li><a href="distributions/dirichlet.html#mpsci.distributions.dirichlet.cov">cov() (in module mpsci.distributions.dirichlet)</a>
+
+      <ul>
+        <li><a href="distributions/multivariate_hypergeometric.html#mpsci.distributions.multivariate_hypergeometric.cov">(in module mpsci.distributions.multivariate_hypergeometric)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="fun/debye.html#mpsci.fun.debye">debye() (in module mpsci.fun)</a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fun/digammainv.html#mpsci.fun.digammainv">digammainv() (in module mpsci.fun)</a>
 </li>
@@ -287,6 +285,8 @@
         <li><a href="distributions/chi.html#mpsci.distributions.chi.entropy">(in module mpsci.distributions.chi)</a>
 </li>
         <li><a href="distributions/chi2.html#mpsci.distributions.chi2.entropy">(in module mpsci.distributions.chi2)</a>
+</li>
+        <li><a href="distributions/dirichlet.html#mpsci.distributions.dirichlet.entropy">(in module mpsci.distributions.dirichlet)</a>
 </li>
         <li><a href="distributions/f.html#mpsci.distributions.f.entropy">(in module mpsci.distributions.f)</a>
 </li>
@@ -320,6 +320,8 @@
 </li>
         <li><a href="distributions/normal.html#mpsci.distributions.normal.entropy">(in module mpsci.distributions.normal)</a>
 </li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.entropy">(in module mpsci.distributions.pareto)</a>
+</li>
         <li><a href="distributions/t.html#mpsci.distributions.t.entropy">(in module mpsci.distributions.t)</a>
 </li>
         <li><a href="distributions/truncnorm.html#mpsci.distributions.truncnorm.entropy">(in module mpsci.distributions.truncnorm)</a>
@@ -340,10 +342,6 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stats/fisher_exact.html#mpsci.stats.fisher_exact">fisher_exact() (in module mpsci.stats)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="signal/freqz.html#mpsci.signal.freqz">freqz() (in module mpsci.signal)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -403,6 +401,8 @@
         <li><a href="distributions/cosine.html#mpsci.distributions.cosine.invcdf">(in module mpsci.distributions.cosine)</a>
 </li>
         <li><a href="distributions/exponweib.html#mpsci.distributions.exponweib.invcdf">(in module mpsci.distributions.exponweib)</a>
+</li>
+        <li><a href="distributions/f.html#mpsci.distributions.f.invcdf">(in module mpsci.distributions.f)</a>
 </li>
         <li><a href="distributions/gamma.html#mpsci.distributions.gamma.invcdf">(in module mpsci.distributions.gamma)</a>
 </li>
@@ -484,6 +484,8 @@
 </li>
         <li><a href="distributions/exponweib.html#mpsci.distributions.exponweib.invsf">(in module mpsci.distributions.exponweib)</a>
 </li>
+        <li><a href="distributions/f.html#mpsci.distributions.f.invsf">(in module mpsci.distributions.f)</a>
+</li>
         <li><a href="distributions/gamma.html#mpsci.distributions.gamma.invsf">(in module mpsci.distributions.gamma)</a>
 </li>
         <li><a href="distributions/gamma_gompertz.html#mpsci.distributions.gamma_gompertz.invsf">(in module mpsci.distributions.gamma_gompertz)</a>
@@ -558,6 +560,8 @@
       <ul>
         <li><a href="distributions/betabinomial.html#mpsci.distributions.betabinomial.kurtosis">(in module mpsci.distributions.betabinomial)</a>
 </li>
+        <li><a href="distributions/betaprime.html#mpsci.distributions.betaprime.kurtosis">(in module mpsci.distributions.betaprime)</a>
+</li>
         <li><a href="distributions/cosine.html#mpsci.distributions.cosine.kurtosis">(in module mpsci.distributions.cosine)</a>
 </li>
         <li><a href="distributions/gamma.html#mpsci.distributions.gamma.kurtosis">(in module mpsci.distributions.gamma)</a>
@@ -611,6 +615,8 @@
         <li><a href="distributions/chi2.html#mpsci.distributions.chi2.logpdf">(in module mpsci.distributions.chi2)</a>
 </li>
         <li><a href="distributions/cosine.html#mpsci.distributions.cosine.logpdf">(in module mpsci.distributions.cosine)</a>
+</li>
+        <li><a href="distributions/dirichlet.html#mpsci.distributions.dirichlet.logpdf">(in module mpsci.distributions.dirichlet)</a>
 </li>
         <li><a href="distributions/exponweib.html#mpsci.distributions.exponweib.logpdf">(in module mpsci.distributions.exponweib)</a>
 </li>
@@ -755,6 +761,8 @@
         <li><a href="distributions/chi2.html#mpsci.distributions.chi2.mean">(in module mpsci.distributions.chi2)</a>
 </li>
         <li><a href="distributions/cosine.html#mpsci.distributions.cosine.mean">(in module mpsci.distributions.cosine)</a>
+</li>
+        <li><a href="distributions/dirichlet.html#mpsci.distributions.dirichlet.mean">(in module mpsci.distributions.dirichlet)</a>
 </li>
         <li><a href="distributions/f.html#mpsci.distributions.f.mean">(in module mpsci.distributions.f)</a>
 </li>
@@ -961,6 +969,8 @@
 </li>
         <li><a href="distributions/cosine.html#module-mpsci.distributions.cosine">mpsci.distributions.cosine</a>
 </li>
+        <li><a href="distributions/dirichlet.html#module-mpsci.distributions.dirichlet">mpsci.distributions.dirichlet</a>
+</li>
         <li><a href="distributions/exponweib.html#module-mpsci.distributions.exponweib">mpsci.distributions.exponweib</a>
 </li>
         <li><a href="distributions/f.html#module-mpsci.distributions.f">mpsci.distributions.f</a>
@@ -1064,8 +1074,6 @@
         <li><a href="distributions/weibull_min.html#module-mpsci.distributions.weibull_min">mpsci.distributions.weibull_min</a>
 </li>
         <li><a href="fun.html#module-mpsci.fun">mpsci.fun</a>
-</li>
-        <li><a href="signal.html#module-mpsci.signal">mpsci.signal</a>
 </li>
         <li><a href="stats.html#module-mpsci.stats">mpsci.stats</a>
 </li>
@@ -1172,6 +1180,13 @@
 
       <ul>
         <li><a href="distributions/cosine.html#module-mpsci.distributions.cosine">module</a>
+</li>
+      </ul></li>
+      <li>
+    mpsci.distributions.dirichlet
+
+      <ul>
+        <li><a href="distributions/dirichlet.html#module-mpsci.distributions.dirichlet">module</a>
 </li>
       </ul></li>
       <li>
@@ -1539,13 +1554,6 @@
 </li>
       </ul></li>
       <li>
-    mpsci.signal
-
-      <ul>
-        <li><a href="signal.html#module-mpsci.signal">module</a>
-</li>
-      </ul></li>
-      <li>
     mpsci.stats
 
       <ul>
@@ -1570,6 +1578,8 @@
         <li><a href="distributions/betaprime.html#mpsci.distributions.betaprime.nll">(in module mpsci.distributions.betaprime)</a>
 </li>
         <li><a href="distributions/gamma.html#mpsci.distributions.gamma.nll">(in module mpsci.distributions.gamma)</a>
+</li>
+        <li><a href="distributions/genpareto.html#mpsci.distributions.genpareto.nll">(in module mpsci.distributions.genpareto)</a>
 </li>
         <li><a href="distributions/gompertz.html#mpsci.distributions.gompertz.nll">(in module mpsci.distributions.gompertz)</a>
 </li>
@@ -1598,10 +1608,10 @@
         <li><a href="distributions/weibull_min.html#mpsci.distributions.weibull_min.nll">(in module mpsci.distributions.weibull_min)</a>
 </li>
       </ul></li>
-      <li><a href="distributions/gamma.html#mpsci.distributions.gamma.nll_grad">nll_grad() (in module mpsci.distributions.gamma)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="distributions/gamma.html#mpsci.distributions.gamma.nll_grad">nll_grad() (in module mpsci.distributions.gamma)</a>
+</li>
       <li><a href="distributions/gamma.html#mpsci.distributions.gamma.nll_hess">nll_hess() (in module mpsci.distributions.gamma)</a>
 </li>
       <li><a href="distributions/gamma.html#mpsci.distributions.gamma.nll_invhess">nll_invhess() (in module mpsci.distributions.gamma)</a>
@@ -1674,6 +1684,8 @@
         <li><a href="distributions/chi2.html#mpsci.distributions.chi2.pdf">(in module mpsci.distributions.chi2)</a>
 </li>
         <li><a href="distributions/cosine.html#mpsci.distributions.cosine.pdf">(in module mpsci.distributions.cosine)</a>
+</li>
+        <li><a href="distributions/dirichlet.html#mpsci.distributions.dirichlet.pdf">(in module mpsci.distributions.dirichlet)</a>
 </li>
         <li><a href="distributions/exponweib.html#mpsci.distributions.exponweib.pdf">(in module mpsci.distributions.exponweib)</a>
 </li>
@@ -1792,8 +1804,6 @@
         <li><a href="distributions/poisson.html#mpsci.distributions.poisson.pmf">(in module mpsci.distributions.poisson)</a>
 </li>
       </ul></li>
-      <li><a href="signal/poly_from_zeros.html#mpsci.signal.poly_from_zeros">poly_from_zeros() (in module mpsci.signal)</a>
-</li>
       <li><a href="fun/pow1pm1.html#mpsci.fun.pow1pm1">pow1pm1() (in module mpsci.fun)</a>
 </li>
   </ul></td>
@@ -1924,8 +1934,6 @@
         <li><a href="distributions/weibull_min.html#mpsci.distributions.weibull_min.sf">(in module mpsci.distributions.weibull_min)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="distributions/beta.html#mpsci.distributions.beta.skewness">skewness() (in module mpsci.distributions.beta)</a>
 
       <ul>
@@ -1958,12 +1966,108 @@
         <li><a href="distributions/weibull_min.html#mpsci.distributions.weibull_min.skewness">(in module mpsci.distributions.weibull_min)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stats/std.html#mpsci.stats.std">std() (in module mpsci.stats)</a>
 </li>
-      <li><a href="distributions/fishers_noncentral_hypergeometric.html#mpsci.distributions.fishers_noncentral_hypergeometric.support">support() (in module mpsci.distributions.fishers_noncentral_hypergeometric)</a>
+      <li><a href="distributions/argus.html#mpsci.distributions.argus.support">support() (in module mpsci.distributions.argus)</a>
 
       <ul>
+        <li><a href="distributions/benktander1.html#mpsci.distributions.benktander1.support">(in module mpsci.distributions.benktander1)</a>
+</li>
+        <li><a href="distributions/benktander2.html#mpsci.distributions.benktander2.support">(in module mpsci.distributions.benktander2)</a>
+</li>
+        <li><a href="distributions/beta.html#mpsci.distributions.beta.support">(in module mpsci.distributions.beta)</a>
+</li>
+        <li><a href="distributions/betaprime.html#mpsci.distributions.betaprime.support">(in module mpsci.distributions.betaprime)</a>
+</li>
+        <li><a href="distributions/chi.html#mpsci.distributions.chi.support">(in module mpsci.distributions.chi)</a>
+</li>
+        <li><a href="distributions/chi2.html#mpsci.distributions.chi2.support">(in module mpsci.distributions.chi2)</a>
+</li>
+        <li><a href="distributions/cosine.html#mpsci.distributions.cosine.support">(in module mpsci.distributions.cosine)</a>
+</li>
+        <li><a href="distributions/exponweib.html#mpsci.distributions.exponweib.support">(in module mpsci.distributions.exponweib)</a>
+</li>
+        <li><a href="distributions/f.html#mpsci.distributions.f.support">(in module mpsci.distributions.f)</a>
+</li>
+        <li><a href="distributions/fishers_noncentral_hypergeometric.html#mpsci.distributions.fishers_noncentral_hypergeometric.support">(in module mpsci.distributions.fishers_noncentral_hypergeometric)</a>
+</li>
+        <li><a href="distributions/folded_normal.html#mpsci.distributions.folded_normal.support">(in module mpsci.distributions.folded_normal)</a>
+</li>
+        <li><a href="distributions/gamma.html#mpsci.distributions.gamma.support">(in module mpsci.distributions.gamma)</a>
+</li>
+        <li><a href="distributions/gamma_gompertz.html#mpsci.distributions.gamma_gompertz.support">(in module mpsci.distributions.gamma_gompertz)</a>
+</li>
+        <li><a href="distributions/genexpon.html#mpsci.distributions.genexpon.support">(in module mpsci.distributions.genexpon)</a>
+</li>
+        <li><a href="distributions/genhyperbolic.html#mpsci.distributions.genhyperbolic.support">(in module mpsci.distributions.genhyperbolic)</a>
+</li>
+        <li><a href="distributions/geninvgauss.html#mpsci.distributions.geninvgauss.support">(in module mpsci.distributions.geninvgauss)</a>
+</li>
+        <li><a href="distributions/genpareto.html#mpsci.distributions.genpareto.support">(in module mpsci.distributions.genpareto)</a>
+</li>
+        <li><a href="distributions/gompertz.html#mpsci.distributions.gompertz.support">(in module mpsci.distributions.gompertz)</a>
+</li>
+        <li><a href="distributions/gumbel_max.html#mpsci.distributions.gumbel_max.support">(in module mpsci.distributions.gumbel_max)</a>
+</li>
+        <li><a href="distributions/gumbel_min.html#mpsci.distributions.gumbel_min.support">(in module mpsci.distributions.gumbel_min)</a>
+</li>
+        <li><a href="distributions/half_logistic.html#mpsci.distributions.half_logistic.support">(in module mpsci.distributions.half_logistic)</a>
+</li>
+        <li><a href="distributions/hypsecant.html#mpsci.distributions.hypsecant.support">(in module mpsci.distributions.hypsecant)</a>
+</li>
+        <li><a href="distributions/invchi2.html#mpsci.distributions.invchi2.support">(in module mpsci.distributions.invchi2)</a>
+</li>
+        <li><a href="distributions/invgamma.html#mpsci.distributions.invgamma.support">(in module mpsci.distributions.invgamma)</a>
+</li>
+        <li><a href="distributions/invgauss.html#mpsci.distributions.invgauss.support">(in module mpsci.distributions.invgauss)</a>
+</li>
+        <li><a href="distributions/kumaraswamy.html#mpsci.distributions.kumaraswamy.support">(in module mpsci.distributions.kumaraswamy)</a>
+</li>
+        <li><a href="distributions/laplace.html#mpsci.distributions.laplace.support">(in module mpsci.distributions.laplace)</a>
+</li>
+        <li><a href="distributions/levy.html#mpsci.distributions.levy.support">(in module mpsci.distributions.levy)</a>
+</li>
+        <li><a href="distributions/loggamma.html#mpsci.distributions.loggamma.support">(in module mpsci.distributions.loggamma)</a>
+</li>
+        <li><a href="distributions/logistic.html#mpsci.distributions.logistic.support">(in module mpsci.distributions.logistic)</a>
+</li>
+        <li><a href="distributions/lognormal.html#mpsci.distributions.lognormal.support">(in module mpsci.distributions.lognormal)</a>
+</li>
+        <li><a href="distributions/maxwell.html#mpsci.distributions.maxwell.support">(in module mpsci.distributions.maxwell)</a>
+</li>
         <li><a href="distributions/multivariate_hypergeometric.html#mpsci.distributions.multivariate_hypergeometric.support">(in module mpsci.distributions.multivariate_hypergeometric)</a>
+</li>
+        <li><a href="distributions/nakagami.html#mpsci.distributions.nakagami.support">(in module mpsci.distributions.nakagami)</a>
+</li>
+        <li><a href="distributions/ncf.html#mpsci.distributions.ncf.support">(in module mpsci.distributions.ncf)</a>
+</li>
+        <li><a href="distributions/nct.html#mpsci.distributions.nct.support">(in module mpsci.distributions.nct)</a>
+</li>
+        <li><a href="distributions/ncx2.html#mpsci.distributions.ncx2.support">(in module mpsci.distributions.ncx2)</a>
+</li>
+        <li><a href="distributions/normal.html#mpsci.distributions.normal.support">(in module mpsci.distributions.normal)</a>
+</li>
+        <li><a href="distributions/pareto.html#mpsci.distributions.pareto.support">(in module mpsci.distributions.pareto)</a>
+</li>
+        <li><a href="distributions/power_normal.html#mpsci.distributions.power_normal.support">(in module mpsci.distributions.power_normal)</a>
+</li>
+        <li><a href="distributions/rel_breitwigner.html#mpsci.distributions.rel_breitwigner.support">(in module mpsci.distributions.rel_breitwigner)</a>
+</li>
+        <li><a href="distributions/rice.html#mpsci.distributions.rice.support">(in module mpsci.distributions.rice)</a>
+</li>
+        <li><a href="distributions/t.html#mpsci.distributions.t.support">(in module mpsci.distributions.t)</a>
+</li>
+        <li><a href="distributions/truncnorm.html#mpsci.distributions.truncnorm.support">(in module mpsci.distributions.truncnorm)</a>
+</li>
+        <li><a href="distributions/uniform.html#mpsci.distributions.uniform.support">(in module mpsci.distributions.uniform)</a>
+</li>
+        <li><a href="distributions/vonmises.html#mpsci.distributions.vonmises.support">(in module mpsci.distributions.vonmises)</a>
+</li>
+        <li><a href="distributions/weibull_max.html#mpsci.distributions.weibull_max.support">(in module mpsci.distributions.weibull_max)</a>
+</li>
+        <li><a href="distributions/weibull_min.html#mpsci.distributions.weibull_min.support">(in module mpsci.distributions.weibull_min)</a>
 </li>
       </ul></li>
       <li><a href="distributions/fishers_noncentral_hypergeometric.html#mpsci.distributions.fishers_noncentral_hypergeometric.support_pmf">support_pmf() (in module mpsci.distributions.fishers_noncentral_hypergeometric)</a>
@@ -2012,6 +2116,8 @@
         <li><a href="distributions/gauss_kuzmin.html#mpsci.distributions.gauss_kuzmin.var">(in module mpsci.distributions.gauss_kuzmin)</a>
 </li>
         <li><a href="distributions/genextreme.html#mpsci.distributions.genextreme.var">(in module mpsci.distributions.genextreme)</a>
+</li>
+        <li><a href="distributions/genhyperbolic.html#mpsci.distributions.genhyperbolic.var">(in module mpsci.distributions.genhyperbolic)</a>
 </li>
         <li><a href="distributions/geninvgauss.html#mpsci.distributions.geninvgauss.var">(in module mpsci.distributions.geninvgauss)</a>
 </li>
@@ -2087,6 +2193,14 @@
   </ul></td>
 </tr></table>
 
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="fun/wright_bessel.html#mpsci.fun.wright_bessel">wright_bessel() (in module mpsci.fun)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="X">X</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -2113,14 +2227,6 @@
   </ul></td>
 </tr></table>
 
-<h2 id="Z">Z</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="signal/zpkfreqz.html#mpsci.signal.zpkfreqz">zpkfreqz() (in module mpsci.signal)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 
 
           </div>
@@ -2130,11 +2236,11 @@
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2023, Warren Weckesser.
+      &copy;2024, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 
