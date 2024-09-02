@@ -1,32 +1,30 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Beta-binomial distribution &#8212; mpsci  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=8c5fb73a" />
+    <script src="../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   <div class="document">
     
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../index.html">mpsci</a></h1>
 
@@ -54,7 +52,7 @@
     
 </ul>
 
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -62,7 +60,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
@@ -72,12 +70,13 @@
 
           <div class="body" role="main">
             
-  <span class="target" id="module-mpsci.distributions.betabinomial"></span><section id="beta-binomial-distribution">
-<h1>Beta-binomial distribution<a class="headerlink" href="#beta-binomial-distribution" title="Permalink to this heading">¶</a></h1>
+  <section id="beta-binomial-distribution">
+<span id="module-mpsci.distributions.betabinomial"></span><h1>Beta-binomial distribution<a class="headerlink" href="#beta-binomial-distribution" title="Link to this heading">¶</a></h1>
 <p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Beta-binomial_distribution">https://en.wikipedia.org/wiki/Beta-binomial_distribution</a></p>
+</section>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.cdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.cdf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.cdf" title="Link to this definition">¶</a></dt>
 <dd><p>Cumulative distribution function of the beta-binomial distribution.</p>
 <p>This function uses <code class="docutils literal notranslate"><span class="pre">mpmath.mp.hyp3f2(a1,</span> <span class="pre">a2,</span> <span class="pre">a3,</span> <span class="pre">b1,</span> <span class="pre">b2,</span> <span class="pre">z)</span></code>.
 According to the docstring of that function, “Evaluation for <code class="docutils literal notranslate"><span class="pre">|z-1|</span></code>
@@ -87,38 +86,93 @@ combinations”.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.kurtosis">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">kurtosis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.kurtosis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">kurtosis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.kurtosis" title="Link to this definition">¶</a></dt>
 <dd><p>Excess kurtosis of the beta-binomial distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.logpmf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">logpmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.logpmf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">logpmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.logpmf" title="Link to this definition">¶</a></dt>
 <dd><p>Logarithm of PMF of the beta-binomial distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.mean">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.mean" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.mean" title="Link to this definition">¶</a></dt>
 <dd><p>Mean of the beta-binomial distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.mle">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.mle" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.mle" title="Link to this definition">¶</a></dt>
 <dd><p>Maximum likelihood estimation for the beta-binomial distribution.</p>
 <p>This function does not estimate <code class="docutils literal notranslate"><span class="pre">n</span></code>; a fixed value of <code class="docutils literal notranslate"><span class="pre">n</span></code> must
 be given.</p>
 <p>Returns (n, a, b), where each value is the maximum likelihood
 estimate of the parameter if it was not given in the function call.</p>
+<p>If <cite>counts</cite> is given, it must be a sequence of nonnegative integers
+with the same length as <cite>x</cite>.  It gives the number of occurrences in
+the sample of the corresponding value in <cite>x</cite>.</p>
 <p>The function works best when a good initial guess is provided for the
 parameters to be fit. Use <code class="xref py py-class docutils literal notranslate"><span class="pre">mpsci.distributions.Initial</span></code> to specify
 an initial guess for the parameter.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="kn">import</span> <span class="n">betabinomial</span><span class="p">,</span> <span class="n">Initial</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> is our sample, which we assume is drawn from a beta binomial
+distribution with <code class="docutils literal notranslate"><span class="pre">n=8</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+<span class="gp">... </span>     <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>Fit both <code class="docutils literal notranslate"><span class="pre">a`</span> <span class="pre">and</span> <span class="pre">``b</span></code>.  Use <code class="docutils literal notranslate"><span class="pre">a=Initial(0.5)</span></code> and <code class="docutils literal notranslate"><span class="pre">b=Initial(1.5)</span></code>
+to provide initial guesses to the numerical optimizer.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">betabinomial</span><span class="o">.</span><span class="n">mle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">Initial</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">b</span><span class="o">=</span><span class="n">Initial</span><span class="p">(</span><span class="mf">1.5</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpf</span><span class="p">(</span><span class="s1">&#39;0.6183654180946715501688528635&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpf</span><span class="p">(</span><span class="s1">&#39;1.418640359545716670987007935&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we know <code class="docutils literal notranslate"><span class="pre">a</span></code> must be 1, we can pass in the parameter <code class="docutils literal notranslate"><span class="pre">a=1</span></code> to
+fix the value of <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n2</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">betabinomial</span><span class="o">.</span><span class="n">mle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">Initial</span><span class="p">(</span><span class="mf">1.5</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpf</span><span class="p">(</span><span class="s1">&#39;1.0&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpf</span><span class="p">(</span><span class="s1">&#39;2.143528853730739316264441767&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The following example is from the wikipedia article “Beta-binomial
+distribution” (<a class="reference external" href="https://en.wikipedia.org/wiki/Beta-binomial_distribution">https://en.wikipedia.org/wiki/Beta-binomial_distribution</a>),
+where the data is described as:</p>
+<blockquote>
+<div><p>The following data gives the number of male children among the
+first 12 children of family size 13 in 6115 families taken from
+hospital records in 19th century Saxony (Sokal and Rohlf, p. 59
+from Lindsey). The 13th child is ignored to blunt the effect of
+families non-randomly stopping when a desired gender is reached.</p>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">286</span><span class="p">,</span> <span class="mi">670</span><span class="p">,</span> <span class="mi">1033</span><span class="p">,</span> <span class="mi">1343</span><span class="p">,</span> <span class="mi">1112</span><span class="p">,</span> <span class="mi">829</span><span class="p">,</span> <span class="mi">478</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">betabinomial</span><span class="o">.</span><span class="n">mle</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">counts</span><span class="o">=</span><span class="n">counts</span><span class="p">,</span>
+<span class="gp">... </span>                           <span class="n">n</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">Initial</span><span class="p">(</span><span class="mi">34</span><span class="p">),</span> <span class="n">b</span><span class="o">=</span><span class="n">Initial</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">(34.10285761580158, 31.578234155042065)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.nll">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.nll" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.nll" title="Link to this definition">¶</a></dt>
 <dd><p>Negative log-likelihood of the beta-binomial distribution.</p>
 <p><cite>x</cite> must be a sequence of nonnegative integers, with
 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">x[i]</span> <span class="pre">&lt;=</span> <span class="pre">n</span></code>.</p>
@@ -126,13 +180,13 @@ an initial guess for the parameter.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.pmf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">pmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.pmf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">pmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.pmf" title="Link to this definition">¶</a></dt>
 <dd><p>Probability mass function of the beta-binomial distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.sf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.sf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.sf" title="Link to this definition">¶</a></dt>
 <dd><p>Survival function of the beta-binomial distribution.</p>
 <p>This function uses <code class="docutils literal notranslate"><span class="pre">mpmath.mp.hyp3f2(a1,</span> <span class="pre">a2,</span> <span class="pre">a3,</span> <span class="pre">b1,</span> <span class="pre">b2,</span> <span class="pre">z)</span></code>.
 According to the docstring of that function, “Evaluation for <code class="docutils literal notranslate"><span class="pre">|z-1|</span></code>
@@ -142,17 +196,32 @@ combinations”.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.skewness">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.skewness" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.skewness" title="Link to this definition">¶</a></dt>
 <dd><p>Skewness of the beta-bimonial distribution.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.betabinomial.support">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.support" title="Link to this definition">¶</a></dt>
+<dd><p>Support of the beta-binomial distribution.</p>
+<p>The support is the integers 0, 1, 2, …, n; this is implemented
+by returning <cite>range(n + 1)</cite>.  That is, the return value is the
+<cite>range</cite> instance, not a sequence.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="kn">import</span> <span class="n">betabinomial</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sup</span> <span class="o">=</span> <span class="n">betabinomial</span><span class="o">.</span><span class="n">support</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">sup</span><span class="p">]</span>
+<span class="go">[0, 1, 2, 3, 4, 5]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betabinomial.var">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.var" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.betabinomial.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.betabinomial.var" title="Link to this definition">¶</a></dt>
 <dd><p>Variance of the beta-binomial distribution.</p>
 </dd></dl>
 
-</section>
 
 
           </div>
@@ -162,11 +231,11 @@ combinations”.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2024, Warren Weckesser.
+      &#169;2024, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
     </div>
 

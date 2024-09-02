@@ -1,32 +1,30 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Weibull probability distribution (for maxima) &#8212; mpsci  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=8c5fb73a" />
+    <script src="../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   <div class="document">
     
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../index.html">mpsci</a></h1>
 
@@ -54,7 +52,7 @@
     
 </ul>
 
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -62,7 +60,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
@@ -72,8 +70,8 @@
 
           <div class="body" role="main">
             
-  <span class="target" id="module-mpsci.distributions.weibull_max"></span><section id="weibull-probability-distribution-for-maxima">
-<h1>Weibull probability distribution (for maxima)<a class="headerlink" href="#weibull-probability-distribution-for-maxima" title="Permalink to this heading">¶</a></h1>
+  <section id="weibull-probability-distribution-for-maxima">
+<span id="module-mpsci.distributions.weibull_max"></span><h1>Weibull probability distribution (for maxima)<a class="headerlink" href="#weibull-probability-distribution-for-maxima" title="Link to this heading">¶</a></h1>
 <p>This is the same distribution as:</p>
 <ul class="simple">
 <li><p><cite>scipy.stats.weibull_max</cite>;</p></li>
@@ -93,9 +91,10 @@ by <cite>-x</cite>.  The <cite>weibull_min</cite> distribution is the same distr
 <li><p>the Weibull distribution in the text “Statistical Distribution” (fourth ed.)
 by Forbes, Evans, Hastings and Peacock (Wiley, 2011).</p></li>
 </ul>
+</section>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.cdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.cdf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.cdf" title="Link to this definition">¶</a></dt>
 <dd><p>Cumulative distribution function for the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -103,7 +102,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.entropy">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.entropy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.entropy" title="Link to this definition">¶</a></dt>
 <dd><p>Differential entropy of the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -111,7 +110,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.invcdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">invcdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.invcdf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">invcdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.invcdf" title="Link to this definition">¶</a></dt>
 <dd><p>Inverse of the CDF for the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -119,7 +118,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.invsf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">invsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.invsf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">invsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.invsf" title="Link to this definition">¶</a></dt>
 <dd><p>Inverse of the survival function for the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -127,7 +126,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.kurtosis">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">kurtosis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.kurtosis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">kurtosis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.kurtosis" title="Link to this definition">¶</a></dt>
 <dd><p>Excess kurtosis of the Weibull distribution (for minima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -135,7 +134,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.logpdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.logpdf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.logpdf" title="Link to this definition">¶</a></dt>
 <dd><p>Log of the PDF of the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -143,7 +142,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.mean">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.mean" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.mean" title="Link to this definition">¶</a></dt>
 <dd><p>Mean of the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -151,7 +150,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.mle">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.mle" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.mle" title="Link to this definition">¶</a></dt>
 <dd><p>Maximum likelihood estimate of the Weibull(max) distribution parameters.</p>
 <p><cite>loc</cite> must be given.</p>
 <p>Return value is (k, loc, scale).</p>
@@ -159,7 +158,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.mode">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.mode" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.mode" title="Link to this definition">¶</a></dt>
 <dd><p>Mode of the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -167,20 +166,20 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.nll">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.nll" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.nll" title="Link to this definition">¶</a></dt>
 <dd><p>Negative log-likelihood function for the Weibull(min) distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.noncentral_moment">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">noncentral_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.noncentral_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">noncentral_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.noncentral_moment" title="Link to this definition">¶</a></dt>
 <dd><p>Noncentral moment of the Weibull distribution (for maxima).</p>
 <p>The value is also known as the raw moment.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.pdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.pdf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.pdf" title="Link to this definition">¶</a></dt>
 <dd><p>Probability density function for the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -188,7 +187,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.sf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.sf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.sf" title="Link to this definition">¶</a></dt>
 <dd><p>Survival function for the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -196,7 +195,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.skewness">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.skewness" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.skewness" title="Link to this definition">¶</a></dt>
 <dd><p>Skewness of the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -204,7 +203,7 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.support">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.support" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.support" title="Link to this definition">¶</a></dt>
 <dd><p>Support of the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
@@ -212,13 +211,12 @@ two-parameter version has just the parameters k and scale.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.weibull_max.var">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.var" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.weibull_max.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.weibull_max.var" title="Link to this definition">¶</a></dt>
 <dd><p>Variance of the Weibull distribution (for maxima).</p>
 <p>This is a three-parameter version of the distribution.  The more typical
 two-parameter version has just the parameters k and scale.</p>
 </dd></dl>
 
-</section>
 
 
           </div>
@@ -228,11 +226,11 @@ two-parameter version has just the parameters k and scale.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2024, Warren Weckesser.
+      &#169;2024, Warren Weckesser.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
     </div>
 
