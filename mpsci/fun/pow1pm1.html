@@ -11,6 +11,7 @@
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -75,8 +76,28 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.fun.pow1pm1">
 <span class="sig-prename descclassname"><span class="pre">mpsci.fun.</span></span><span class="sig-name descname"><span class="pre">pow1pm1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.pow1pm1" title="Link to this definition">¶</a></dt>
-<dd><p>Compute <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">+</span> <span class="pre">1)**y</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
+<dd><p>Compute <span class="math notranslate nohighlight">\((1 + x)^y - 1\)</span>.</p>
 <p><em>See also:</em> <a class="reference internal" href="inv_pow1pm1.html#mpsci.fun.inv_pow1pm1" title="mpsci.fun.inv_pow1pm1"><code class="xref py py-func docutils literal notranslate"><span class="pre">inv_pow1pm1()</span></code></a></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.fun</span> <span class="kn">import</span> <span class="n">pow1pm1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="s1">&#39;3.5e-75&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="s1">&#39;2.86e-8&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Naive calculation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="go">mpf(&#39;0.0&#39;)</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">pow1pm1</span></code>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pow1pm1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">mpf(&#39;1.001000000000000000000000001e-82&#39;)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

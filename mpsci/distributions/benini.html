@@ -11,6 +11,7 @@
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -72,6 +73,25 @@
             
   <section id="benini-distribution">
 <span id="module-mpsci.distributions.benini"></span><h1>Benini Distribution<a class="headerlink" href="#benini-distribution" title="Link to this heading">¶</a></h1>
+<p>The Benini distribution has the probability density function</p>
+<div class="math notranslate nohighlight">
+\[f(x, \alpha, \beta, \sigma) =
+    e^{\theta(x, \alpha, \beta, \sigma)}
+    \left(
+        \frac{\alpha}{x} +
+        \frac{2\beta\log\left(\frac{x}{\sigma}\right)}{x}
+    \right)\]</div>
+<p>and cumulative distribution function</p>
+<div class="math notranslate nohighlight">
+\[F(x, \alpha, \beta, \sigma) =
+  1 - e^{\theta(x, \alpha, \beta, \sigma)}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\theta(x, \alpha, \beta, \sigma) =
+  -\alpha \log\left(\frac{x}{\sigma}\right)
+    - \beta \log\left(\frac{x}{\sigma}\right)^2\]</div>
+<p><span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are shape parameters; <span class="math notranslate nohighlight">\(\sigma\)</span> is a scale parameter.</p>
+<p>The support is <span class="math notranslate nohighlight">\(x &gt; \sigma\)</span>.</p>
 <p>See</p>
 <ul class="simple">
 <li><p>Kleiber, Christian; Kotz, Samuel (2003). “Chapter 7.1: Benini Distribution”,

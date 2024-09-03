@@ -74,53 +74,54 @@
 <span id="module-mpsci.distributions.argus"></span><h1>ARGUS distribution<a class="headerlink" href="#argus-distribution" title="Link to this heading">¶</a></h1>
 <p>The parameters, chi and c, follow the conventions used in the
 wikipedia article <a class="reference external" href="https://en.wikipedia.org/wiki/ARGUS_distribution">https://en.wikipedia.org/wiki/ARGUS_distribution</a>.</p>
-<p>Note that c is a scale parameter.</p>
+<p>Note that the parameter c in the wikipedia article is called <code class="docutils literal notranslate"><span class="pre">scale</span></code>
+here.</p>
 </section>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.argus.cdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.cdf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.cdf" title="Link to this definition">¶</a></dt>
 <dd><p>CDF of the ARGUS probability distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.argus.logpdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.logpdf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.logpdf" title="Link to this definition">¶</a></dt>
 <dd><p>Logarithm of the PDF of the ARGUS probability distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.argus.mean">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.mean" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.mean" title="Link to this definition">¶</a></dt>
 <dd><p>Mean of the ARGUS distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.argus.mode">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.mode" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.mode" title="Link to this definition">¶</a></dt>
 <dd><p>Mode of the ARGUS distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.argus.pdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.pdf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.pdf" title="Link to this definition">¶</a></dt>
 <dd><p>PDF of the ARGUS probability distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.argus.sf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.sf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.sf" title="Link to this definition">¶</a></dt>
 <dd><p>Survival function of the ARGUS probability distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.argus.support">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.support" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.support" title="Link to this definition">¶</a></dt>
 <dd><p>Support of the ARGUS probability distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.argus.var">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.var" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.argus.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.argus.var" title="Link to this definition">¶</a></dt>
 <dd><p>Variance of the ARGUS distribution.</p>
 </dd></dl>
 

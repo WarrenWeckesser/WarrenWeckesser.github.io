@@ -144,6 +144,23 @@ Methods, Techniques, and Applications, CRC Press LLC, Boca
 Raton, Florida.</p>
 </aside>
 </aside>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.stats</span> <span class="kn">import</span> <span class="n">odds_ratio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">28</span><span class="p">],</span> <span class="p">[</span><span class="mi">124</span><span class="p">,</span> <span class="mi">19</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">odds_ratio</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;conditional&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">odds_ratio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mpf</span><span class="p">(</span><span class="s1">&#39;0.1386439288429951782006148315&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">odds_ratio_ci</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="go">ConfidenceInterval(low=mpf(&#39;0.06223766231159558258257537936&#39;),</span>
+<span class="go">high=mpf(&#39;0.3002430126764577947401324812&#39;))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">pvalue</span><span class="p">)</span>
+<span class="go">7.14599142505505e-08</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

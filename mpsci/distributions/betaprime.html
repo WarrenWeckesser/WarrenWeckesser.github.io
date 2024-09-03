@@ -11,6 +11,7 @@
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -72,12 +73,26 @@
             
   <section id="beta-prime-probability-distribution">
 <span id="module-mpsci.distributions.betaprime"></span><h1>Beta prime probability distribution<a class="headerlink" href="#beta-prime-probability-distribution" title="Link to this heading">¶</a></h1>
+<p>The beta prime distribution is a continuous univariate distribution with
+support <span class="math notranslate nohighlight">\(x &gt; 0\)</span>.</p>
+<p>The probability density function is</p>
+<div class="math notranslate nohighlight">
+\[f(x, a, b, \sigma) = \frac{x^{a - 1}(1 + x)^{-a-b}}{B(a,b)}\]</div>
+<p>and the cumulative distribution function is</p>
+<div class="math notranslate nohighlight">
+\[F(x, a, b, \sigma) = I_{
+    \frac{x/\sigma}
+          {1+x/\sigma}
+}(a, b)\]</div>
+<p>where <span class="math notranslate nohighlight">\(B(a, b)\)</span> is the beta function and <span class="math notranslate nohighlight">\(I_{z}(a, b)\)</span> is the regularized
+incomplete beta function.</p>
+<p>Parameters <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are shape parameters; <span class="math notranslate nohighlight">\(\sigma\)</span> is a scale parameter.</p>
 <p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_prime_distribution">https://en.wikipedia.org/wiki/Beta_prime_distribution</a></p>
 <p>The functions defined here include a scale parameter, so according to the
 Wikipedia article, this is actually a generalization of the beta prime
 distribution known as the <em>compound gamma distribution</em>.  If you want
 the “standard” beta prime distribution as described in the article, set
-<cite>scale</cite> to 1.</p>
+the scale to 1.</p>
 </section>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.betaprime.cdf">
