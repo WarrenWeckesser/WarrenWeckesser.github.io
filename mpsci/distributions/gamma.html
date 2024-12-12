@@ -73,32 +73,32 @@
   <section id="gamma-probability-distribution">
 <span id="module-mpsci.distributions.gamma"></span><h1>Gamma probability distribution<a class="headerlink" href="#gamma-probability-distribution" title="Link to this heading">¶</a></h1>
 <p>The parameters used here are <cite>k</cite>, the shape parameter, and
-<cite>theta</cite>, the scale parameter.</p>
+<cite>scale</cite>, the scale parameter.</p>
 <p>Another common parameterization is shape <cite>k</cite> and the “rate” <cite>lambda</cite>.
-<cite>theta</cite> is the reciprocal of <cite>lambda</cite>.</p>
+<cite>lambda</cite> is the reciprocal of <cite>scale</cite>.</p>
 </section>
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.cdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.cdf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.cdf" title="Link to this definition">¶</a></dt>
 <dd><p>Gamma distribution cumulative distribution function.</p>
-<p>k is the shape parameter
-theta is the scale parameter (reciprocal of the rate parameter)</p>
+<p><cite>k</cite> is the shape parameter
+<cite>scale</cite> is the scale parameter (reciprocal of the rate parameter)</p>
 <p>Unlike scipy, a location parameter is not included.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.entropy">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.entropy" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.entropy" title="Link to this definition">¶</a></dt>
 <dd><p>Differential entropy of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.interval_prob">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">interval_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.interval_prob" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">interval_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.interval_prob" title="Link to this definition">¶</a></dt>
 <dd><p>Compute the probability of x in [x1, x2] for the gamma distribution.</p>
 <p>Mathematically, this is the same as</p>
 <blockquote>
-<div><p>gamma.cdf(x2, k, theta) - gamma.cdf(x1, k, theta)</p>
+<div><p>gamma.cdf(x2, k, scale) - gamma.cdf(x1, k, scale)</p>
 </div></blockquote>
 <p>but when the two CDF values are nearly equal, this function will give
 a more accurate result.</p>
@@ -107,39 +107,39 @@ a more accurate result.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.invcdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">invcdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.invcdf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">invcdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.invcdf" title="Link to this definition">¶</a></dt>
 <dd><p>Inverse of the CDF of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.invsf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">invsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.invsf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">invsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.invsf" title="Link to this definition">¶</a></dt>
 <dd><p>Inverse of the survival function of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.kurtosis">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">kurtosis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.kurtosis" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">kurtosis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.kurtosis" title="Link to this definition">¶</a></dt>
 <dd><p>Excess kurtosis of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.logpdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.logpdf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">logpdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.logpdf" title="Link to this definition">¶</a></dt>
 <dd><p>Log of the PDF of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.mean">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mean" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mean" title="Link to this definition">¶</a></dt>
 <dd><p>Mean of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.mle">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mle" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mle" title="Link to this definition">¶</a></dt>
 <dd><p>Gamma distribution maximum likelihood parameter estimation.</p>
-<p>Maximum likelihood estimate for the k (shape) and theta (scale) parameters
+<p>Maximum likelihood estimate for the k (shape) and scale parameters
 of the gamma distribution.</p>
 <p>x must be a sequence of values.</p>
 </dd></dl>
@@ -149,70 +149,70 @@ of the gamma distribution.</p>
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">mom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.mom" title="Link to this definition">¶</a></dt>
 <dd><p>Parameter estimation by the method of moments for the gamma distribution.</p>
 <p>x must be a sequence of values.</p>
-<p>Returns the estimates of the shape k and the scale theta.</p>
+<p>Returns the estimates of the shape k and the scale.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.nll">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll" title="Link to this definition">¶</a></dt>
 <dd><p>Gamma distribution negative log-likelihood.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.nll_grad">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">nll_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_grad" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">nll_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_grad" title="Link to this definition">¶</a></dt>
 <dd><p>Gamma distribution gradient of the negative log-likelihood function.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.nll_hess">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">nll_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_hess" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">nll_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_hess" title="Link to this definition">¶</a></dt>
 <dd><p>Gamma distribution hessian of the negative log-likelihood function.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.nll_invhess">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">nll_invhess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_invhess" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">nll_invhess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.nll_invhess" title="Link to this definition">¶</a></dt>
 <dd><p>Gamma distribution inverse of the hessian of the negative log-likelihood.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.noncentral_moment">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">noncentral_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.noncentral_moment" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">noncentral_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.noncentral_moment" title="Link to this definition">¶</a></dt>
 <dd><p>n-th noncentral moment of the gamma distribution.</p>
 <p>n must be a nonnegative integer.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.pdf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.pdf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.pdf" title="Link to this definition">¶</a></dt>
 <dd><p>Gamma distribution probability density function.</p>
-<p>k is the shape parameter
-theta is the scale parameter (reciprocal of the rate parameter)</p>
+<p><cite>k</cite> is the shape parameter
+<cite>scale</cite> is the scale parameter (reciprocal of the rate parameter)</p>
 <p>Unlike scipy, a location parameter is not included.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.sf">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.sf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.sf" title="Link to this definition">¶</a></dt>
 <dd><p>Survival function of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.skewness">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.skewness" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.skewness" title="Link to this definition">¶</a></dt>
 <dd><p>Skewness of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.support">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.support" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.support" title="Link to this definition">¶</a></dt>
 <dd><p>Support of the gamma distribution.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.gamma.var">
-<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.var" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.gamma.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.gamma.var" title="Link to this definition">¶</a></dt>
 <dd><p>Variance of the gamma distribution.</p>
 </dd></dl>
 

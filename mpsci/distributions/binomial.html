@@ -97,6 +97,38 @@ or n, the incomplete beta function of mpmath might fail.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.binomial.mle">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.binomial.</span></span><span class="sig-name descname"><span class="pre">mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.mle" title="Link to this definition">¶</a></dt>
+<dd><p>Maximum likelihood estimation for the binomial distribution.</p>
+<p>x  must be a sequence of nonnegative integers.</p>
+<p>Returns <cite>n</cite> (an integer) and <cite>p</cite> (a probability).</p>
+<p><em>Note</em></p>
+<p>When the parameter <cite>n</cite> is not fixed, the robustness of the numerical
+solution depends on the input data <cite>x</cite>.  For some <cite>x</cite>, the solver is
+likely to fail.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpsci.distributions</span> <span class="kn">import</span> <span class="n">binomial</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span><span class="o">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">binomial</span><span class="o">.</span><span class="n">mle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>
+<span class="go">mpf(&#39;0.734375&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mpsci.distributions.binomial.nll">
+<span class="sig-prename descclassname"><span class="pre">mpsci.distributions.binomial.</span></span><span class="sig-name descname"><span class="pre">nll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.nll" title="Link to this definition">¶</a></dt>
+<dd><p>Negative log-likelihood of the binomial distribution.</p>
+<p><cite>x</cite> must be a sequence of nonnegative integers, with
+<code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">x[i]</span> <span class="pre">&lt;=</span> <span class="pre">n</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="mpsci.distributions.binomial.pmf">
 <span class="sig-prename descclassname"><span class="pre">mpsci.distributions.binomial.</span></span><span class="sig-name descname"><span class="pre">pmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.distributions.binomial.pmf" title="Link to this definition">¶</a></dt>
 <dd><p>Probability mass function of the binomial distribution.</p>
