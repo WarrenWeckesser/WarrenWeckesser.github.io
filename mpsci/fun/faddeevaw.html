@@ -5,13 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>cmarcumq &#8212; mpsci  documentation</title>
+    <title>faddeevaw &#8212; mpsci  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=4ba8ed1c" />
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,16 +72,16 @@
 
           <div class="body" role="main">
             
-  <section id="cmarcumq">
-<span id="mpsci-fun-cmarcumq"></span><h1>cmarcumq<a class="headerlink" href="#cmarcumq" title="Link to this heading">¶</a></h1>
+  <section id="faddeevaw">
+<span id="mpsci-fun-faddeevaw"></span><h1>faddeevaw<a class="headerlink" href="#faddeevaw" title="Link to this heading">¶</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="mpsci.fun.cmarcumq">
-<span class="sig-prename descclassname"><span class="pre">mpsci.fun.</span></span><span class="sig-name descname"><span class="pre">cmarcumq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.cmarcumq" title="Link to this definition">¶</a></dt>
-<dd><p>The “complementary” Marcum Q function.</p>
-<p>This is 1 - marcumq(m, a, b).</p>
-<p>The function uses numerical integration, so it can be very slow.</p>
-<p>The computed integral tends to be very inaccurate for m &lt; 1/2.</p>
-<p><em>See also:</em> <a class="reference internal" href="marcumq.html#mpsci.fun.marcumq" title="mpsci.fun.marcumq"><code class="xref py py-func docutils literal notranslate"><span class="pre">marcumq()</span></code></a></p>
+<dt class="sig sig-object py" id="mpsci.fun.faddeevaw">
+<span class="sig-prename descclassname"><span class="pre">mpsci.fun.</span></span><span class="sig-name descname"><span class="pre">faddeevaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.faddeevaw" title="Link to this definition">¶</a></dt>
+<dd><p>Computes the complex Faddeeva W function.</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(W(z) = e^{-z^2}\textrm{erfc}(-i z)\)</span></p>
+</div></blockquote>
+<p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Faddeeva_function">https://en.wikipedia.org/wiki/Faddeeva_function</a>.</p>
 </dd></dl>
 
 </section>
