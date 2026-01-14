@@ -12,6 +12,7 @@
     <script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -77,6 +78,9 @@
 <dt class="sig sig-object py" id="mpsci.fun.debye">
 <span class="sig-prename descclassname"><span class="pre">mpsci.fun.</span></span><span class="sig-name descname"><span class="pre">debye</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'quad'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpsci.fun.debye" title="Link to this definition">¶</a></dt>
 <dd><p>Compute the Debye function D_n(x).</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(D_n(x) = \frac{n}{x^n} \int_{0}^{x}\frac{t^n}{e^t - 1} dt\)</span></p>
+</div></blockquote>
 <p>If <code class="docutils literal notranslate"><span class="pre">method</span> <span class="pre">==</span> <span class="pre">'quad'</span></code>,  <code class="docutils literal notranslate"><span class="pre">mp.quad</span></code> is used to evaluate the integral form
 of the function, so it might be necessary to set <code class="docutils literal notranslate"><span class="pre">mp.dps</span></code> to a value
 much larger than the desired output precision.  For example, <code class="docutils literal notranslate"><span class="pre">mp.dps</span> <span class="pre">=</span> <span class="pre">150</span></code>
